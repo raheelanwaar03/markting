@@ -1,52 +1,91 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+    <title>Register</title>
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/images/logo.png') }}" />
+    <!-- Font -->
+    <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="{{ asset('assets/fonts/icons-alipay.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/styles.css') }}" />
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('assets/app/icons/icon-192x192.png') }}">
+
+</head>
+
+<body>
+    <!-- preloade -->
+    <div class="preload preload-container">
+        <div class="preload-logo">
+            <div class="spinner"></div>
         </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    </div>
+    <!-- /preload -->
+    <div class="header">
+        <div class="tf-container">
+            <div class="tf-statusbar br-none d-flex justify-content-center align-items-center">
+                <a href="#" class="back-btn"> <i class="icon-left"></i> </a>
+            </div>
         </div>
+    </div>
+    <div class="mt-3 register-section">
+        <div class="tf-container">
+            <form class="tf-form" action="{{ route('register') }}" method="POST">
+                @csrf
+                <h1>Register</h1>
+                <div class="group-input">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Themesflat">
+                </div>
+                <div class="group-input">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Example@gmail">
+                </div>
+                <div class="group-input">
+                    <label>Phone Number</label>
+                    <input type="number" name="number" placeholder="123 4567 890">
+                </div>
+                <div class="group-input">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter Your Password">
+                </div>
+                <div class="group-input auth-pass-input last">
+                    <label>Confirm Password</label>
+                    <input type="password" name="password_confirmation" class="password-input"
+                        placeholder="Enter Your Password">
+                    <a class="icon-eye password-addon" id="password-addon"></a>
+                </div>
+                <div class="group-cb mt-5">
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+                    <input type="checkbox" checked class="tf-checkbox">
+                    <label class="fw_3">I agree to <a>Terms and condition</a> </label>
+                </div>
+                <button type="submit" class="tf-btn accent large">Create An Account</button>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+            </form>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
+    </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+    <script type="text/javascript" src="{{ asset('assets/javascript/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/password-addon.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/init.js') }}"></script>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</body>
+
+</html>

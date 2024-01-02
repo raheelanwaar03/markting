@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
-    <title>{{ env('APP_NAME') }}</title>
+    <title>home</title>
     <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/images/logo.png') }}" />
+    <link rel="shortcut icon" href="images/logo.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/logo.png" />
     <!-- Font -->
-    <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
     <!-- Icons -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/icons-alipay.css') }}">
 

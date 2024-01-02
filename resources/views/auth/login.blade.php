@@ -1,47 +1,77 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<!DOCTYPE html>
+<html lang="en">
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+    <title>Login</title>
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/images/logo.png') }}" />
+    <!-- Font -->
+    <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="{{ asset('assets/fonts/icons-alipay.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.css') }}">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/styles.css') }}" />
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('assets/app/icons/icon-192x192.png') }}">
+
+</head>
+
+<body>
+    <!-- preloade -->
+    <div class="preload preload-container">
+        <div class="preload-logo">
+            <div class="spinner"></div>
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+    </div>
+    <!-- /preload -->
+    <div class="header">
+        <div class="tf-container">
+            <div class="tf-statusbar br-none d-flex justify-content-center align-items-center">
+                <a href="#" class="back-btn"> <i class="icon-left"></i> </a>
+            </div>
         </div>
+    </div>
+    <div class="mt-3 register-section">
+        <div class="tf-container">
+            <form class="tf-form" action="{{ route('login') }}" method="POST">
+                @csrf
+                <h1>Login</h1>
+                <div class="group-input">
+                    <label>Email</label>
+                    <input type="text" name="email" placeholder="Example@gmail">
+                </div>
+                <div class="group-input auth-pass-input last">
+                    <label>Password</label>
+                    <input type="password" name="password" class="password-input" placeholder="Password">
+                    <a class="icon-eye password-addon" id="password-addon"></a>
+                </div>
+                <a href="08_reset-password.html" class="auth-forgot-password mt-3">Forgot Password?</a>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
+                <button type="submit" class="tf-btn accent large">Log In</button>
+
+            </form>
+            <div class="auth-line">Or</div>
+            <p class="mb-9 fw-3 text-center ">Already have a Account? <a href="05_register.html"
+                    class="auth-link-rg">Sign up</a></p>
         </div>
+    </div>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+
+    <script type="text/javascript" src="{{ asset('assets/javascript/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/password-addon.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/init.js') }}"></script>
+
+
+</body>
+
+</html>
