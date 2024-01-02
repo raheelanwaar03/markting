@@ -7,5 +7,14 @@ use Illuminate\Http\Request;
 
 class PlansController extends Controller
 {
-    //
+    public function add()
+    {
+        return view('admin.plan.add');
+    }
+
+    public function store(Request $request)
+    {
+        return $request;
+    }
+
 }
