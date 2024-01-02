@@ -3386,9 +3386,16 @@
                             </a>
                         </li>
                         <li>
-                            <a href="69_profile.html" class="nav-link">
+                            <a href="{{ route('login') }}" class="nav-link">
                                 <i class="icon icon-user-outline"></i>
-                                <span>Logout</span>
+                                @if (auth()->user())
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" style="border: none;color:black;margin-left:-15px;">Logout</button>
+                                </form>
+                                @else
+                                <span>Login</span>
+                                @endif
                             </a>
                         </li>
                     </ul>
