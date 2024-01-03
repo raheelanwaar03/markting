@@ -196,7 +196,12 @@
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a href="{{ route('Admin.Add.Plan') }}" class="nav-link">
-                                            add
+                                            Add New Plan
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('Admin.All.Plan') }}" class="nav-link">
+                                            All Plans
                                         </a>
                                     </li>
                                 </ul>

@@ -11,7 +11,7 @@
                                 <h4 class="card-title mb-0">Add Plan</h4>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('Admin.Store.Plan') }}" method="POST">
+                                <form action="{{ route('Admin.Store.Plan') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mt-4">
                                         <h5 class="fs-14 mb-3 text-muted">Enter Details</h5>
@@ -26,7 +26,7 @@
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-delimiter" class="form-label">Plan Investment</label>
-                                                    <input type="text" class="form-control" name="investment"
+                                                    <input type="number" class="form-control" name="investment"
                                                         id="cleave-delimiter" placeholder="Enter Plan Investment">
                                                 </div>
                                             </div>
@@ -36,14 +36,14 @@
                                                 <div class="mb-3">
                                                     <label for="cleave-delimiters" class="form-label">Plan daily
                                                         Profit</label>
-                                                    <input type="text" class="form-control" name="daily_profit"
+                                                    <input type="number" class="form-control" name="daily_profit"
                                                         id="cleave-delimiters" placeholder="Enter Profit">
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Total Profit</label>
-                                                    <input type="text" class="form-control" id="cleave-prefix"
+                                                    <input type="number" class="form-control" id="cleave-prefix"
                                                         name="total_profit" placeholder="Enter Plan Total Profit">
                                                 </div>
                                             </div>
@@ -53,7 +53,7 @@
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Duration</label>
-                                                    <input type="text" class="form-control" id="cleave-prefix"
+                                                    <input type="number" class="form-control" id="cleave-prefix"
                                                         name="duration" placeholder="Enter Plan active duration">
                                                 </div>
                                             </div>
