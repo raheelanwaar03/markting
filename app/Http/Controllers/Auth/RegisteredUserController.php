@@ -33,11 +33,12 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'number' => ['required'],
         ]);
 
-        $user_code = rand(11111,99999);
+        $user_code = rand(111111,999999);
 
         $user = User::create([
             'name' => $request->name,

@@ -49,7 +49,7 @@ class clean extends Command
         $user->name = 'Admin';
         $user->referral = 'default';
         $user->balance = '0';
-        $user->user_code = '12345';
+        $user->user_code = '123456';
         $user->number = '03000000000';
         $user->email = 'admin123@gmail.com';
         $user->password = Hash::make('asdfasdf');
@@ -63,7 +63,7 @@ class clean extends Command
         $user->email = 'user123@gmail.com';
         $user->referral = 'default';
         $user->balance = '100';
-        $user->user_code = '12345';
+        $user->user_code = '123457';
         $user->number = '03000000000';
         $user->password = Hash::make('asdfasdf');
         $user->role = 'user';
