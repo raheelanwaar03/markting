@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-6">
                             <div class="inner-right">
-                                <p>Not Login yet</p>
+                                <p>1st payment</p>
                                 <h3>
                                     <ul class="icon-gift-box">
                                         <li class="path1"></li>

@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
     <title>home</title>
     <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="images/logo.png" />
-    <link rel="apple-touch-icon-precomposed" href="images/logo.png" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/images/logo.png') }}" />
     <!-- Font -->
-    <link rel="stylesheet" href="fonts/fonts.css" />
+    <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}" />
     <!-- Icons -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/icons-alipay.css') }}">
 
@@ -38,7 +38,7 @@
                     <div class="content">
                         <h4 class="white_color">New Hexa Network</h4>
                         @if (auth()->user())
-                        <p class="white_color fw_4">The New Era of Investment</p>
+                        <p class="white_color fw_4">{{ auth()->user()->name }} Welcome to User dashboard</p>
                         @endif
                     </div>
                 </a>

@@ -65,6 +65,7 @@
                         placeholder="Enter Your Password">
                     <a class="icon-eye password-addon" id="password-addon"></a>
                 </div>
+                <input type="text" name="referral" value="{{ $referral }}" hidden>
                 <div class="group-cb mt-5">
 
                     <input type="checkbox" checked class="tf-checkbox">

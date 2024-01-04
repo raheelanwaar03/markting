@@ -13,4 +13,10 @@ class UserDashboardController extends Controller
         $plans = Plans::get();
         return view('user.dashboard',compact('plans'));
     }
+
+    public function profile()
+    {
+        return view('user.profile');
+    }
+
 }

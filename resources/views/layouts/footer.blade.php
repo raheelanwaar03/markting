@@ -17,7 +17,7 @@
                             stroke="#717171" stroke-width="1.25" />
                     </svg>
                     App</a> </li>
-            <li><a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="69_profile.html"><i
+            <li><a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="{{ route('User.Profile') }}"><i
                         class="icon-user-outline"></i> Profile</a> </li>
         </ul>
         <!-- <span class="line"></span> -->

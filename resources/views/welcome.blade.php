@@ -96,7 +96,7 @@
                                     Whatsapp
                                 </a>
                             @else
-                                <a class="fw_6 btn-card-popup" href="#">
+                                <a class="fw_6 btn-card-popup" href="{{ route('login') }}">
                                     <ul class="icon icon-group-credit-card">
                                         <li class="path1"></li>
                                         <li class="path2"></li>
@@ -174,7 +174,7 @@
 
                     <!-- "Visit" button on the right -->
                     <div class="ml-auto">
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Start</a>
                     </div>
                 </div>
                 <div class="card-body d-flex align-items-center">
@@ -193,7 +193,7 @@
 
                     <!-- "Visit" button on the right -->
                     <div class="ml-auto">
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Start</a>
                     </div>
                 </div>
                 <div class="card-body d-flex align-items-center">
@@ -212,7 +212,7 @@
 
                     <!-- "Visit" button on the right -->
                     <div class="ml-auto">
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Start</a>
                     </div>
                 </div>
                 <div class="card-body d-flex align-items-center">
@@ -231,7 +231,7 @@
 
                     <!-- "Visit" button on the right -->
                     <div class="ml-auto">
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Start</a>
                     </div>
                 </div>
                 <div class="card-body d-flex align-items-center">
@@ -250,7 +250,7 @@
 
                     <!-- "Visit" button on the right -->
                     <div class="ml-auto">
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Start</a>
                     </div>
                 </div>
                 <div class="card-body d-flex align-items-center">
@@ -268,7 +268,7 @@
 
                     <!-- "Visit" button on the right -->
                     <div class="ml-auto">
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Start</a>
                     </div>
                 </div>
                 <div class="card-body d-flex align-items-center">
@@ -287,7 +287,7 @@
 
                     <!-- "Visit" button on the right -->
                     <div class="ml-auto">
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Start</a>
                     </div>
                 </div>
                 <div class="card-body d-flex align-items-center">
@@ -306,7 +306,7 @@
 
                     <!-- "Visit" button on the right -->
                     <div class="ml-auto">
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Start</a>
                     </div>
                 </div>
 
