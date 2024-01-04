@@ -38,7 +38,7 @@
                                                         style="background-color: red;">{{ $user->status }}</span></td>
                                                 <td>
                                                     <a href="{{ route('Admin.Pending.Users', $user->id) }}"
-                                                        class="btn btn-danger btn-sm">Pending</a>
+                                                        class="btn btn-primary btn-sm">Pending</a>
                                                     <a href="{{ route('Admin.Approve.Users', $user->id) }}"
                                                         class="btn btn-success btn-sm">Approved</a>
                                                 </td>

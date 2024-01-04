@@ -220,7 +220,7 @@
                                             data-key="t-horizontal">All Users</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('Admin.Pending.User') }}" target="_blank" class="nav-link"
+                                        <a href="{{ route('Admin.Pending.Users') }}" target="_blank" class="nav-link"
                                             data-key="t-horizontal">Pending Users</a>
                                     </li>
                                     <li class="nav-item">

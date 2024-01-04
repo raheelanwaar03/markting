@@ -22,13 +22,19 @@ class AdminDashboardController extends Controller
     public function rejectedUsers()
     {
         $users = User::where('status','rejected')->get();
-        return view('admin.user.pendingUsers',compact('users'));
+        return view('admin.user.rejectedUsers',compact('users'));
     }
 
     public function pendingUsers()
     {
-        $users = User::where('status','rejected')->get();
-        return view('admin.user.rejectedUsers',compact('users'));
+        $users = User::where('status','pending')->get();
+        return view('admin.user.pendingUsers',compact('users'));
+    }
+
+    public function approvedUsers()
+    {
+        $users = User::where('status','approved')->get();
+        return view('admin.user.approvedUsers',compact('users'));
     }
 
     public function rejectUser($id)
