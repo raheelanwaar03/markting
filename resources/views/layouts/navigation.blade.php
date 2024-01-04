@@ -28,6 +28,9 @@
     <div class="preload preload-container">
         <div class="preload-logo"></div>
     </div>
+
+    <x-alert />
+
     <!-- /preload -->
     <div class="app-header">
         <div class="tf-container">

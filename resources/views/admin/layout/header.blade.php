@@ -27,6 +27,7 @@
 
 <body>
 
+    <x-alert />
     <!-- Begin page -->
     <div id="layout-wrapper">
 
@@ -241,30 +242,13 @@
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse"
                                 role="button" aria-expanded="false" aria-controls="sidebarAuth">
-                                <i class="ri-account-circle-line"></i> <span
-                                    data-key="t-authentication">Authentication</span>
+                                <i class="ri-stack-line"></i> <span
+                                    data-key="t-authentication">Settings</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarAuth">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarSignIn"
-                                            data-key="t-signin"> Sign In
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarSignIn">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="auth-signin-basic.html" class="nav-link"
-                                                        data-key="t-basic"> Basic
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="auth-signin-cover.html" class="nav-link"
-                                                        data-key="t-cover"> Cover
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        <a href="{{ route('Admin.Referral.Setting') }}" class="nav-link">Referral Bouns</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse"

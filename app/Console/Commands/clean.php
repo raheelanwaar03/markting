@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\admin\Referralsetting;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -33,6 +34,16 @@ class clean extends Command
         Artisan::call('config:clear');
         Artisan::call('view:clear');
         Artisan::call('route:clear');
+
+        // adding refferal bouns
+        $referral_bouns = new Referralsetting();
+        $referral_bouns->first_person = "100";
+        $referral_bouns->second_person = "50";
+        $referral_bouns->third_person = "25";
+        $referral_bouns->status = "1";
+        $referral_bouns->save();
+
+        // adding users
 
         $user = new User();
         $user->name = 'Admin';
