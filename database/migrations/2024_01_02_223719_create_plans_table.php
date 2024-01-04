@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
             $table->string('plan_name');
-            $table->integer('investment');
-            $table->float('daily_profit', 10, 3);
-            $table->integer('total_profit');
+            $table->integer('min_invest');
+            $table->integer('max_invest');
+            $table->integer('persentage');
             $table->integer('duration');
+            $table->string('limite');
+            $table->string('status')->default('unlock');
             $table->string('image');
             $table->timestamps();
         });

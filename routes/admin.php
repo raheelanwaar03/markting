@@ -18,5 +18,7 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('Add/Plan',[PlansController::class,'add'])->name('Add.Plan');
     Route::post('Store/Plan',[PlansController::class,'store'])->name('Store.Plan');
     Route::get('All/Plan',[PlansController::class,'index'])->name('All.Plan');
+    Route::get('Lock/Plan/{id}',[PlansController::class,'lockPlan'])->name('Lock.Plan');
+    Route::get('Unlock/Plan/{id}',[PlansController::class,'unLockPlan'])->name('Unlock.Plan');
 
 });

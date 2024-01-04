@@ -14,7 +14,6 @@
                                 <form action="{{ route('Admin.Store.Plan') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mt-4">
-                                        <h5 class="fs-14 mb-3 text-muted">Enter Details</h5>
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
@@ -25,39 +24,37 @@
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
-                                                    <label for="cleave-delimiter" class="form-label">Plan Investment</label>
-                                                    <input type="number" class="form-control" name="investment"
-                                                        id="cleave-delimiter" placeholder="Enter Plan Investment">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xl-6">
-                                                <div class="mb-3">
-                                                    <label for="cleave-delimiters" class="form-label">Plan daily
-                                                        Profit</label>
-                                                    <input type="number" class="form-control" name="daily_profit"
-                                                        id="cleave-delimiters" placeholder="Enter Profit">
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6">
-                                                <div class="mb-3">
-                                                    <label for="cleave-prefix" class="form-label">Total Profit</label>
-                                                    <input type="number" class="form-control" id="cleave-prefix"
-                                                        name="total_profit" placeholder="Enter Plan Total Profit">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-xl-6">
-                                                <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Duration</label>
                                                     <input type="number" class="form-control" id="cleave-prefix"
                                                         name="duration" placeholder="Enter Plan active duration">
                                                 </div>
                                             </div>
-
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-6">
+                                                <div class="mb-3">
+                                                    <label for="cleave-delimiter" class="form-label">Minimum
+                                                        Investment</label>
+                                                    <input type="number" class="form-control" name="min_invest"
+                                                        id="cleave-delimiter" placeholder="Enter Plan Investment">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="mb-3">
+                                                    <label for="cleave-prefix" class="form-label">Maximum Investment</label>
+                                                    <input type="number" class="form-control" id="cleave-prefix"
+                                                        name="max_invest" placeholder="Enter Plan Total Profit">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-6">
+                                                <div class="mb-3">
+                                                    <label for="cleave-delimiters" class="form-label">Persentage</label>
+                                                    <input type="number" class="form-control" name="persentage"
+                                                        id="cleave-delimiters" placeholder="Enter Profit">
+                                                </div>
+                                            </div>
                                             <div class="col-xl-6">
                                                 <div class="mb-0">
                                                     <label for="cleave-numeral" class="form-label">Add Image</label>
@@ -66,8 +63,18 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="">
-                                            <button type="submit" class="btn btn-primary">Add</button>
+                                        <div class="row justify-content-center align-items-center">
+                                            <div class="col-xl-6">
+                                                <div class="mb-0">
+                                                    <label for="cleave-numeral" class="form-label">Limite</label>
+                                                    <input type="number" class="form-control" name="limite">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="mb-0 mt-2">
+                                                    <button type="submit" class="btn btn-primary">Add</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </form>

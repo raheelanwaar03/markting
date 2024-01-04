@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\user\Deposit;
 
 function users()
 {
@@ -26,3 +27,16 @@ function rejected_users()
     return $user;
 }
 
+function user_investment()
+{
+    $investment = Deposit::where('status','approved')->get();
+    $total_money = 0.00;
+
+    foreach($investment as $invest)
+    {
+        $total_money += $invest->money;
+    }
+
+    return $total_money;
+
+}

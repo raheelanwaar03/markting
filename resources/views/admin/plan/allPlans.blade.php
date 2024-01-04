@@ -8,7 +8,10 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title mb-0">All Plans</h5>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">All Plans</h5>
+                                    <a href="{{ route('Admin.Add.Plan') }}" class="btn btn-primary">Add New</a>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <table id="example"
@@ -17,10 +20,12 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Investment</th>
-                                            <th>Daily Profit</th>
-                                            <th>Total Profit</th>
+                                            <th>Minmum Investment</th>
+                                            <th>Maximum Investment</th>
+                                            <th>Persentage</th>
+                                            <th>Limite</th>
                                             <th>Duration</th>
+                                            <th>Status</th>
                                             <th>Image</th>
                                             <th>Action</th>
                                         </tr>
@@ -29,24 +34,23 @@
                                         @foreach ($plans as $plan)
                                         <tr>
                                             <td>{{ $plan->plan_name }}</td>
-                                            <td>{{ $plan->investment }}</td>
-                                            <td>{{ $plan->daily_profit }}</td>
-                                            <td>{{ $plan->total_profit }}</td>
+                                            <td>{{ $plan->min_invest }}</td>
+                                            <td>{{ $plan->max_invest }}</td>
+                                            <td>{{ $plan->persentage }}</td>
+                                            <td>{{ $plan->limite }}</td>
                                             <td>{{ $plan->duration }}</td>
+                                            <td>
+                                                @if ($plan->status == 'lock')
+                                                <span class="badge badge-danger" style="background-color:red">{{ $plan->status }}</span>
+                                                @else
+                                                <span class="badge badge-primary" style="background-color:blue">{{ $plan->status }}</span>
+                                                @endif
+                                            </td>
                                             <td><img src="{{ asset('image/' . $plan->image) }}" alt="image"
                                                     width="50px" height="50px"></td>
                                             <td>
-                                                <div class="dropdown d-inline-block">
-                                                    <ul class="dropdown-menu dropdown-menu-end">
-                                                        <li>
-                                                            <a class="dropdown-item remove-item-btn">
-                                                                <i
-                                                                    class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                                                Delete
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <a href="{{ route('Admin.Lock.Plan',$plan->id) }}" class="btn btn-primary">Lock</a>
+                                                <a href="{{ route('Admin.Unlock.Plan',$plan->id) }}" class="btn btn-danger">Unlock</a>
                                             </td>
                                         </tr>
                                         @endforeach
