@@ -26,5 +26,9 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('Referral/Setting',[SettingController::class,'referSetting'])->name('Referral.Setting');
     Route::get('Edit/Referral/Setting/{id}',[SettingController::class,'editReferSetting'])->name('Edit.Referral.Setting');
     Route::post('Update/Referral/Setting/{id}',[SettingController::class,'updateReferSetting'])->name('Update.Referral.Setting');
+    // Deposit requests
+    Route::get('Deposit/Requests',[AdminDashboardController::class,'deposits'])->name('Deposit.Requests');
+    Route::get('Approved/Requests',[AdminDashboardController::class,'approveDeposit'])->name('Approved.Deposit');
+    Route::get('Approve/Deposit/{id}',[AdminDashboardController::class,'approveDeposits'])->name('Approve.Depoit.Requests');
 
 });

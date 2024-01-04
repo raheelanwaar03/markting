@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\admin\Referralsetting;
 use App\Models\User;
+use App\Models\user\Deposit;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -95,4 +96,25 @@ class AdminDashboardController extends Controller
             return redirect()->back()->with('success', 'user has been approved');
         }
     }
+
+    public function deposits()
+    {
+        $deposits = Deposit::where('status','pending')->get();
+        return view('admin.deposit.pending',compact('deposits'));
+    }
+
+    public function approveDeposit()
+    {
+        $deposits = Deposit::where('status','approved')->get();
+        return view('admin.deposit.approved',compact('deposits'));
+    }
+
+    public function approveDeposits($id)
+    {
+        $deposit = Deposit::find($id);
+        $deposit->status = 'approved';
+        $deposit->save();
+        return redirect()->back()->with('success','Deposit request has been approved');
+    }
+
 }
