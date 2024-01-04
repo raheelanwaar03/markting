@@ -41,7 +41,7 @@
         </div>
     </div>
     <div id="app-wrap">
-        <a class="box-profile mt-1" href="70_profile-detail.html">
+        <a class="box-profile mt-1" href="#">
             <div class="inner d-flex align-items-center">
                 <div class="box-avatar">
                     <img src="{{ asset('assets/images/user/profile1.jpg') }}" alt="image">
@@ -49,9 +49,9 @@
                 </div>
                 <div class="info">
                     <h2 class="fw_8">{{ auth()->user()->name }}</h2>
-                    <p>Referral ID : <input type="text"
+                    <p>Referral ID : <input type="text" style="border: none;width:350px;font-size:11px;"
                             value="{{ route('register', ['referral' => Auth::user()->user_code]) }}" id="myInput"
-                            readonly> <i class="icon-copy1"></i></p>
+                            readonly> <i class="icon-copy1" onclick="copy()"></i></p>
                 </div>
             </div>
             <span><i class="icon-right"></i></span>

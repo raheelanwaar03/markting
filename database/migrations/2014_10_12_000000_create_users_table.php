@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->float('balance', 10, 2);
+            $table->float('balance', 10, 2)->default(0);
             $table->string('referral')->default('default');
+            $table->string('level')->default('Level 0');
             $table->string('number');
             $table->string('user_code');
             $table->string('role')->default('user');

@@ -18,9 +18,9 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function create($referral = 'default')
     {
-        return view('auth.register');
+        return view('auth.register',compact('referral'));
     }
 
     /**
@@ -43,6 +43,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'number' => $request->number,
+            'referral' => $request->referral,
             'user_code' => $user_code,
             'password' => Hash::make($request->password),
         ]);
