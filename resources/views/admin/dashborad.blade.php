@@ -25,13 +25,13 @@
                 <div class="row project-wrapper">
                     <div class="col-xxl-8">
                         <div class="row">
-                            <div class="col-xl-4">
+                            <div class="col-xl-3">
                                 <div class="card card-animate">
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div class="avatar-sm flex-shrink-0">
                                                 <span class="avatar-title bg-primary-subtle text-primary rounded-2 fs-2">
-                                                    <i data-feather="briefcase" class="text-primary"></i>
+                                                    <i data-feather="award" class="text-warning"></i>
                                                 </span>
                                             </div>
                                             <div class="flex-grow-1 overflow-hidden ms-3">
@@ -39,7 +39,7 @@
                                                     All Users</p>
                                                 <div class="d-flex align-items-center mb-3">
                                                     <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
-                                                            data-target="">{{ users() }}</span>
+                                                            data-target="{{ users() }}">{{ users() }}</span>
                                                     </h4>
                                                 </div>
                                             </div>
@@ -47,29 +47,29 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4">
+                            <div class="col-xl-3">
                                 <div class="card card-animate">
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div class="avatar-sm flex-shrink-0">
-                                                <span class="avatar-title bg-warning-subtle text-warning rounded-2 fs-2">
+                                                <span class="avatar-title bg-primary-subtle text-primary rounded-2 fs-2">
                                                     <i data-feather="award" class="text-warning"></i>
                                                 </span>
                                             </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <p class="text-uppercase fw-medium text-muted mb-3">Pending Users
-                                                </p>
+                                            <div class="flex-grow-1 overflow-hidden ms-3">
+                                                <p class="text-uppercase fw-medium text-muted text-truncate mb-3">
+                                                    Pending Users</p>
                                                 <div class="d-flex align-items-center mb-3">
                                                     <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
-                                                            data-target="">0</span>
+                                                            data-target="{{ pending_users() }}">{{ pending_users() }}</span>
                                                     </h4>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div><!-- end card body -->
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4">
+                            <div class="col-xl-3">
                                 <div class="card card-animate">
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
@@ -83,12 +83,34 @@
                                                 </p>
                                                 <div class="d-flex align-items-center mb-3">
                                                     <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
-                                                            data-target="">0</span>
+                                                            data-target="{{ approved_users() }}">{{ approved_users() }}</span>
                                                     </h4>
                                                 </div>
                                             </div>
                                         </div>
                                     </div><!-- end card body -->
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="card card-animate">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-sm flex-shrink-0">
+                                                <span class="avatar-title bg-primary-subtle text-primary rounded-2 fs-2">
+                                                    <i data-feather="award" class="text-warning"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-grow-1 overflow-hidden ms-3">
+                                                <p class="text-uppercase fw-medium text-muted text-truncate mb-3">
+                                                    Rejected Users</p>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
+                                                            data-target="{{ rejected_users() }}">{{ rejected_users() }}</span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div><!-- end row -->

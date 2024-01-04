@@ -211,26 +211,25 @@
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse"
                                 role="button" aria-expanded="false" aria-controls="sidebarLayouts">
-                                <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Layouts</span> <span
-                                    class="badge badge-pill bg-danger" data-key="t-hot">Hot</span>
+                                <i class="ri-account-circle-line"></i> <span data-key="t-layouts">Users</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarLayouts">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="layouts-horizontal.html" target="_blank" class="nav-link"
-                                            data-key="t-horizontal">Horizontal</a>
+                                        <a href="{{ route('Admin.All.Users') }}" target="_blank" class="nav-link"
+                                            data-key="t-horizontal">All Users</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="layouts-detached.html" target="_blank" class="nav-link"
-                                            data-key="t-detached">Detached</a>
+                                        <a href="{{ route('Admin.Pending.User') }}" target="_blank" class="nav-link"
+                                            data-key="t-horizontal">Pending Users</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="layouts-two-column.html" target="_blank" class="nav-link"
-                                            data-key="t-two-column">Two Column</a>
+                                        <a href="{{ route('Admin.Approved.Users') }}" target="_blank" class="nav-link"
+                                            data-key="t-horizontal">Approved Users</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="layouts-vertical-hovered.html" target="_blank" class="nav-link"
-                                            data-key="t-hovered">Hovered</a>
+                                        <a href="{{ route('Admin.Rejected.Users') }}" target="_blank" class="nav-link"
+                                            data-key="t-horizontal">Rejected Users</a>
                                     </li>
                                 </ul>
                             </div>
