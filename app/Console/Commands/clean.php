@@ -62,7 +62,7 @@ class clean extends Command
         $user->name = 'User';
         $user->email = 'user123@gmail.com';
         $user->referral = 'default';
-        $user->balance = '100';
+        $user->balance = '10000';
         $user->user_code = '123457';
         $user->number = '03000000000';
         $user->password = Hash::make('asdfasdf');
