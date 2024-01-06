@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('plan_name');
             $table->integer('min_invest');
             $table->integer('max_invest');
-            $table->integer('persentage');
+            $table->float('persentage', 10, 3);
             $table->integer('duration');
             $table->string('limite');
             $table->string('status')->default('unlock');

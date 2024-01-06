@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('plan_id');
+            $table->string('amount');
+            $table->string('daily_profit');
+            $table->string('total_profit');
+            $table->string('duration');
             $table->string('status')->default('active');
             $table->string('current')->default('unlock');
             $table->timestamps();

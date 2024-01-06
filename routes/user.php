@@ -19,6 +19,9 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user', 'status')->gro
     Route::get('Add/Wallet', [WidthrawBalanceController::class, 'add_wallet'])->name('Add.Wallet');
     Route::post('Store/Wallet', [WidthrawBalanceController::class, 'store_wallet'])->name('Store.Wallet');
     // buy plan
-    Route::get('Buy/Plan/{id}', [BuyPlanController::class, 'buyPlan'])->name('Buy.Plan');
+    Route::post('Buy/Plan/{id}', [BuyPlanController::class, 'buyPlan'])->name('Buy.Plan');
+    Route::post('Store/Plan/Details/{id}', [BuyPlanController::class, 'store_plan'])->name('Store.Plan');
+    Route::get('Invest/Plan/{id}', [BuyPlanController::class, 'invest'])->name('Invest.Plan');
+    Route::get('Store/Invest', [BuyPlanController::class, 'store_invest'])->name('Store.Invest.Plan');
     Route::get('Buy/Plan/view/{id}', [BuyPlanController::class, 'plan_details'])->name('Plan.Details');
 });

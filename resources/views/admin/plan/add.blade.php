@@ -51,7 +51,7 @@
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-delimiters" class="form-label">Persentage</label>
-                                                    <input type="number" class="form-control" name="persentage"
+                                                    <input type="number" step="0.0001" class="form-control" name="persentage"
                                                         id="cleave-delimiters" placeholder="Enter Profit">
                                                 </div>
                                             </div>

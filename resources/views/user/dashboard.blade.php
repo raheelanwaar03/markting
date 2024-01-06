@@ -137,7 +137,7 @@
 
                         <!-- "Visit" button on the right -->
                         <div class="ml-auto">
-                            <a href="{{ route('User.Plan.Details', $plan->id) }}" class="btn btn-primary">Start</a>
+                            <a href="{{ route('User.Invest.Plan', $plan->id) }}" class="btn btn-primary">Start</a>
                         </div>
                     </div>
                 @endforeach
