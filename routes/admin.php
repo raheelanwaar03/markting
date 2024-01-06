@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\PlansController;
 use App\Http\Controllers\admin\SettingController;
+use App\Http\Controllers\admin\WithdrawController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(function () {
@@ -30,5 +31,12 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('Deposit/Requests',[AdminDashboardController::class,'deposits'])->name('Deposit.Requests');
     Route::get('Approved/Requests',[AdminDashboardController::class,'approveDeposit'])->name('Approved.Deposit');
     Route::get('Approve/Deposit/{id}',[AdminDashboardController::class,'approveDeposits'])->name('Approve.Depoit.Requests');
+    // withdraw routes
+    Route::get('Pending/Withdraw',[WithdrawController::class,'pending'])->name('Pending.Withdraw');
+    Route::get('Approved/Withdraw',[WithdrawController::class,'approved'])->name('Approved.Withdraw');
+    Route::get('Rejected/Withdraw',[WithdrawController::class,'rejected'])->name('Rejected.Withdraw');
+    Route::get('Make/Withdraw/Pending/{id}',[WithdrawController::class,'make_pending'])->name('Make.Withdraw.Pending');
+    Route::get('Make/Withdraw/Rejected/{id}',[WithdrawController::class,'make_rejected'])->name('Make.Withdraw.Rejected');
+    Route::get('Make/Withdraw/Approved/{id}',[WithdrawController::class,'make_approved'])->name('Make.Withdraw.Approved');
 
 });
