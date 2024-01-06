@@ -39,28 +39,27 @@ class WidthrawBalanceController extends Controller
 
     public function store_widthraw(Request $request)
     {
+        $withdraw_money = $request->amount;
         // checking if user have enougn balance
-        $user = User::where('id',auth()->user()->id)->first();
+        $user = User::where('id', auth()->user()->id)->first();
         $user_balance = $user->balance;
-        if($user_balance = $request->money)
-        {
-            return 'ok';
-        }
-        else
-        {
+        if ($request->money > $user_balance) {
             return 'error';
         }
-
-        $wallet = Wallet::where('user_id',auth()->user()->id)->first();
+        $user->balance -= $request->money;
+        $user->save();
+        $wallet = Wallet::where('user_id', auth()->user()->id)->first();
+        if ($wallet == null) {
+            return redirect()->route('User.Add.Wallet')->with('error', 'please add your wallet first');
+        }
         // Widthraw
         $widthraw = new WidthrawBalance();
         $widthraw->user_id = auth()->user()->id;
         $widthraw->wallet_name = $wallet->wallet_name;
         $widthraw->wallet_number = $wallet->wallet_number;
         $widthraw->holder_name = $wallet->holder_name;
-        $widthraw->money = $request->money;
+        $widthraw->money = $withdraw_money;
         $widthraw->save();
-        return 'success';
+        return redirect()->route('User.Dashboard')->with('success', 'you have been requested for withdraw successfully');
     }
-
 }

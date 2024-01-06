@@ -52,7 +52,7 @@
                     <div class="tf-form">
                         <div class="group-input input-field input-money">
                             <label for="">Amout Of Money</label>
-                            <input type="text" value="0" required name="amount" class="search-field value_input st1"
+                            <input type="text" readonly value="0" required name="amount" class="search-field value_input st1"
                                 type="text">
                             <span class="icon-clear"></span>
                         </div>
