@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('widthraw_balances', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
+            $table->string('money');
+            $table->string('wallet_name');
+            $table->string('wallet_number');
+            $table->string('holder_name');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

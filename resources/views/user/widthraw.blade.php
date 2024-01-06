@@ -47,16 +47,17 @@
                     <h3>{{ auth()->user()->balance }}pkr</h3>
                 </div>
                 <div class="tf-spacing-16"></div>
-                <div class="tf-form">
-                    <div class="group-input input-field input-money">
-                        <label for="">Amout Of Money</label>
-                        <input type="text" required class="search-field value_input st1" type="text">
-                        <span class="icon-clear"></span>
+                <form action="{{ route('User.Store.Widthraw') }}" method="POST">
+                    @csrf
+                    <div class="tf-form">
+                        <div class="group-input input-field input-money">
+                            <label for="">Amout Of Money</label>
+                            <input type="text" value="0" required name="amount" class="search-field value_input st1"
+                                type="text">
+                            <span class="icon-clear"></span>
+                        </div>
                     </div>
-                </div>
-
             </div>
-
         </div>
         <div class="bottom-navigation-bar">
             <div class="tf-container">
@@ -116,7 +117,9 @@
                     <ul class="info">
                         <li>
                             <h4 class="secondary_color fw_4 d-flex justify-content-between align-items-center">Amout
-                                <input type="text" style="border: none;width:100px;" required class="search-field value_input st1"></h4>
+                                <input type="text" style="border: none;width:100px;" required
+                                    class="search-field value_input st1">
+                            </h4>
                         </li>
                         <li>
                             <h4 class="secondary_color fw_4 d-flex justify-content-between align-items-center">Fee <a
@@ -127,12 +130,14 @@
                         <div class="total">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h4 class="secondary_color fw_4">Total</h4>
-                                <h2><input type="text" style="border: none;width:100px;" required class="search-field value_input st1"
-                               readonly></h2>
+                                <h2><input type="text" style="border: none;width:100px;" required
+                                        class="search-field value_input st1" readonly></h2>
                             </div>
                         </div>
-                        <a id="withdrawBtn" class="tf-btn accent large" onclick="showHelloModal()"><i
-                                class="icon-secure1"></i> Withdraw</a>
+                        <a id="withdrawBtn" onclick="showHelloModal()">
+                            <span><button type="submit" class="btn btn-primary"><i
+                                        class="icon-secure1"></i>Withdraw</button></span>
+                        </a>
 
                         <div class="modal fade" id="helloModal" tabindex="-1" role="dialog"
                             aria-labelledby="helloModalLabel" aria-hidden="true">
@@ -145,6 +150,7 @@
                             </div>
                         </div>
 
+                        </form>
                         <script>
                             function showHelloModal() {
                                 var modal = document.getElementById('helloModal');
@@ -152,9 +158,9 @@
                                 modal.style.display = 'block';
 
                                 // Redirect after 3 seconds
-                                setTimeout(function() {
-                                    window.location.href = '/home.html';
-                                }, 1000);
+                                // setTimeout(function() {
+                                //     window.location.href = '/User/Dashboard';
+                                // }, 1000);
                             }
                         </script>
                     </div>

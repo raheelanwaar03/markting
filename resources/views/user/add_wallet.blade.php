@@ -70,7 +70,6 @@
                             <ul id="box-select"></ul>
                         </div>
                     </div>
-
                 </div>
                 <div class="group-input">
                     <label for="">Wallet Number</label>

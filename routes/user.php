@@ -15,6 +15,7 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user', 'status')->gro
     Route::get('History', [UserDashboardController::class, 'history'])->name('History');
     // Widthraw
     Route::get('Widthraw/View', [WidthrawBalanceController::class, 'widthraw_Balance'])->name('Widthraw.View');
+    Route::post('Store/Widthraw', [WidthrawBalanceController::class, 'store_widthraw'])->name('Store.Widthraw');
     Route::get('Add/Wallet', [WidthrawBalanceController::class, 'add_wallet'])->name('Add.Wallet');
     Route::post('Store/Wallet', [WidthrawBalanceController::class, 'store_wallet'])->name('Store.Wallet');
     // buy plan
