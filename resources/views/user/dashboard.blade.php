@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li class="wallet-card-item">
-                            <a class="fw_6" href="29_topup.html">
+                            <a class="fw_6" href="{{ route('User.Widthraw.View') }}">
                                 <ul class="icon icon-topup">
                                     <li class="path1"></li>
                                     <li class="path2"></li>
@@ -120,24 +120,26 @@
             </div>
             <div class="card custom-card">
                 @foreach ($plans as $plan)
-                <div class="card-body d-flex align-items-center">
-                    <!-- Image on the left -->
-                    <img src="{{ asset('image/'.$plan->image) }}"
-                        class="card-img">
-                    <!-- Text beside the image -->
-                    <div class="ml-3">
-                        <h5 class="card-title">{{ $plan->plan_name }} - {{ $plan->duration }} Days</h5>
-                        <p class="card-text">{{ $plan->investment }}-{{ $plan->total_profit }} <span
-                                style="background-color:cyan;color:white;padding: 5px;border-radius: 20px;">Experimental</span><br>
-                            <b>({{ $plan->investment }}-/ Day)</b>
-                        </p>
-                    </div>
+                    <div class="card-body d-flex align-items-center">
+                        <!-- Image on the left -->
+                        <div class="pr-3">
+                            <img src="{{ asset('image/' . $plan->image) }}" class="card-img">
+                        </div>
+                        <!-- Text beside the image -->
+                        <div class="pl-3">
+                            <h5 class="card-title">{{ $plan->plan_name }} - {{ $plan->duration }} Days</h5>
+                            <p class="card-text">({{ $plan->min_invest }}-{{ $plan->max_invest }})
+                                {{-- <span style="background-color:cyan;color:white;padding: 5px;border-radius: 20px;">Experimental</span> --}}
+                                <br>
+                                <b>({{ $plan->persentage }}%)</b>
+                            </p>
+                        </div>
 
-                    <!-- "Visit" button on the right -->
-                    <div class="ml-auto">
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <!-- "Visit" button on the right -->
+                        <div class="ml-auto">
+                            <a href="{{ route('User.Plan.Details', $plan->id) }}" class="btn btn-primary">Start</a>
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
