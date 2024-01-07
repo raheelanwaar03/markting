@@ -12,7 +12,7 @@ class WidthrawBalanceController extends Controller
 {
     public function widthraw_Balance()
     {
-        $wallet = Wallet::first();
+        $wallet = Wallet::where('user_id',auth()->user()->id)->first();
         return view('user.widthraw', compact('wallet'));
     }
 
@@ -43,6 +43,10 @@ class WidthrawBalanceController extends Controller
         // checking if user have enougn balance
         $user = User::where('id', auth()->user()->id)->first();
         $user_balance = $user->balance;
+        if(auth()->user()->balance == null)
+        {
+            return redirect()->route('User.Dashboard')->with('error','you have not enough balance');
+        }
         if ($request->money > $user_balance) {
             return 'error';
         }

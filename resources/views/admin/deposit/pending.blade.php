@@ -35,6 +35,8 @@
                                                 <td>
                                                     <a href="{{ route('Admin.Approve.Depoit.Requests', $deposit->id) }}"
                                                         class="btn btn-success btn-sm">Approved</a>
+                                                        <a href="{{ route('Admin.Approve.Depoit.Requests', $deposit->id) }}"
+                                                            class="btn btn-primary btn-sm">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach

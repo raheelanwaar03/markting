@@ -15,13 +15,12 @@ class status
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->user()->status == 'approved')
-        {
+        if (auth()->user()->status == 'approved') {
             return $next($request);
-        }
-        elseif(auth()->user()->status == 'pending')
-        {
-            return redirect()->back()->with('error','Please wait for admin approvel.Your accout is pending!');
+        } elseif (auth()->user()->status == 'pending') {
+            return redirect()->route('Welcome')->with('error', 'Please wait for admin approvel.Your accout is pending!');
+        } elseif (auth()->user()->status == 'rejected') {
+            return redirect()->route('Welcome')->with('error', 'Please wait for admin approvel.Your accout is rejected!');
         }
     }
 }

@@ -66,8 +66,9 @@ class BuyPlanController extends Controller
         $buy_plan->plan_id = $id;
         $buy_plan->amount = $request->amount;
         $buy_plan->daily_profit = $daily_profit;
-        $buy_plan->profit = $request->total_profit;
+        $buy_plan->total_profit = $request->profit;
         $buy_plan->duration = $request->duration;
         $buy_plan->save();
+        return redirect()->route('User.Dashboard')->with('success', 'You buy this plan successfully');
     }
 }

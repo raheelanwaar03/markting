@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 
 class UserDashboardController extends Controller
 {
+
+    public function welcome()
+    {
+        $plans = Plans::get();
+        return view('welcome',compact('plans'));
+    }
+
     public function index()
     {
         $plans = Plans::get();
@@ -36,12 +43,13 @@ class UserDashboardController extends Controller
         ]);
 
         $deposit = new Deposit();
+        $deposit->user_id = auth()->user()->id;
         $deposit->bank = $validated['bank'];
         $deposit->account_number = $validated['account_number'];
         $deposit->account_name = $validated['account_name'];
         $deposit->money = $validated['money'];
         $deposit->save();
-        return redirect()->back()->with('success','Your deposit request has been submitted please wait for admin approvel!');
+        return redirect()->route('User.Dashboard')->with('success','Your deposit request has been submitted please wait for admin approvel!');
     }
 
     public function history()

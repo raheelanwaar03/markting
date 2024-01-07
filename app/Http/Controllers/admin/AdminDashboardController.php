@@ -71,6 +71,8 @@ class AdminDashboardController extends Controller
             $user->save();
             return redirect()->back()->with('success', 'user has been approved');
         } else {
+            $user->status = 'approved';
+            $user->save();
             $first_referral->balance += $first;
             $first_referral->save();
         }
@@ -79,8 +81,12 @@ class AdminDashboardController extends Controller
 
         $second_referral = User::where('user_code', $first_referral->referral)->first();
         if ($second_referral == '') {
+            $user->status = 'approved';
+            $user->save();
             return redirect()->back()->with('success', 'user has been approved');
         } else {
+            $user->status = 'approved';
+            $user->save();
             $second_referral->balance += $second;
             $second_referral->save();
         }
@@ -89,8 +95,12 @@ class AdminDashboardController extends Controller
 
         $third_referral = User::where('user_code', $second_referral->referral)->first();
         if ($third_referral == '') {
+            $user->status = 'approved';
+            $user->save();
             return redirect()->back()->with('success', 'user has been approved');
         } else {
+            $user->status = 'approved';
+            $user->save();
             $third_referral->balance += $third;
             $third_referral->save();
             return redirect()->back()->with('success', 'user has been approved');
@@ -99,14 +109,14 @@ class AdminDashboardController extends Controller
 
     public function deposits()
     {
-        $deposits = Deposit::where('status','pending')->get();
-        return view('admin.deposit.pending',compact('deposits'));
+        $deposits = Deposit::where('status', 'pending')->get();
+        return view('admin.deposit.pending', compact('deposits'));
     }
 
     public function approveDeposit()
     {
-        $deposits = Deposit::where('status','approved')->get();
-        return view('admin.deposit.approved',compact('deposits'));
+        $deposits = Deposit::where('status', 'approved')->get();
+        return view('admin.deposit.approved', compact('deposits'));
     }
 
     public function approveDeposits($id)
@@ -114,7 +124,6 @@ class AdminDashboardController extends Controller
         $deposit = Deposit::find($id);
         $deposit->status = 'approved';
         $deposit->save();
-        return redirect()->back()->with('success','Deposit request has been approved');
+        return redirect()->back()->with('success', 'Deposit request has been approved');
     }
-
 }
