@@ -52,7 +52,7 @@ class clean extends Command
         $user->user_code = '123456';
         $user->number = '03000000000';
         $user->email = 'admin123@gmail.com';
-        $user->password = Hash::make('admin01@');
+        $user->password = Hash::make('asdfasdf');
         $user->status = 'approved';
         $user->role = 'admin';
         $user->save();
@@ -65,7 +65,7 @@ class clean extends Command
         $user->balance = '10000';
         $user->user_code = '123457';
         $user->number = '03000000000';
-        $user->password = Hash::make('user02@');
+        $user->password = Hash::make('asdfasdf');
         $user->role = 'user';
         $user->status = 'approved';
         $user->save();

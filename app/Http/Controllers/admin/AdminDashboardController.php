@@ -113,17 +113,56 @@ class AdminDashboardController extends Controller
         return view('admin.deposit.pending', compact('deposits'));
     }
 
-    public function approveDeposit()
+    public function approvedDeposit()
     {
         $deposits = Deposit::where('status', 'approved')->get();
         return view('admin.deposit.approved', compact('deposits'));
     }
 
-    public function approveDeposits($id)
+    public function rejectedDeposit()
+    {
+        $deposits = Deposit::where('status', 'rejected')->get();
+        return view('admin.deposit.rejected', compact('deposits'));
+    }
+
+    public function approveDeposit($id)
     {
         $deposit = Deposit::find($id);
         $deposit->status = 'approved';
         $deposit->save();
         return redirect()->back()->with('success', 'Deposit request has been approved');
     }
+
+    public function rejectDeposit($id)
+    {
+        $deposit = Deposit::find($id);
+        $deposit->status = 'rejected';
+        $deposit->save();
+        return redirect()->back()->with('success', 'Deposit request has been approved');
+    }
+
+    public function pendingDeposit($id)
+    {
+        $deposit = Deposit::find($id);
+        $deposit->status = 'pending';
+        $deposit->save();
+        return redirect()->back()->with('success', 'Deposit request has been approved');
+    }
+
+    public function addDeposit($id)
+    {
+        $deposit = Deposit::find($id);
+        $user = User::where('id', $deposit->user_id)->first();
+        return view('admin.deposit.add',compact('user','deposit'));
+    }
+
+    public function updateDeposit(Request $request,$id)
+    {
+        $user = User::find($id);
+        $user->balance += $request->balance;
+        $user->save();
+        return redirect()->route('Admin.Deposit.Requests')->with('success','Deposit added successfully');
+    }
+
+
 }

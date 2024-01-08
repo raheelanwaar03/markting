@@ -29,8 +29,13 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::post('Update/Referral/Setting/{id}',[SettingController::class,'updateReferSetting'])->name('Update.Referral.Setting');
     // Deposit requests
     Route::get('Deposit/Requests',[AdminDashboardController::class,'deposits'])->name('Deposit.Requests');
-    Route::get('Approved/Requests',[AdminDashboardController::class,'approveDeposit'])->name('Approved.Deposit');
-    Route::get('Approve/Deposit/{id}',[AdminDashboardController::class,'approveDeposits'])->name('Approve.Depoit.Requests');
+    Route::get('Approved/Requests',[AdminDashboardController::class,'approvedDeposit'])->name('Approved.Deposit');
+    Route::get('Rejected/Requests',[AdminDashboardController::class,'rejectedDeposit'])->name('Rejected.Deposit');
+    Route::get('Approve/Deposit/{id}',[AdminDashboardController::class,'approveDeposit'])->name('Approve.Deposit.Requests');
+    Route::get('Reject/Deposit/{id}',[AdminDashboardController::class,'rejectDeposit'])->name('Reject.Deposit.Requests');
+    Route::get('Pending/Deposit/{id}',[AdminDashboardController::class,'pendingDeposit'])->name('Pending.Deposit.Requests');
+    Route::get('Add/Deposit/{id}',[AdminDashboardController::class,'addDeposit'])->name('Add.Deposit.Requests');
+    Route::post('Update/Deposit/{id}',[AdminDashboardController::class,'updateDeposit'])->name('Update.User.Account');
     // withdraw routes
     Route::get('Pending/Withdraw',[WithdrawController::class,'pending'])->name('Pending.Withdraw');
     Route::get('Approved/Withdraw',[WithdrawController::class,'approved'])->name('Approved.Withdraw');

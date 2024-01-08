@@ -8,7 +8,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title mb-0">User's Deposit Requests (Approved)</h5>
+                                <h5 class="card-title mb-0">User's Deposit Requests (Rejected)</h5>
                             </div>
                             <div class="card-body">
                                 <table id="example"
@@ -33,8 +33,8 @@
                                                 <td><span class="badge badge-primary"
                                                         style="background-color: blue;">{{ $deposit->status }}</span></td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Reject.Deposit.Requests', $deposit->id) }}"
-                                                        class="btn btn-danger btn-sm">Rejected</a>
+                                                    <a href="{{ route('Admin.Approve.Deposit.Requests', $deposit->id) }}"
+                                                        class="btn btn-success btn-sm">Approved</a>
                                                     <a href="{{ route('Admin.Pending.Deposit.Requests', $deposit->id) }}"
                                                         class="btn btn-info btn-sm">Pending</a>
                                                     <a href="{{ route('Admin.Add.Deposit.Requests', $deposit->id) }}"

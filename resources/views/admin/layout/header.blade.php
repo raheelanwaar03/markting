@@ -266,6 +266,8 @@
                                             data-key="t-starter">Pending Requests</a>
                                         <a href="{{ route('Admin.Approved.Deposit') }}" class="nav-link"
                                             data-key="t-starter">Approved Requests</a>
+                                        <a href="{{ route('Admin.Rejected.Deposit') }}" class="nav-link"
+                                            data-key="t-starter">Rejected Requests</a>
                                     </li>
                                 </ul>
                             </div>
