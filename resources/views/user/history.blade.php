@@ -1,37 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('user.layout.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
-    <title>History</title>
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/images/logo.png') }}" />
-    <!-- Font -->
-    <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}" />
-    <!-- Icons -->
-    <link rel="stylesheet" href="{{ asset('assets/fonts/icons-alipay.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/styles/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/styles.css') }}" />
-    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
-    <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('assets/app/icons/icon-192x192.png') }}">
-</head>
-
-
-<body class="bg_surface_color">
-    <!-- preloade -->
-    <div class="preload preload-container">
-        <div class="preload-logo">
-            <div class="spinner"></div>
-        </div>
-    </div>
-    <!-- /preload -->
+@section('content')
     <div class="header mb-1 is-fixed">
         <div class="tf-container">
             <div class="tf-statusbar d-flex justify-content-center align-items-center">
@@ -45,8 +14,7 @@
             <div class="tf-container">
                 <div class="wrap-total">
                     <div class="total-item">
-                        <a href="#" class="box-icon bg_primary"><i
-                                class="icon-arrow-up_minor primary_color"></i></a>
+                        <a href="#" class="box-icon bg_primary"><i class="icon-arrow-up_minor primary_color"></i></a>
                         <div class="content">
                             <p class="fw_4">INVESTED</p>
                             <h2 class="fw_6 success_color">RS {{ user_investment() }}</h2>
@@ -188,8 +156,8 @@
         <div class="tf-container">
             <ul class="tf-navigation-bar">
                 <li>
-                    <a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="{{ route('User.Dashboard') }}"><i
-                            class="icon-home"></i> Home</a>
+                    <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
+                        href="{{ route('User.Dashboard') }}"><i class="icon-home"></i> Home</a>
                 </li>
                 <li class="active">
                     <a class="fw_6 d-flex justify-content-center align-items-center flex-column"
@@ -197,13 +165,11 @@
                         <i class="icon-history"></i> History</a>
                 </li>
                 <li>
-                    <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
-                        href="40_qr-code.html">
+                    <a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="40_qr-code.html">
                         <i class="icon-scan-qr-code"></i> </a>
                 </li>
                 <li>
-                    <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
-                        href="62_rewards.html">
+                    <a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="62_rewards.html">
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12.25" cy="12" r="9.5" stroke="#717171" />
@@ -221,13 +187,4 @@
             </ul>
         </div>
     </div>
-
-    <script type="text/javascript" src="{{ asset('assets/javascript/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/javascript/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/javascript/swiper-bundle.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/javascript/swiper.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/javascript/main.js') }}"></script>
-
-</body>
-
-</html>
+@endsection

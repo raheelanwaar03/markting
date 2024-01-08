@@ -261,7 +261,7 @@
                             class="icon-home"></i> Home</a>
                 </li>
                 <li class="active">
-                    <a class="fw_6 d-flex justify-content-center align-items-center flex-column"
+                    <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
                         href="{{ route('User.History') }}">
                         <i class="icon-history"></i> History</a>
                 </li>
@@ -283,7 +283,7 @@
                         App</a>
                 </li>
                 <li>
-                    <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
+                    <a class="fw_6 d-flex justify-content-center align-items-center flex-column"
                         href="{{ route('User.Profile') }}">
                         <i class="icon-user-outline"></i> Profile</a>
                 </li>
