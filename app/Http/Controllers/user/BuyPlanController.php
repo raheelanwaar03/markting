@@ -33,6 +33,15 @@ class BuyPlanController extends Controller
         $percentage = $plan->persentage;
         $duration = $plan->duration;
 
+        // checking plan limite
+        $plan_limit = BuyPlan::where('status','completed')->where('user_id',auth()->user()->id)->get();
+        $count = $plan_limit->count();
+        // return $count;
+        if($count == $plan->limite)
+        {
+            return redirect()->back()->with('error','You purchasing limit for this plan has been completed');
+        }
+
         if ($request->amount < $plan->min_invest) {
             return redirect()->back()->with('error', 'Your amount should not be less than {{ $plan->min_invest }}');
         }

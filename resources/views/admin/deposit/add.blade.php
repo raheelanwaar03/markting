@@ -8,10 +8,10 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title mb-0">Add Deposit</h4>
+                                <h4 class="card-title mb-0">User Details who request for Deposit</h4>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('Admin.Update.User.Account',$user->id) }}" method="POST">
+                                <form action="{{ route('Admin.Update.User.Account', $user->id) }}" method="POST">
                                     @csrf
                                     <div class="mt-4">
                                         <div class="row">
@@ -25,7 +25,7 @@
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Email</label>
-                                                    <input type="number" class="form-control" id="cleave-prefix"
+                                                    <input type="text" class="form-control" id="cleave-prefix"
                                                         value="{{ $user->email }}" readonly>
                                                 </div>
                                             </div>
@@ -57,15 +57,27 @@
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Status</label>
-                                                    <input type="number" class="form-control" id="cleave-prefix"
+                                                    <input type="text" class="form-control" id="cleave-prefix"
                                                         value="{{ $deposit->status }}" readonly>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="">
-                                            <label for="">Add Amount Here</label>
-                                            <input type="number" name="balance" class="form-control"
-                                                placeholder="Enter Amount here you want to add in user account">
+                                        <div class="col-xl-6">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">User Transcation Screen
+                                                    Shot</label>
+                                                <img class="form-control text-center"
+                                                    src="{{ asset('images/' . $deposit->screen_shot) }}"
+                                                    alt="{{ $deposit->screen_shot }}" class="img-fluid" width="200px"
+                                                    height="200px">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="mb-3">
+                                                <label for="">Add Amount Here</label>
+                                                <input type="number" name="balance" class="form-control"
+                                                    placeholder="Enter Amount here you want to add in user account">
+                                            </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="mb-0 mt-2">

@@ -14,13 +14,13 @@ class UserDashboardController extends Controller
     public function welcome()
     {
         $plans = Plans::get();
-        return view('welcome',compact('plans'));
+        return view('welcome', compact('plans'));
     }
 
     public function index()
     {
         $plans = Plans::get();
-        return view('user.dashboard',compact('plans'));
+        return view('user.dashboard', compact('plans'));
     }
 
     public function profile()
@@ -40,7 +40,13 @@ class UserDashboardController extends Controller
             'account_name' => 'required',
             'account_number' => 'required',
             'money' => 'required',
+            'screen_shot' => 'required',
         ]);
+
+        $image = $validated['screen_shot'];
+        $imageName = rand(11111, 99999) . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $imageName);
+
 
         $deposit = new Deposit();
         $deposit->user_id = auth()->user()->id;
@@ -48,8 +54,9 @@ class UserDashboardController extends Controller
         $deposit->account_number = $validated['account_number'];
         $deposit->account_name = $validated['account_name'];
         $deposit->money = $validated['money'];
+        $deposit->screen_shot = $imageName;
         $deposit->save();
-        return redirect()->route('User.Dashboard')->with('success','Your deposit request has been submitted please wait for admin approvel!');
+        return redirect()->route('User.Dashboard')->with('success', 'Your deposit request has been submitted please wait for admin approvel!');
     }
 
     public function history()
@@ -61,6 +68,4 @@ class UserDashboardController extends Controller
     {
         return view('user.team');
     }
-
-
 }

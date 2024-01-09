@@ -20,6 +20,7 @@
                                             <th>Bank</th>
                                             <th>Money</th>
                                             <th>Status</th>
+                                            <th>Screen Shot</th>
                                             <th>Action</th>
                                         </tr>
                                         </tr>
@@ -32,6 +33,10 @@
                                                 <td>{{ $deposit->money }}</td>
                                                 <td><span class="badge badge-primary"
                                                         style="background-color: blue;">{{ $deposit->status }}</span></td>
+                                                <td>
+                                                    <img src="{{ asset('images/' . $deposit->screen_shot) }}"
+                                                        alt="Screen_shot" class="img-fluid" height="80px" width="80px">
+                                                </td>
                                                 <td>
                                                     <a href="{{ route('Admin.Approve.Deposit.Requests', $deposit->id) }}"
                                                         class="btn btn-success btn-sm">Approved</a>

@@ -25,6 +25,8 @@
 
 
 <body class="bg_surface_color">
+
+    <x-alert />
     <!-- preloade -->
     <div class="preload preload-container">
         <div class="preload-logo">

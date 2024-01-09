@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('account_name');
             $table->string('account_number');
             $table->integer('money');
+            $table->string('screen_shot');
             $table->string('status')->default('pending');
             $table->timestamps();
         });

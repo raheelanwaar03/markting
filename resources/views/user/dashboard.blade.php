@@ -64,7 +64,7 @@
                                     <li class="path2"></li>
                                     <li class="path3"></li>
                                 </ul>
-                                Whatsapp
+                                C.S
                             </a>
                         </li>
                         <li class="wallet-card-item">

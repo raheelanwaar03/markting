@@ -52,13 +52,13 @@
                     <input type="password" name="password" class="password-input" placeholder="Password">
                     <a class="icon-eye password-addon" id="password-addon"></a>
                 </div>
-                <a href="08_reset-password.html" class="auth-forgot-password mt-3">Forgot Password?</a>
+                <a href="#" class="auth-forgot-password mt-3">Forgot Password?</a>
 
                 <button type="submit" class="tf-btn accent large">Log In</button>
 
             </form>
             <div class="auth-line">Or</div>
-            <p class="mb-9 fw-3 text-center ">Already have a Account? <a href="05_register.html"
+            <p class="mb-9 fw-3 text-center">Already have a Account? <a href="{{ route('User.Dashboard') }}"
                     class="auth-link-rg">Sign up</a></p>
         </div>
     </div>

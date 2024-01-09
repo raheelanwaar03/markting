@@ -25,6 +25,8 @@
 
 
 <body class="bg_surface_color">
+
+    <x-alert />
     <!-- preloade -->
     <div class="preload preload-container">
         <div class="preload-logo">
@@ -47,13 +49,14 @@
                             class="icon-right"></i></a></h3>
                 <div class="tf-spacing-12"></div>
             </div>
-            <form class="tf-form mt-3" action="{{ route('User.Store.Transfer') }}" method="POST">
+            <form class="tf-form mt-3" action="{{ route('User.Store.Transfer') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="group-input">
                     <label for="">Bank</label>
                     <div class="box-custom-select">
                         <select class="default-select" name="bank">
-                            <option class="item" value="easypaisa" data-thumbnail="https://freesvg.org/img/1612850349easypaisa.png">
+                            <option class="item" value="easypaisa"
+                                data-thumbnail="https://freesvg.org/img/1612850349easypaisa.png">
                                 EasyPaisa</option>
                             <option class="item" value="jazzcash"
                                 data-thumbnail="https://seeklogo.com/images/N/new-jazz-logo-D69BD35771-seeklogo.com.png?v=638133576270000000">
@@ -93,7 +96,8 @@
                 </div>
                 <div class="group-input input-field input-money">
                     <label for="">Amout Of Money</label>
-                    <input type="text" name="money" value="5000" required class="search-field value_input st1" type="text">
+                    <input type="text" name="money" value="5000" required class="search-field value_input st1"
+                        type="text">
                     <span class="icon-clear"></span>
                     <div class="money">
                         <a class="tag-money" href="#">500</a>
@@ -102,14 +106,14 @@
                     </div>
                 </div>
                 <div class="group-input">
-                    <label for="">Message</label>
-                    <input type="text"
-                        placeholder="After Tranfer Send ScreenShot to +92373084032 - money will be added under 12 working hours." readonly>
+                    <label for="">Payment Screen Shot</label>
+                    <input type="file" name="screen_shot" class="form-control">
                     <div class="tf-spacing-12"></div>
                     <div class="group-checkbox">
                         <input type="checkbox" class="tf-checkbox st1" checked>
-                        <span class="fw_3">After Tranfer Send ScreenShot to +92373084032 - money will be added under
-                            12 working hours.</span>
+                        <span class="fw_3">Send Selected Amount to our <b>()</b> number with account title <b>()</b> in <b>()</b> bank. After Tranfer Add ScreenShot and also send it to +92373084032 On What's app - money will
+                            be added under
+                            12 working hours in your account.</span>
                     </div>
                 </div>
                 <div class="bottom-navigation-bar bottom-btn-fixed st2">

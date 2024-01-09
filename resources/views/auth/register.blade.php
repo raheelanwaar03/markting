@@ -72,9 +72,7 @@
                     <label class="fw_3">I agree to <a>Terms and condition</a> </label>
                 </div>
                 <button type="submit" class="tf-btn accent large">Create An Account</button>
-
             </form>
-
         </div>
     </div>
 
