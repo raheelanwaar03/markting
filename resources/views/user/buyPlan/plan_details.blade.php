@@ -43,8 +43,7 @@
     <div class="content-by-bank mt-3">
         <div class="tf-container">
             <div class="heading">
-                <h3 class="d-flex justify-content-between fw_6">Profit Details<i
-                            class="icon-right"></i></h3>
+                <h3 class="d-flex justify-content-between fw_6">Profit Details<i class="icon-right"></i></h3>
                 <div class="tf-spacing-12"></div>
             </div>
             <form class="tf-form mt-3" action="{{ route('User.Store.Plan', $plan->id) }}" method="POST">
@@ -52,10 +51,10 @@
                 <div class="d-flex justify-content-between align-items-center m-4">
                     <img src="{{ asset('image/' . $plan->image) }}" alt="img" class="img-fluid"
                         style="height: 80px;width:80px;">
-                    <p style="font-size:25px;color:rgb(19, 95, 208)">{{ $plan->plan_name }}
+                    <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->plan_name }}
                     </p>
-                    <p style="font-size:25px;color:rgb(19, 95, 208)">{{ $plan->persentage }}%</p>
-                    <p style="font-size:25px;color:rgb(19, 95, 208)">{{ $plan->duration }}Days</p>
+                    <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->persentage }}%</p>
+                    <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->duration }}Days</p>
                 </div>
                 <div style="background-color: lightblue;padding:16px">
                     <div class="d-flex justify-content-between align-items-center">
@@ -70,7 +69,7 @@
                     <div class="d-flex justify-content-between align-items-center mt-2">
                         <p style="color:black">Estimated Earning</p>
                         <p style="color: black" id="result">{{ $profit }}</p>
-                        <input type="number" name="profit" value="{{ $profit }}" hidden>
+                        <input type="number" name="profit" value="{{ $total }}" hidden>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-2">
                         <p style="color:black">Expire In</p>
@@ -81,7 +80,7 @@
                         <p style="color:black">Income Rule</p>
                         <p style="color: black" id="result">
                             <span class="displayAmount"></span>
-                            {{ $amount }}+(<span
+                            {{ $amount }} (<span
                                 class="displayAmount"></span>{{ $amount }}*{{ $plan->persentage }}*{{ $plan->duration }})=Total
                             {{ $total }} Rs.
                         </p>

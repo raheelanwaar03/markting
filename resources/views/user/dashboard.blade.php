@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-6">
                             <div class="inner-right">
-                                <p>1st payment</p>
+                                <p>1st Deposit Reward</p>
                                 <h3>
                                     <ul class="icon-gift-box">
                                         <li class="path1"></li>
@@ -59,16 +59,6 @@
                         </li>
                         <li class="wallet-card-item">
                             <a class="fw_6 btn-card-popup" href="#">
-                                <ul class="icon icon-group-credit-card">
-                                    <li class="path1"></li>
-                                    <li class="path2"></li>
-                                    <li class="path3"></li>
-                                </ul>
-                                C.S
-                            </a>
-                        </li>
-                        <li class="wallet-card-item">
-                            <a class="fw_6" href="40_qr-code.html">
                                 <ul class="icon icon-my-qr">
                                     <li class="path1"></li>
                                     <li class="path2"></li>
@@ -78,7 +68,17 @@
                                     <li class="path6"></li>
                                     <li class="path7"></li>
                                 </ul>
-                                App
+                                C.S
+                            </a>
+                        </li>
+                        <li class="wallet-card-item">
+                            <a class="fw_6" href="{{ route('User.Daily.Reward') }}">
+                                <ul class="icon icon-group-credit-card">
+                                    <li class="path1"></li>
+                                    <li class="path2"></li>
+                                    <li class="path3"></li>
+                                </ul>
+                                Daily Reward
                             </a>
                         </li>
                     </ul>
@@ -122,8 +122,8 @@
                 @foreach ($plans as $plan)
                     <div class="card-body d-flex align-items-center">
                         <!-- Image on the left -->
-                        <div class="pr-3">
-                            <img src="{{ asset('image/' . $plan->image) }}" class="card-img">
+                        <div class="pr-3" style="margin-right:15px;">
+                            <img src="{{ asset('image/' . $plan->image) }}" height="150px" width="150px" class="card-img">
                         </div>
                         <!-- Text beside the image -->
                         <div class="pl-3">

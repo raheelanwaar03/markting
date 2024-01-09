@@ -49,13 +49,13 @@
                             class="icon-right"></i></a></h3>
                 <div class="tf-spacing-12"></div>
             </div>
-            <div class="d-flex justify-content-between align-items-center m-4">
+            <div class="col-sm-12 d-flex justify-content-between align-items-center m-4">
                 <img src="{{ asset('image/' . $plan->image) }}" alt="img" class="img-fluid"
                     style="height: 80px;width:80px;">
-                <p style="font-size:25px;color:rgb(19, 95, 208)">{{ $plan->plan_name }}
+                <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->plan_name }}
                 </p>
-                <p style="font-size:25px;color:rgb(19, 95, 208)">{{ $plan->persentage }}%</p>
-                <p style="font-size:25px;color:rgb(19, 95, 208)">{{ $plan->duration }}Days</p>
+                <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->persentage }}%</p>
+                <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->duration }}Days</p>
             </div>
             <form class="tf-form mt-3" action="{{ route('User.Buy.Plan', $plan->id) }}" method="POST">
                 @csrf

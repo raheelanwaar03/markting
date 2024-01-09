@@ -5,7 +5,9 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Models\admin\Plans;
 use App\Models\User;
+use App\Models\user\BuyPlan;
 use App\Models\user\Deposit;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class UserDashboardController extends Controller
@@ -13,13 +15,13 @@ class UserDashboardController extends Controller
 
     public function welcome()
     {
-        $plans = Plans::get();
+        $plans = Plans::where('status', 'unlock')->get();
         return view('welcome', compact('plans'));
     }
 
     public function index()
     {
-        $plans = Plans::get();
+        $plans = Plans::where('status', 'unlock')->get();
         return view('user.dashboard', compact('plans'));
     }
 
@@ -67,5 +69,36 @@ class UserDashboardController extends Controller
     public function team()
     {
         return view('user.team');
+    }
+
+    public function daily_reward()
+    {
+        $buy_plans = BuyPlan::where('user_id', auth()->user()->id)->get();
+
+        foreach ($buy_plans as $plan) {
+            // checking user plan created_at date
+            if ($plan->status === 'active') {
+                // Check if the user's plan has been active for more than three days
+                $activationDate = Carbon::parse($plan->created_at);
+                $currentDate = Carbon::now();
+                if ($currentDate->diffInDays($activationDate) >= $plan->duration) {
+                    $plan = BuyPlan::where('plan_id', $plan->id)->first();
+                    $plan->status = 'inactive';
+                    $plan->save();
+                }
+            }
+        }
+
+        $active_plans = BuyPlan::where('user_id', auth()->user()->id)->where('status', 'active')->get();
+        $total_daily_profit = 0;
+        foreach($active_plans as $active)
+        {
+            $total_daily_profit += $active->daily_profit;
+        }
+        // adding to user wallet
+        $user = User::where('id', auth()->user()->id)->first();
+        $user->balance += $total_daily_profit;
+        $user->save();
+        return redirect()->back()->with('success', 'You have got your daily profit');
     }
 }

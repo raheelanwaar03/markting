@@ -15,8 +15,6 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user', 'status')->gro
     Route::get('History', [UserDashboardController::class, 'history'])->name('History');
     // Team Members
     Route::get('Team/Members',[UserDashboardController::class,'team'])->name('Team.View');
-
-
     // Widthraw
     Route::get('Widthraw/View', [WidthrawBalanceController::class, 'widthraw_Balance'])->name('Widthraw.View');
     Route::post('Store/Widthraw', [WidthrawBalanceController::class, 'store_widthraw'])->name('Store.Widthraw');
@@ -28,4 +26,6 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user', 'status')->gro
     Route::get('Invest/Plan/{id}', [BuyPlanController::class, 'invest'])->name('Invest.Plan');
     Route::get('Store/Invest', [BuyPlanController::class, 'store_invest'])->name('Store.Invest.Plan');
     Route::get('Buy/Plan/view/{id}', [BuyPlanController::class, 'plan_details'])->name('Plan.Details');
+    // Getting User his daily reward
+    Route::get('Daily/Reward',[UserDashboardController::class,'daily_reward'])->name('Daily.Reward');
 });

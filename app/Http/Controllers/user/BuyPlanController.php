@@ -22,11 +22,6 @@ class BuyPlanController extends Controller
         return view('user.buyPlan.invest', compact('plan'));
     }
 
-    public function store_invest(Request $request)
-    {
-        return $request;
-    }
-
     public function buyPlan(Request $request, $id)
     {
         $plan = Plans::find($id);
@@ -34,19 +29,19 @@ class BuyPlanController extends Controller
         $duration = $plan->duration;
 
         // checking plan limite
-        $plan_limit = BuyPlan::where('status','completed')->where('user_id',auth()->user()->id)->get();
+        $plan_limit = BuyPlan::where('status','active')->where('plan_id',$id)->where('user_id',auth()->user()->id)->get();
         $count = $plan_limit->count();
-        // return $count;
-        if($count == $plan->limite)
+        // return $plan->limite;
+        if($count > $plan->limite )
         {
             return redirect()->back()->with('error','You purchasing limit for this plan has been completed');
         }
 
         if ($request->amount < $plan->min_invest) {
-            return redirect()->back()->with('error', 'Your amount should not be less than {{ $plan->min_invest }}');
+            return redirect()->back()->with('error', 'Your amount should not be less than plan limit');
         }
         if ($request->amount > $plan->max_invest) {
-            return redirect()->back()->with('error', 'Your amount should not be greater than {{ $plan->max_invest }}');
+            return redirect()->back()->with('error', 'Your amount should not be greater than plan limit');
         }
         $user = User::where('id', auth()->user()->id)->first();
         if ($user->balance < $request->amount) {
@@ -54,7 +49,7 @@ class BuyPlanController extends Controller
         }
 
         $amount = $request->amount;
-        $total = $amount + ($amount * $percentage * $duration);
+        $total = $amount+($amount * $percentage * $duration);
         $profit = $total - $amount;
         return view('user.buyPlan.plan_details', compact('plan', 'total', 'amount', 'profit'));
     }

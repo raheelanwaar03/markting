@@ -56,7 +56,7 @@
                         </svg>
                     </a>
                     <a href="#" id="btn-popup-up"
-                        class="icon-notification1"><span>{{ auth()->user()->balance }}</span></a>
+                        class="icon-notification1"><span>2</span></a>
                 </div>
             </div>
         </div>
