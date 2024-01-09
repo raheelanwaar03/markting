@@ -13,6 +13,10 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user', 'status')->gro
     Route::get('Transfer', [UserDashboardController::class, 'transfer'])->name('Transfer');
     Route::post('Store/Deposit', [UserDashboardController::class, 'storeTransfer'])->name('Store.Transfer');
     Route::get('History', [UserDashboardController::class, 'history'])->name('History');
+    // Team Members
+    Route::get('Team/Members',[UserDashboardController::class,'team'])->name('Team.View');
+
+
     // Widthraw
     Route::get('Widthraw/View', [WidthrawBalanceController::class, 'widthraw_Balance'])->name('Widthraw.View');
     Route::post('Store/Widthraw', [WidthrawBalanceController::class, 'store_widthraw'])->name('Store.Widthraw');

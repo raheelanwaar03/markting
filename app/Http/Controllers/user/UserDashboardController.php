@@ -57,5 +57,10 @@ class UserDashboardController extends Controller
         return view('user.history');
     }
 
+    public function team()
+    {
+        return view('user.team');
+    }
+
 
 }

@@ -11,14 +11,14 @@
                                 @if (auth()->user())
                                     <h3>Rs {{ auth()->user()->balance }}</h3>
                                 @else
-                                    <h3>RS 3.466,9</h3>
+                                    <h3>RS 0.00</h3>
                                 @endif
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="inner-right">
                                 @if (auth()->user())
-                                    <p>1st payment</p>
+                                    <p>1st Deposit Reward</p>
                                 @else
                                     <p>Not Login yet</p>
                                 @endif
@@ -207,20 +207,3 @@
 
     </div>
 @endsection
-
-
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body style="background:pink">
-    <h1 style="font-size:100px;color:red">Hameera Imtaiz</h1> <br>
-    <h1 style="font-size:100px;color:red">Shrajreel Imtaiz</h1> <br>
-    <h1 style="font-size:100px;color:red">Samina Imtaiz</h1> <br>
-    <h1 style="font-size:100px;color:red">Raheel Anwaar</h1> <br>
-</body>
-</html> --}}

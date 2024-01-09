@@ -5,19 +5,19 @@
                 <a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="{{ route('User.Dashboard') }}"><i
                         class="icon-home"></i> Home</a>
             </li>
-            <li class="active">
+            <li>
                 <a class="fw_6 d-flex justify-content-center align-items-center flex-column"
                     href="{{ route('User.History') }}">
                     <i class="icon-history"></i> History</a>
             </li>
             <li>
                 <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
-                    href="40_qr-code.html">
-                    <i class="icon-scan-qr-code"></i> </a>
+                    href="{{ route('User.Team.View') }}">
+                    <i class="icon-user" style="font-size:18px;"></i>Team</a>
             </li>
             <li>
                 <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
-                    href="62_rewards.html">
+                    href="#">
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12.25" cy="12" r="9.5" stroke="#717171" />
@@ -44,7 +44,7 @@
         <div class="modal-content">
             <div class="heading">
                 <h4 class="fw_6 text-center">
-                    “Alipay” Would Like To Send You Notifications
+                    "{{ env('APP_NAME') }}” Would Like To Send You Notifications
                 </h4>
                 <p class="fw_4 mt-2 text-center">Notifications may include alerts, sounds, and icon badges. These can
                     be configure in Settings.</p>
