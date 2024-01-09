@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\user\History;
 use App\Models\user\Wallet;
 use App\Models\user\WidthrawBalance;
 use Illuminate\Http\Request;
@@ -64,6 +65,12 @@ class WidthrawBalanceController extends Controller
         $widthraw->holder_name = $wallet->holder_name;
         $widthraw->money = $withdraw_money;
         $widthraw->save();
+
+        $history = new History();
+        $history->user_id = auth()->user()->id;
+        $history->amount = $withdraw_money;
+        $history->type = 'withdraw';
+        $history->save();
         return redirect()->route('User.Dashboard')->with('success', 'you have been requested for withdraw successfully');
     }
 }

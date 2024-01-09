@@ -38,115 +38,24 @@
         <div class="app-section st1 mt-1 mb-5 bg_white_color">
             <div class="tf-container">
                 <div class="trading-month">
-                    <h4 class="fw_5 mb-3">November</h4>
+                    <h4 class="fw_5 mb-3">{{ month() }}</h4>
                     <div class="group-trading-history mb-5">
+                        @forelse ($history as $item)
                         <a class="tf-trading-history" href="61_filter-research.html">
                             <div class="inner-left">
                                 <div class="icon-box rgba_primary">
                                     <i class="icon icon-electricity-1"></i>
                                 </div>
                                 <div class="content">
-                                    <h4>AD Machine</h4>
-                                    <p>Today 10:27 AM</p>
+                                    <h4>AI Technology</h4>
+                                    <p>Today {{ $item->created_at->format('H:i:s') }}</p>
                                 </div>
                             </div>
-                            <span class="num-val success_color">RS 343</span>
+                            <span class="num-val success_color">RS {{ $item->amount }}</span>
                         </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box rgba_primary">
-                                    <i class="icon icon-electricity-1"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>AD Machine</h4>
-                                    <p>Today 10:27 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">RS 343</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="trading-month">
-                    <h4 class="fw_5 mb-3">November</h4>
-                    <div class="group-trading-history mb-5">
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box rgba_primary">
-                                    <i class="icon icon-electricity-1"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>AD Machine</h4>
-                                    <p>Today 10:27 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">RS 343</span>
-                        </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box rgba_primary">
-                                    <i class="icon icon-electricity-1"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>AD Machine</h4>
-                                    <p>Today 10:27 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">RS 343</span>
-                        </a>
-
-                    </div>
-                </div>
-                <div class="trading-month">
-                    <h4 class="fw_5 mb-3">September</h4>
-                    <div class="group-trading-history mb-5">
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box rgba_primary">
-                                    <i class="icon icon-electricity-1"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>AD Machine</h4>
-                                    <p>Today 10:27 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">RS 343</span>
-                        </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box rgba_primary">
-                                    <i class="icon icon-electricity-1"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>AD Machine</h4>
-                                    <p>Today 10:27 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">RS 343</span>
-                        </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box rgba_primary">
-                                    <i class="icon icon-electricity-1"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>AD Machine</h4>
-                                    <p>Today 10:27 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">RS 343</span>
-                        </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box rgba_primary">
-                                    <i class="icon icon-electricity-1"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>AD Machine</h4>
-                                    <p>Today 10:27 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">RS 343</span>
-                        </a>
+                        @empty
+                            <h3>Empty</h3>
+                        @endforelse
                     </div>
                 </div>
             </div>

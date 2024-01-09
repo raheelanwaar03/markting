@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\user\Deposit;
+use Carbon\Carbon;
 
 function users()
 {
@@ -36,7 +37,14 @@ function user_investment()
     {
         $total_money += $invest->money;
     }
-
     return $total_money;
-
 }
+
+function month()
+{
+    // getting current month
+    $now = Carbon::now();
+    $month = $now->format('F');
+    return $month;
+}
+

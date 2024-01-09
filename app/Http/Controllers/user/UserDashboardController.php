@@ -7,6 +7,7 @@ use App\Models\admin\Plans;
 use App\Models\User;
 use App\Models\user\BuyPlan;
 use App\Models\user\Deposit;
+use App\Models\user\History;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -58,12 +59,19 @@ class UserDashboardController extends Controller
         $deposit->money = $validated['money'];
         $deposit->screen_shot = $imageName;
         $deposit->save();
+        // history
+        $history = new History();
+        $history->user_id = auth()->user()->id;
+        $history->amount = $validated['money'];
+        $history->type = 'deposit';
+        $history->save();
         return redirect()->route('User.Dashboard')->with('success', 'Your deposit request has been submitted please wait for admin approvel!');
     }
 
     public function history()
     {
-        return view('user.history');
+        $history = History::get();
+        return view('user.history',compact('history'));
     }
 
     public function team()
@@ -99,6 +107,13 @@ class UserDashboardController extends Controller
         $user = User::where('id', auth()->user()->id)->first();
         $user->balance += $total_daily_profit;
         $user->save();
+
+        $history = new History();
+        $history->user_id = auth()->user()->id;
+        $history->amount = $total_daily_profit;
+        $history->type = 'reward';
+        $history->save();
+
         return redirect()->back()->with('success', 'You have got your daily profit');
     }
 }

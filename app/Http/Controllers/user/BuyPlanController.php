@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\admin\Plans;
 use App\Models\User;
 use App\Models\user\BuyPlan;
+use App\Models\user\History;
 use Illuminate\Http\Request;
 
 class BuyPlanController extends Controller
@@ -29,12 +30,11 @@ class BuyPlanController extends Controller
         $duration = $plan->duration;
 
         // checking plan limite
-        $plan_limit = BuyPlan::where('status','active')->where('plan_id',$id)->where('user_id',auth()->user()->id)->get();
+        $plan_limit = BuyPlan::where('status', 'active')->where('plan_id', $id)->where('user_id', auth()->user()->id)->get();
         $count = $plan_limit->count();
         // return $plan->limite;
-        if($count > $plan->limite )
-        {
-            return redirect()->back()->with('error','You purchasing limit for this plan has been completed');
+        if ($count > $plan->limite) {
+            return redirect()->back()->with('error', 'You purchasing limit for this plan has been completed');
         }
 
         if ($request->amount < $plan->min_invest) {
@@ -49,7 +49,7 @@ class BuyPlanController extends Controller
         }
 
         $amount = $request->amount;
-        $total = $amount+($amount * $percentage * $duration);
+        $total = $amount + ($amount * $percentage * $duration);
         $profit = $total - $amount;
         return view('user.buyPlan.plan_details', compact('plan', 'total', 'amount', 'profit'));
     }
@@ -73,6 +73,14 @@ class BuyPlanController extends Controller
         $buy_plan->total_profit = $request->profit;
         $buy_plan->duration = $request->duration;
         $buy_plan->save();
+
+        // adding into history
+        $history = new History();
+        $history->user_id = auth()->user()->id;
+        $history->amount = $request->amount;
+        $history->type = 'buy_plan';
+        $history->save();
+
         return redirect()->route('User.Dashboard')->with('success', 'You buy this plan successfully');
     }
 }
