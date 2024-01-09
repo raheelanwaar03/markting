@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\user\Deposit;
+use App\Models\user\History;
 use Carbon\Carbon;
 
 function users()
@@ -46,5 +47,16 @@ function month()
     $now = Carbon::now();
     $month = $now->format('F');
     return $month;
+}
+
+function user_outcome()
+{
+    $outcome = History::where('user_id',auth()->user()->id)->where('type','deposit')->where('status','approved')->get();
+    $total_outcome = 0;
+    foreach($outcome as $out)
+    {
+        $total_outcome += $out->amount;
+    }
+    return $total_outcome;
 }
 
