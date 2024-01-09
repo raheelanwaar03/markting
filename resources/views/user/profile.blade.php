@@ -49,30 +49,15 @@
                 </div>
                 <div class="info">
                     <h2 class="fw_8">{{ auth()->user()->name }}</h2>
-                    <p>Referral ID : <input type="text" style="border: none;width:350px;font-size:11px;"
-                            value="{{ route('register', ['referral' => Auth::user()->user_code]) }}" id="myInput"
-                            readonly> <i class="icon-copy1" onclick="copy()"></i></p>
                 </div>
             </div>
             <span><i class="icon-right"></i></span>
-
-            <script>
-                function copy() {
-                    // Get the text field
-                    var copyText = document.getElementById("myInput");
-                    copyText.select();
-                    copyText.setSelectionRange(0, 99999);
-                    navigator.clipboard.writeText(copyText.value);
-                    // Alert the copied text
-                    alert("Copied the text: " + copyText.value);
-                }
-            </script>
 
         </a>
 
         <ul class="mt-1">
             <li>
-                <a href="/home.html" class="list-profile outline">
+                <a href="#" class="list-profile outline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -135,13 +120,13 @@
                             fill="#FC9E20" />
                     </svg>
                     <p>Account Balance</p>
-                    <span>RS 4000 <i class="icon-right"></i></span>
+                    <span>RS {{ auth()->user()->balance }} <i class="icon-right"></i></span>
                 </a>
             </li>
         </ul>
         <ul class="mt-1">
             <li>
-                <a href="/29_topup.html" class="list-profile outline">
+                <a href="{{ route('User.Add.Wallet') }}" class="list-profile outline">
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -207,11 +192,11 @@
                             fill="#424852" />
                     </svg>
                     <p>Withdraw</p>
-                    <span>1 link <i class="icon-right"></i></span>
+                    <span><i class="icon-right"></i></span>
                 </a>
             </li>
             <li>
-                <a href="/23_transfer-bank.html" class="list-profile outline">
+                <a href="{{ route('User.Transfer') }}" class="list-profile outline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -242,9 +227,12 @@
         <ul class="box-settings-profile mt-1 mb-8">
 
             <li>
-                <a href="53_saved-repicient.html" class="list-setting-profile">
+                <a href="#" class="list-setting-profile">
                     <span class="icon icon-logout"></span>
-                    <p>Logout</p>
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                    </form>
                     <i class="icon-right"></i>
                 </a>
             </li>
