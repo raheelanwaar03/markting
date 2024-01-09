@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('user.layout.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
-    <title>Deposit</title>
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/images/logo.png') }}" />
-    <!-- Font -->
-    <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}" />
-    <!-- Icons -->
-    <link rel="stylesheet" href="{{ asset('assets/fonts/icons-alipay.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/styles/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/styles.css') }}" />
-    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
-    <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('assets/app/icons/icon-192x192.png') }}">
-</head>
-
-
-<body class="bg_surface_color">
-
-    <x-alert />
+@section('content')
     <!-- preloade -->
     <div class="preload preload-container">
         <div class="preload-logo">
@@ -49,7 +23,8 @@
                             class="icon-right"></i></a></h3>
                 <div class="tf-spacing-12"></div>
             </div>
-            <form class="tf-form mt-3" action="{{ route('User.Store.Transfer') }}" method="POST" enctype="multipart/form-data">
+            <form class="tf-form mt-3" action="{{ route('User.Store.Transfer') }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="group-input">
                     <label for="">Bank</label>
@@ -111,7 +86,9 @@
                     <div class="tf-spacing-12"></div>
                     <div class="group-checkbox">
                         <input type="checkbox" class="tf-checkbox st1" checked>
-                        <span class="fw_3">Send Selected Amount to our <b>()</b> number with account title <b>()</b> in <b>()</b> bank. After Tranfer Add ScreenShot and also send it to +92373084032 On What's app - money will
+                        <span class="fw_3">Send Selected Amount to our <b>()</b> number with account title <b>()</b> in
+                            <b>()</b> bank. After Tranfer Add ScreenShot and also send it to +92373084032 On What's app -
+                            money will
                             be added under
                             12 working hours in your account.</span>
                     </div>
@@ -122,13 +99,4 @@
             </form>
         </div>
     </div>
-
-    <script type="text/javascript" src="{{ asset('assets/javascript/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/javascript/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/javascript/swiper-bundle.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/javascript/swiper.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/javascript/main.js') }}"></script>
-
-</body>
-
-</html>
+@endsection
