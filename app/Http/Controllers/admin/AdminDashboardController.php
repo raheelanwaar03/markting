@@ -81,6 +81,52 @@ class AdminDashboardController extends Controller
 
         // checking user refferal
         $first_referral = User::where('user_code', $user->referral)->first();
+
+        // count uesr all referals
+        $referral_users = User::where('referral', $first_referral->user_code)->get();
+        $count_users =  $referral_users->count();
+        if ($count_users <= 10) {
+            $first_referral->level = 'Level 1';
+            $first_referral->save();
+        }
+        if ($count_users <= 20) {
+            $first_referral->level = 'Level 2';
+            $first_referral->save();
+        }
+        if ($count_users <= 30) {
+            $first_referral->level = 'Level 3';
+            $first_referral->save();
+        }
+        if ($count_users <= 40) {
+            $first_referral->level = 'Level 4';
+            $first_referral->save();
+        }
+        if ($count_users <= 50) {
+            $first_referral->level = 'Level 5';
+            $first_referral->save();
+        }
+        if ($count_users <= 60) {
+            $first_referral->level = 'Level 6';
+            $first_referral->save();
+        }
+        if ($count_users <= 70) {
+            $first_referral->level = 'Level 7';
+            $first_referral->save();
+        }
+        if ($count_users <= 80) {
+            $first_referral->level = 'Level 8';
+            $first_referral->save();
+        }
+        if ($count_users <= 90) {
+            $first_referral->level = 'Level 9';
+            $first_referral->save();
+        }
+        if ($count_users <= 100) {
+            $first_referral->level = 'Level 10';
+            $first_referral->save();
+        }
+
+
         if ($first_referral == '') {
             $user->status = 'approved';
             $user->save();
