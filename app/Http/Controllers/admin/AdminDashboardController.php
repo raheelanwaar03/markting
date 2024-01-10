@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\admin\Referralsetting;
 use App\Models\User;
 use App\Models\user\Deposit;
+use App\Models\user\History;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -18,15 +19,15 @@ class AdminDashboardController extends Controller
     public function editUser($id)
     {
         $user =  User::find($id);
-        return view('admin.user.editUser',compact('user'));
+        return view('admin.user.editUser', compact('user'));
     }
 
-    public function updateUser(Request $request,$id)
+    public function updateUser(Request $request, $id)
     {
         $user = User::find($id);
         $user->balance = $request->balance;
         $user->save();
-        return redirect()->back()->with('success','Balance changed successfully');
+        return redirect()->back()->with('success', 'Balance changed successfully');
     }
 
     public function allUsers()
@@ -167,16 +168,38 @@ class AdminDashboardController extends Controller
     {
         $deposit = Deposit::find($id);
         $user = User::where('id', $deposit->user_id)->first();
-        return view('admin.deposit.add',compact('user','deposit'));
+        return view('admin.deposit.add', compact('user', 'deposit'));
     }
 
-    public function updateDeposit(Request $request,$id)
+    public function updateDeposit(Request $request, $id)
     {
         $user = User::find($id);
         $user->balance += $request->balance;
         $user->save();
-        return redirect()->route('Admin.Deposit.Requests')->with('success','Deposit added successfully');
+        return redirect()->route('Admin.Deposit.Requests')->with('success', 'Deposit added successfully');
     }
 
+    // giving user reward
 
+    public function give_reward($id)
+    {
+        $deposit = Deposit::find($id);
+        $user = User::where('id', $deposit->user_id)->first();
+        return view('admin.user.giveReward', compact('user', 'deposit'));
+    }
+
+    public function store_reward(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->balance += $request->balance;
+        $user->save();
+        // history
+
+        $history = new History();
+        $history->user_id = $user->id;
+        $history->amount = $request->balance;
+        $history->type = 'reward';
+        $history->save();
+        return redirect()->back()->with('success', 'Reward given successfully');
+    }
 }

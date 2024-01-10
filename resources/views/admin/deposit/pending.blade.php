@@ -44,6 +44,10 @@
                                                         class="btn btn-danger btn-sm">Rejected</a>
                                                     <a href="{{ route('Admin.Add.Deposit.Requests', $deposit->id) }}"
                                                         class="btn btn-primary btn-sm">Edit</a>
+                                                    <a href="{{ route('Admin.Give.Reward', $deposit->id) }}"
+                                                        class="btn btn-sm btn-warning">
+                                                        Give Reward
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach

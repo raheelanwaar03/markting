@@ -13,6 +13,10 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('All/Users',[AdminDashboardController::class,'allUsers'])->name('All.Users');
     Route::get('Edit/User/{id}',[AdminDashboardController::class,'editUser'])->name('Edit.User');
     Route::post('Update/User/{id}',[AdminDashboardController::class,'updateUser'])->name('Update.User');
+    // give user reward
+    Route::get('Give/Reward/{id}',[AdminDashboardController::class,'give_reward'])->name('Give.Reward');
+    Route::post('Store/Reward/{id}',[AdminDashboardController::class,'store_reward'])->name('Store.Reward');
+
     Route::get('Rejected/Users',[AdminDashboardController::class,'rejectedUsers'])->name('Rejected.Users');
     Route::get('Approved/Users',[AdminDashboardController::class,'approvedUsers'])->name('Approved.Users');
     Route::get('Pending/Users',[AdminDashboardController::class,'pendingUsers'])->name('Pending.Users');
