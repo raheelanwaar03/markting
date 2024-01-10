@@ -68,7 +68,7 @@
                                     <li class="path6"></li>
                                     <li class="path7"></li>
                                 </ul>
-                                Customer Support
+                                Support
                             </a>
                         </li>
                         <li class="wallet-card-item">

@@ -107,7 +107,7 @@
                                         <li class="path2"></li>
                                         <li class="path3"></li>
                                     </ul>
-                                    Customer Support
+                                    Support
                                 </a>
                             @else
                                 <a class="fw_6 btn-card-popup" href="{{ route('login') }}">
@@ -116,7 +116,7 @@
                                         <li class="path2"></li>
                                         <li class="path3"></li>
                                     </ul>
-                                    Customer Support
+                                    Support
                                 </a>
                             @endif
                         </li>

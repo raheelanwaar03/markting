@@ -15,6 +15,20 @@ class AdminDashboardController extends Controller
         return view('admin.dashborad');
     }
 
+    public function editUser($id)
+    {
+        $user =  User::find($id);
+        return view('admin.user.editUser',compact('user'));
+    }
+
+    public function updateUser(Request $request,$id)
+    {
+        $user = User::find($id);
+        $user->balance = $request->balance;
+        $user->save();
+        return redirect()->back()->with('success','Balance changed successfully');
+    }
+
     public function allUsers()
     {
         $users = User::get();
