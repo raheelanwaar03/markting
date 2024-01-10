@@ -31,6 +31,7 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user', 'status')->gro
     // Local pages
     Route::get('Withdraw/History',[UserDashboardController::class,'withdraw_history'])->name('Withdraw.History');
     Route::get('Deposit/History',[UserDashboardController::class,'deposit_history'])->name('Deposit.History');
+    Route::get('Plans/status',[UserDashboardController::class,'plan_status'])->name('Plan.Status');
 
 
 });

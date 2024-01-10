@@ -77,8 +77,9 @@ class BuyPlanController extends Controller
         // adding into history
         $history = new History();
         $history->user_id = auth()->user()->id;
+        $history->status = 'pending';
         $history->amount = $request->amount;
-        $history->type = 'buy_plan';
+        $history->type = 'Buy Plan';
         $history->save();
 
         return redirect()->route('User.Dashboard')->with('success', 'You buy this plan successfully');

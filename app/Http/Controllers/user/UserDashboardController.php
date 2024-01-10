@@ -93,6 +93,14 @@ class UserDashboardController extends Controller
                     $plan = BuyPlan::where('plan_id', $plan->id)->first();
                     $plan->status = 'inactive';
                     $plan->save();
+
+                    $history = new History();
+                    $history->user_id = auth()->user()->id;
+                    $history->status = 'inactive';
+                    $history->type = 'Buy Plan';
+                    $history->amount = $plan->amount;
+                    $history->save();
+
                 }
             }
         }
@@ -127,6 +135,12 @@ class UserDashboardController extends Controller
     {
         $history = History::where('user_id',auth()->user()->id)->where('type','deposit')->get();
         return view('user.widthraw_history',compact('history'));
+    }
+
+    public function plan_status()
+    {
+        $history = History::where('user_id',auth()->user()->id)->where('type','buy_plan')->get();
+        return view('user.plan_status',compact('history'));
     }
 
 

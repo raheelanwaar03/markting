@@ -101,8 +101,7 @@
                         </li>
                         <li class="wallet-card-item">
                             @if (auth()->user())
-                                <a class="fw_6 btn-card-popup"
-                                    href="whatsapp://send?Team=03149720318">
+                                <a class="fw_6 btn-card-popup" href="whatsapp://send?Team=03149720318">
                                     <ul class="icon icon-group-credit-card">
                                         <li class="path1"></li>
                                         <li class="path2"></li>
@@ -189,7 +188,7 @@
                         <!-- "Visit" button on the right -->
                         <div class="ml-auto">
                             @if (auth()->user())
-                                <a href="{{ route('User.Invest.Plan',$plan->id) }}" class="btn btn-primary">Start</a>
+                                <a href="{{ route('User.Invest.Plan', $plan->id) }}" class="btn btn-primary">Start</a>
                             @else
                                 <a href="{{ route('login') }}" class="btn btn-primary">Start</a>
                             @endif
@@ -203,6 +202,5 @@
     </div>
 
     <div class="mt-5 mb-9">
-
     </div>
 @endsection

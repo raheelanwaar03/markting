@@ -11,7 +11,7 @@
                     <i class="icon-history"></i> History</a>
             </li>
             <li>
-                <a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="#">
+                <a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="{{ route('User.Plan.Status') }}">
                     <i class="icon-scan-qr-code"></i> </a>
             </li>
             <li>
