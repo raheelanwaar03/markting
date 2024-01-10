@@ -179,11 +179,10 @@
                         <img src="{{ asset('image/' . $plan->image) }}" alt="Card Image" class="card-img">
 
                         <!-- Text beside the image -->
-                        <div class="ml-3">
+                        <div class="ml-3" style="margin-left: 10px;">
                             <h5 class="card-title">{{ $plan->plan_name }} - {{ $plan->duration }} Days</h5>
-                            <p class="card-text">{{ $plan->min_invest }}-{{ $plan->max_invest }} <span
-                                    style="background-color:cyan;color:white;padding: 5px;border-radius: 20px;">Experimental</span><br>
-                                <b>({{ $plan->persantage }}% Day)</b>
+                            <p class="card-text">{{ $plan->min_invest }}-{{ $plan->max_invest }} <br>
+                                <b>({{ $plan->persentage }}% Day)</b>
                             </p>
                         </div>
 

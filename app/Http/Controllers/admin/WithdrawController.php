@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\user\WidthrawBalance;
 use Illuminate\Http\Request;
 
@@ -10,20 +11,20 @@ class WithdrawController extends Controller
 {
     public function pending()
     {
-        $withdraws = WidthrawBalance::where('status','pending')->get();
-        return view('admin.withdraw.pending',compact('withdraws'));
+        $withdraws = WidthrawBalance::where('status', 'pending')->get();
+        return view('admin.withdraw.pending', compact('withdraws'));
     }
 
     public function approved()
     {
-        $withdraws = WidthrawBalance::where('status','approved')->get();
-        return view('admin.withdraw.approved',compact('withdraws'));
+        $withdraws = WidthrawBalance::where('status', 'approved')->get();
+        return view('admin.withdraw.approved', compact('withdraws'));
     }
 
     public function rejected()
     {
-        $withdraws = WidthrawBalance::where('status','rejected')->get();
-        return view('admin.withdraw.rejected',compact('withdraws'));
+        $withdraws = WidthrawBalance::where('status', 'rejected')->get();
+        return view('admin.withdraw.rejected', compact('withdraws'));
     }
 
     public function make_pending($id)
@@ -31,7 +32,7 @@ class WithdrawController extends Controller
         $withdraw = WidthrawBalance::find($id);
         $withdraw->status = 'pending';
         $withdraw->save();
-        return redirect()->back()->with('success','Withdraw has been pending successfully');
+        return redirect()->back()->with('success', 'Withdraw has been pending successfully');
     }
 
     public function make_rejected($id)
@@ -39,7 +40,7 @@ class WithdrawController extends Controller
         $withdraw = WidthrawBalance::find($id);
         $withdraw->status = 'rejected';
         $withdraw->save();
-        return redirect()->back()->with('success','Withdraw has been rejected successfully');
+        return redirect()->back()->with('success', 'Withdraw has been rejected successfully');
     }
 
     public function make_approved($id)
@@ -47,7 +48,10 @@ class WithdrawController extends Controller
         $withdraw = WidthrawBalance::find($id);
         $withdraw->status = 'approved';
         $withdraw->save();
-        return redirect()->back()->with('success','Withdraw has been approved successfully');
+        // getting user
+        $user = User::where('id', $withdraw->user_id)->first();
+        $user->balance -= $withdraw->money;
+        $user->save();
+        return redirect()->back()->with('success', 'Withdraw has been approved successfully');
     }
-
 }

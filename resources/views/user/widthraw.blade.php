@@ -29,8 +29,8 @@
                     <div class="tf-form">
                         <div class="group-input input-field input-money">
                             <label for="">Amout Of Money</label>
-                            <input type="text" readonly value="0" required name="amount"
-                                class="search-field value_input st1" type="text">
+                            <input type="text" value="0" required name="amount"
+                                class="search-field value_input st1" id="amountInput">
                             <span class="icon-clear"></span>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
         </div>
         <div class="bottom-navigation-bar">
             <div class="tf-container">
-                <a href="#" id="btn-popup-up" class="tf-btn accent large">Continue</a>
+                <a href="#" id="btn-popup-up" onclick="calculateDiscount()" class="tf-btn accent large">Continue</a>
             </div>
         </div>
     </div>
@@ -47,13 +47,32 @@
         <div class="tf-container">
             <h3>Amount To Widthraw</h3>
             <ul class="money list-money">
-                <li><a class="tag-money" href="#">50</a> </li>
-                <li><a class="tag-money" href="#">100</a> </li>
                 <li><a class="tag-money" href="#">200</a> </li>
                 <li><a class="tag-money" href="#">500</a> </li>
                 <li><a class="tag-money" href="#">1000</a> </li>
-                <li><a class="tag-money" href="#">2000</a> </li>
             </ul>
+        </div>
+    </div>
+
+    <div class="amount-money mt-5">
+        <div class="tf-container">
+            <h3>Rules</h3>
+            <ul style="padding-bottom: 50px;">
+                <li>Minimum Withdraw Limit is 200Rs.</li>
+                <li>Withdraw once a day</li>
+                <li style="color:red">Note: Max withdraw limit of Easypaisa/Jazzcash is Rs.50,000. If exceeds Rs.50,000
+                    please use Bank
+                    Account to withdraw.</li>
+                <li>The withdrawal funds will arrive within 48 hours.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="amount-money" style="padding-bottom: 50px">
+        <div class="tf-container mb-4">
+            <h3>3% tax and 2% service fee <br>
+                Total: 5%
+            </h3>
         </div>
     </div>
 
@@ -93,22 +112,16 @@
                     </div>
                     <ul class="info">
                         <li>
-                            <h4 class="secondary_color fw_4 d-flex justify-content-between align-items-center">Amout
-                                <input type="text" style="border: none;width:100px;" required
-                                    class="search-field value_input st1">
-                            </h4>
-                        </li>
-                        <li>
                             <h4 class="secondary_color fw_4 d-flex justify-content-between align-items-center">Fee <a
-                                    href="#" class="success_color fw_7">Free</a></h4>
+                                    class="success_color fw_7">5%</a></h4>
                         </li>
                     </ul>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="total">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h4 class="secondary_color fw_4">Total</h4>
-                                <h2><input type="text" style="border: none;width:100px;" required
-                                        class="search-field value_input st1" readonly></h2>
+                                <h2><input type="text" id="discountedAmountInput" style="border: none;width:100px;"
+                                        required class="search-field value_input st1" readonly></h2>
                             </div>
                         </div>
                         <a id="withdrawBtn" onclick="showHelloModal()">
@@ -126,18 +139,35 @@
                                 </div>
                             </div>
                         </div>
-
                         </form>
+
+
                         <script>
                             function showHelloModal() {
                                 var modal = document.getElementById('helloModal');
                                 modal.classList.add('show');
                                 modal.style.display = 'block';
+                            }
 
-                                // Redirect after 3 seconds
-                                // setTimeout(function() {
-                                //     window.location.href = '/User/Dashboard';
-                                // }, 1000);
+                            function calculateDiscount() {
+                                // Get the input values
+                                var amountInput = document.getElementById('amountInput');
+                                var discountedAmountInput = document.getElementById('discountedAmountInput');
+
+                                var amount = parseFloat(amountInput.value);
+
+                                // Check if the input is a valid number
+                                if (isNaN(amount)) {
+                                    alert('Please enter a valid number.');
+                                    return;
+                                }
+
+                                // Calculate the discounted amount (95% of the original amount)
+                                var discountedAmount = amount * 0.95;
+
+                                // Display the original and discounted amounts in their respective input fields
+                                amountInput.value = amount.toFixed(2);
+                                discountedAmountInput.value = discountedAmount.toFixed(2);
                             }
                         </script>
                     </div>

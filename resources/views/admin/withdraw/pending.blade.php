@@ -37,7 +37,7 @@
                                                 <td>
                                                     <a href="{{ route('Admin.Make.Withdraw.Rejected', $withdraw->id) }}"
                                                         class="btn btn-danger btn-sm">Rejected</a>
-                                                    <a href="{{ route('Admin.Make.Withdraw.Rejected', $withdraw->id) }}"
+                                                    <a href="{{ route('Admin.Make.Withdraw.Approved', $withdraw->id) }}"
                                                         class="btn btn-success btn-sm">Approved</a>
                                                 </td>
                                             </tr>
