@@ -139,7 +139,7 @@ class UserDashboardController extends Controller
 
     public function plan_status()
     {
-        $history = History::where('user_id',auth()->user()->id)->where('type','buy_plan')->get();
+        $history = History::where('user_id',auth()->user()->id)->where('type','Buy Plan')->get();
         return view('user.plan_status',compact('history'));
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\admin\Referralsetting;
 use App\Models\User;
 use App\Models\user\Deposit;
 use App\Models\user\History;
@@ -65,6 +66,7 @@ function Total_Team_Investment()
     foreach ($my as $investor) {
         $my_investment += $investor->amount;
     }
+    return $my_investment;
 
     $referrals = User::where('referral', auth()->user()->user_code)->get();
 
@@ -78,7 +80,6 @@ function Total_Team_Investment()
             }
             $first_return_value = $my_investment + $first_user_investment;
         }
-
         return $first_return_value;
     } else {
         return $my_investment;
@@ -88,13 +89,28 @@ function Total_Team_Investment()
 function earned_income()
 {
     $referral_friends = User::where('referral', auth()->user()->user_code)->where('status', 'approved')->get();
-    // if ($referral_friends != null)
-    // {
-    //     $total = 0;
-    //     foreach($referral_friends as $friend)
-    //     {
-    //         $total += $friend->
-    //     }
-    // }
-    return 500;
+    if ($referral_friends != null) {
+        $count = $referral_friends->count();
+    }
+
+    $bouns = Referralsetting::where('status', '1')->first();
+    $first = $bouns->first_person;
+
+    $total_money = $count * $first;
+    return $total_money;
+}
+
+
+function pending_income()
+{
+    $referral_friends = User::where('referral', auth()->user()->user_code)->where('status', 'pending')->get();
+    if ($referral_friends != null) {
+        $count = $referral_friends->count();
+    }
+
+    $bouns = Referralsetting::where('status', '1')->first();
+    $first = $bouns->first_person;
+
+    $total_money = $count * $first;
+    return $total_money;
 }
