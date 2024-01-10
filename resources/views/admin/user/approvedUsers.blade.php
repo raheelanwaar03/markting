@@ -41,6 +41,10 @@
                                                         class="btn btn-primary btn-sm">Pending</a>
                                                     <a href="{{ route('Admin.Reject.Users', $user->id) }}"
                                                         class="btn btn-danger btn-sm">Rejected</a>
+                                                    <a href="{{ route('Admin.Edit.User', $user->id) }}"
+                                                        class="btn btn-sm btn-primary">
+                                                        Edit
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach
