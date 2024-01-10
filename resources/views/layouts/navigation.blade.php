@@ -41,9 +41,7 @@
 
                     <div class="content">
                         <h4 class="white_color">New Hexa Network</h4>
-                        @if (auth()->user())
-                            <p class="white_color fw_4">"The New Era Of Investment"</p>
-                        @endif
+                        <p class="white_color fw_4">"The New Era Of Investment"</p>
                     </div>
                 </a>
                 <div class="d-flex align-items-center gap-4">
