@@ -16,7 +16,35 @@
             </div>
         </div>
     </div>
-    <div class="content-by-bank mt-3">
+    <div class="content-by-bank mt-5" style="padding-top: 50px">
+        <div class="tf-container">
+            <div class="heading">
+                <h3 class="d-flex justify-content-between fw_6">Admin Bank Details</h3>
+                <div class="tf-spacing-12"></div>
+            </div>
+            <div class="group-input">
+                <label for="">Bank</label>
+                <input type="text" value="United Bank Limited (UBL)" readonly>
+            </div>
+            <div class="group-input">
+                <label for="">Account Title</label>
+                <input type="text" value="Muhammad Wali">
+            </div>
+            <div class="group-input">
+                <label for="">Account Number</label>
+                <div class="d-flex">
+                    <input type="text" id="myInput" value="0561302715107" id="acc_num">
+                    <span style="margin-left: -30px;font-size:20px;margin-top:10px"><i class="icon-copy1"
+                            onclick="copy()"></i></span>
+                </div>
+            </div>
+            <div class="bottom-navigation-bar bottom-btn-fixed st2">
+                <button type="submit" class="tf-btn accent large">Continue</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="content-by-bank mt-3 mb-5" style="padding-bottom: 100px;">
         <div class="tf-container">
             <div class="heading">
                 <h3 class="d-flex justify-content-between fw_6">Deposit To <a href="#">Help <i
@@ -86,8 +114,7 @@
                     <div class="tf-spacing-12"></div>
                     <div class="group-checkbox">
                         <input type="checkbox" class="tf-checkbox st1" checked>
-                        <span class="fw_3">Send Selected Amount to our <b>()</b> number with account title <b>()</b> in
-                            <b>()</b> bank. After Tranfer Add ScreenShot and also send it to +92373084032 On What's app -
+                        <span class="fw_3">After Tranfer Add ScreenShot and also send it to +92373084032 On What's app -
                             money will
                             be added under
                             12 working hours in your account.</span>
@@ -99,4 +126,16 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function copy() {
+            // Get the text field
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            // Alert the copied text
+            alert("Copied the text: " + copyText.value);
+        }
+    </script>
 @endsection
