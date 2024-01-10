@@ -169,7 +169,7 @@
     <div class="mt-5">
         <div class="tf-container">
             <div class="tf-title d-flex justify-content-between">
-                <h3 class="fw_6">AD Machine Investment Products </h3>
+                <h3 class="fw_6">AI Technology</h3>
                 <a href="#" class="primary_color fw_6">View All</a>
             </div>
             <div class="card custom-card">
