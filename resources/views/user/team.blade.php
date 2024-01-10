@@ -11,7 +11,7 @@
         <div class="tf-container">
             <div class="tf-statusbar d-flex justify-content-center align-items-center">
                 <a href="#" class="back-btn"> <i class="icon-left"></i> </a>
-                <h3>Profile</h3>
+                <h3>Team</h3>
             </div>
         </div>
     </div>
