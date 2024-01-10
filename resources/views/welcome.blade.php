@@ -102,13 +102,13 @@
                         <li class="wallet-card-item">
                             @if (auth()->user())
                                 <a class="fw_6 btn-card-popup"
-                                    href="whatsapp://send?Team=03149720318&text=Hello%2C%20{{ env('APP_NAME') }}!">
+                                    href="whatsapp://send?Team=03149720318">
                                     <ul class="icon icon-group-credit-card">
                                         <li class="path1"></li>
                                         <li class="path2"></li>
                                         <li class="path3"></li>
                                     </ul>
-                                    C.S
+                                    Customer Support
                                 </a>
                             @else
                                 <a class="fw_6 btn-card-popup" href="{{ route('login') }}">
@@ -117,7 +117,7 @@
                                         <li class="path2"></li>
                                         <li class="path3"></li>
                                     </ul>
-                                    Whatsapp
+                                    Customer Support
                                 </a>
                             @endif
                         </li>
