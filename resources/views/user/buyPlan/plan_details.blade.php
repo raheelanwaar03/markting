@@ -32,29 +32,29 @@
                     <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->persentage }}%</p>
                     <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->duration }}Days</p>
                 </div>
-                <div style="background-color: lightblue;padding:16px">
+                <div style="background-color: rgb(79, 47, 176);padding:16px">
                     <div class="d-flex justify-content-between align-items-center">
-                        <p style="color:black">Invest Amount</p>
-                        <p style="color: black" class="displayAmount">Rs.{{ $amount }}</p>
+                        <p style="color:rgb(254, 254, 254)">Invest Amount</p>
+                        <p style="color:white" class="displayAmount">Rs.{{ $amount }}</p>
                         <input type="number" name="amount" value="{{ $amount }}" hidden>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-2">
-                        <p style="color:black">Single Limit</p>
-                        <p style="color: black">{{ $plan->min_invest }}-{{ $plan->max_invest }} Rs.</p>
+                        <p style="color:white">Single Limit</p>
+                        <p style="color:white">{{ $plan->min_invest }}-{{ $plan->max_invest }} Rs.</p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-2">
-                        <p style="color:black">Estimated Earning</p>
-                        <p style="color: black" id="result">{{ $profit }}</p>
+                        <p style="color:white">Estimated Earning</p>
+                        <p style="color:white" id="result">{{ $profit }}</p>
                         <input type="number" name="profit" value="{{ $total }}" hidden>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-2">
-                        <p style="color:black">Expire In</p>
-                        <p style="color: black">{{ $plan->duration }}Days</p>
+                        <p style="color:white">Expire In</p>
+                        <p style="color:white">{{ $plan->duration }}Days</p>
                         <input type="number" name="duration" value="{{ $plan->duration }}" hidden>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-2">
-                        <p style="color:black">Income Rule</p>
-                        <p style="color: black" id="result">
+                        <p style="color:white">Income Rule</p>
+                        <p style="color:white" id="result">
                             <span class="displayAmount"></span>
                             {{ $amount }} (<span
                                 class="displayAmount"></span>{{ $amount }}*{{ $plan->persentage }}*{{ $plan->duration }})=Total
