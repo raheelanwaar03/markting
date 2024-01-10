@@ -42,7 +42,7 @@
                     <div class="content">
                         <h4 class="white_color">New Hexa Network</h4>
                         @if (auth()->user())
-                            <p class="white_color fw_4">{{ auth()->user()->name }} Welcome to User dashboard</p>
+                            <p class="white_color fw_4">"The New Era Of Investment"</p>
                         @endif
                     </div>
                 </a>
@@ -55,8 +55,7 @@
                                 fill="white" stroke="white" stroke-width="0.125" />
                         </svg>
                     </a>
-                    <a href="#" id="btn-popup-up"
-                        class="icon-notification1"><span>2</span></a>
+                    <a href="#" id="btn-popup-up" class="icon-notification1"><span>2</span></a>
                 </div>
             </div>
         </div>
