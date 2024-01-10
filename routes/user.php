@@ -28,4 +28,9 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user', 'status')->gro
     Route::get('Buy/Plan/view/{id}', [BuyPlanController::class, 'plan_details'])->name('Plan.Details');
     // Getting User his daily reward
     Route::get('Daily/Reward',[UserDashboardController::class,'daily_reward'])->name('Daily.Reward');
+    // Local pages
+    Route::get('Withdraw/History',[UserDashboardController::class,'withdraw_history'])->name('Withdraw.History');
+    Route::get('Deposit/History',[UserDashboardController::class,'deposit_history'])->name('Deposit.History');
+
+
 });

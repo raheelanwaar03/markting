@@ -116,4 +116,18 @@ class UserDashboardController extends Controller
 
         return redirect()->back()->with('success', 'You have got your daily profit');
     }
+
+    public function withdraw_history()
+    {
+        $history = History::where('user_id',auth()->user()->id)->where('type','withdraw')->get();
+        return view('user.widthraw_history',compact('history'));
+    }
+
+    public function deposit_history()
+    {
+        $history = History::where('user_id',auth()->user()->id)->where('type','deposit')->get();
+        return view('user.widthraw_history',compact('history'));
+    }
+
+
 }
