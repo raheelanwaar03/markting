@@ -14,17 +14,12 @@
             <div class="tf-container">
                 <div class="wrap-total">
                     <div class="total-item">
-                        <a href="#" class="box-icon bg_primary"><i class="icon-arrow-up_minor primary_color"></i></a>
                         <div class="content">
                             <p class="fw_4" style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">INVESTED</p>
                             <h2 class="fw_6 success_color">RS {{ user_investment() }}</h2>
                         </div>
                     </div>
                     <div class="total-item">
-                        <a href="#" class="box-icon bg_critical"><i
-                                class="icon-arrow-up_minor critical_color arrow-down"></i></a>
-
-
                         <div class="content">
                             <p class="fw_4"
                                 style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">Outcome</p>
