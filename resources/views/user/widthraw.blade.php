@@ -124,31 +124,13 @@
                                         required class="search-field value_input st1" readonly></h2>
                             </div>
                         </div>
-                        <a id="withdrawBtn" onclick="showHelloModal()">
+                        <a id="withdrawBtn">
                             <span><button type="submit" class="btn btn-primary"><i
                                         class="icon-secure1"></i>Withdraw</button></span>
                         </a>
-
-                        <div class="modal fade" id="helloModal" tabindex="-1" role="dialog"
-                            aria-labelledby="helloModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <h1>Will be Transfer after a While (3 Working Hours)</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         </form>
 
-
                         <script>
-                            function showHelloModal() {
-                                var modal = document.getElementById('helloModal');
-                                modal.classList.add('show');
-                                modal.style.display = 'block';
-                            }
-
                             function calculateDiscount() {
                                 // Get the input values
                                 var amountInput = document.getElementById('amountInput');
