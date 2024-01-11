@@ -16,6 +16,7 @@
     background-color: #01bb07;
     /* Green background color */
     color: #fff;
+    font-size: medium;
     /* White text color */
     width: 200px;
     /* Adjust the width as needed */
@@ -25,7 +26,7 @@
 
 .swal-error {
     background-color: #e32b0a;
-    /* Red background color */
+    font-size: medium;
     color: #fff;
     /* White text color */
     width: 200px;
