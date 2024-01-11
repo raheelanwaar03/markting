@@ -16,7 +16,7 @@
                     <div class="total-item">
                         <a href="#" class="box-icon bg_primary"><i class="icon-arrow-up_minor primary_color"></i></a>
                         <div class="content">
-                            <p class="fw_4">INVESTED</p>
+                            <p class="fw_4" style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">INVESTED</p>
                             <h2 class="fw_6 success_color">RS {{ user_investment() }}</h2>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
 
 
                         <div class="content">
-                            <p class="fw_4">Outcome</p>
+                            <p class="fw_4" style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">Outcome</p>
                             <h2 class="fw_6 success_color">RS {{ user_outcome() }}</h2>
                         </div>
                     </div>
