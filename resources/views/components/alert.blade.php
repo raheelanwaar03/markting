@@ -1,23 +1,19 @@
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-@if ($errors->any())
-    @foreach ($errors->all() as $error)
-        <script>
-            swal("oops!", "{!! $error !!}", "error");
-        </script>
-    @endforeach
-@endif
-@if (session('success') || session('status'))
+@if(session('success'))
     <script>
-        swal("Success!", "{!! session('success') !!}", "success");
+        swal({
+            title: "Success!",
+            text: "{{ session('success') }}",
+            icon: "success",
+            button: "OK",
+        });
+    </script>
+@elseif(session('error'))
+    <script>
+        swal({
+            title: "Error!",
+            text: "{{ session('error') }}",
+            icon: "error",
+            button: "OK",
+        });
     </script>
 @endif
-@if (session('error'))
-    <script>
-        swal("oops!", "{!! session('error') !!}", "error");
-    </script>
-@endif
-<script>
-    window.addEventListener('showAlert', event => {
-        swal("Success!", event.detail.message, "success");
-    })
-</script>
