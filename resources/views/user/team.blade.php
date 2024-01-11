@@ -118,7 +118,7 @@
                 border: 1px solid #ccc;
                 width: 300px;
                 margin: 30px auto;
-                background-color: white;
+                background-color: goldenrod;
             }
 
             .top-heading {
@@ -158,7 +158,7 @@
             copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value);
             // Alert the copied text
-            alert("Copied the text: " + copyText.value);
+            alert("Copied");
         }
     </script>
 
@@ -178,7 +178,7 @@
             window.getSelection().removeAllRanges();
 
             // Notify the user that the text has been copied (optional)
-            alert("Copied: " + inputElement.value);
+            alert("Copied");
         }
     </script>
 @endsection

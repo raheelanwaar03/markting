@@ -5,7 +5,7 @@
             <div class="tf-balance-box bg-warning" style="background-color: rgb(231, 198, 12);">
                 <div class="balance">
                     <div class="row">
-                        <div class="col-6 br-right">
+                        <div class="col-6">
                             <div class="inner-left">
                                 <p>Your Balance:</p>
                                 <h3>RS {{ auth()->user()->balance }}</h3>
