@@ -24,9 +24,14 @@
                 </div>
                 <div class="info">
                     <h2 class="fw_8">{{ auth()->user()->name }}</h2>
-                    <p>Referral ID : <input type="text" style="border: none;width:350px;font-size:11px;"
+                    <p>Referral ID :
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <input type="text" style="border: none;width:350px;font-size:11px;"
                             value="{{ route('register', ['referral' => Auth::user()->user_code]) }}" id="myInput"
-                            readonly> <i class="icon-copy1" onclick="copy()"></i></p>
+                            readonly>
+                        <i class="icon-copy1" style="font-size: 18px;margin-left:-60px" onclick="copy()"></i>
+                    </div>
                 </div>
             </div>
         </a>
@@ -120,22 +125,22 @@
                 font-size: 14px;
                 font-weight: bold;
                 margin-bottom: 10px;
-                color:blue;
+                color: blue;
             }
 
             .bottom-amounts {
                 font-size: 16px;
                 color: #0e29b1;
-                display:flex;
+                display: flex;
                 justify-content: space-between;
-                align-items:center;
+                align-items: center;
             }
         </style>
         <div class="amount-container">
             <h3>My Invitation Stats</h3>
             <div class="top-heading">{{ Total_Team_Investment() }} RS.</div>
             <div class="bottom-amounts">
-                <p>Earned: {{earned_income()}} Rs.</p>
+                <p>Earned: {{ earned_income() }} Rs.</p>
                 <p>Pending: {{ pending_income() }}</p>
             </div>
         </div>
