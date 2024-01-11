@@ -80,6 +80,7 @@ class BuyPlanController extends Controller
         $history->status = 'active';
         $history->amount = $request->amount;
         $history->type = 'Buy Plan';
+        $history->day = $request->duration;
         $history->save();
 
         return redirect()->route('User.Dashboard')->with('success', 'You buy this plan successfully');

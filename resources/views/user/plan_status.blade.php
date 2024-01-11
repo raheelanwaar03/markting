@@ -55,7 +55,7 @@
                                             <p style="color:green">({{ $item->status }})</p>
                                             @endif
                                         </div>
-                                        <p>Today {{ $item->created_at->format('H:i:s') }}</p>
+                                        <p>Buy Date {{ $item->created_at->format('m/d/Y') }} Ends In:{{ $item->day }}</p>
                                     </div>
                                 </div>
                                 <span class="num-val success_color">RS {{ $item->amount }}</span>
