@@ -68,7 +68,7 @@ class UserDashboardController extends Controller
         $history->amount = $validated['money'];
         $history->type = 'deposit';
         $history->save();
-        return redirect()->route('User.Dashboard')->with('success', 'Your deposit request has been submitted please wait for admin approvel!');
+        return redirect()->route('User.Dashboard')->with('success', 'Success');
     }
 
     public function history()
@@ -87,7 +87,7 @@ class UserDashboardController extends Controller
         $today = Carbon::today();
         $today_reward = History::where('user_id', auth()->user()->id)->where('type', 'reward')->where('status', 'recived')->whereDate('created_at', $today)->first();
         if ($today_reward != null) {
-            return redirect()->back()->with('error', 'You have got your daily reward');
+            return redirect()->back()->with('error', 'Already Recived');
         }
 
         $buy_plans = BuyPlan::where('user_id', auth()->user()->id)->get();
@@ -130,7 +130,7 @@ class UserDashboardController extends Controller
         $history->type = 'reward';
         $history->save();
 
-        return redirect()->back()->with('success', 'You have got your daily profit');
+        return redirect()->back()->with('success', 'Success');
     }
 
     public function withdraw_history()

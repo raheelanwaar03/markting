@@ -34,18 +34,18 @@ class BuyPlanController extends Controller
         $count = $plan_limit->count();
         // return $plan->limite;
         if ($count > $plan->limite) {
-            return redirect()->back()->with('error', 'You purchasing limit for this plan has been completed');
+            return redirect()->back()->with('error', 'Limite Full!');
         }
 
         if ($request->amount < $plan->min_invest) {
-            return redirect()->back()->with('error', 'Your amount should not be less than plan limit');
+            return redirect()->back()->with('error', 'Less Amount');
         }
         if ($request->amount > $plan->max_invest) {
-            return redirect()->back()->with('error', 'Your amount should not be greater than plan limit');
+            return redirect()->back()->with('error', 'Greater Amount');
         }
         $user = User::where('id', auth()->user()->id)->first();
         if ($user->balance < $request->amount) {
-            return redirect()->back()->with('error', 'you have not enough balance.Deposit more to invest');
+            return redirect()->back()->with('error', 'Less Balance');
         }
 
         $amount = $request->amount;
@@ -83,6 +83,6 @@ class BuyPlanController extends Controller
         $history->day = $request->duration;
         $history->save();
 
-        return redirect()->route('User.Dashboard')->with('success', 'You buy this plan successfully');
+        return redirect()->route('User.Dashboard')->with('success', 'Success');
     }
 }
