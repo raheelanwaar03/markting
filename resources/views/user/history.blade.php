@@ -16,14 +16,14 @@
                     <div class="total-item">
                         <div class="content">
                             <p class="fw_4" style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">INVESTED</p>
-                            <h2 class="fw_6 success_color">RS {{ user_investment() }}</h2>
+                            <h2 class="fw_6 success_color text-center">RS {{ user_investment() }}</h2>
                         </div>
                     </div>
                     <div class="total-item">
                         <div class="content">
                             <p class="fw_4"
                                 style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">Outcome</p>
-                            <h2 class="fw_6 success_color">RS {{ user_outcome() }}</h2>
+                            <h2 class="fw_6 success_color text-center">RS {{ user_outcome() }}</h2>
                         </div>
                     </div>
                 </div>
