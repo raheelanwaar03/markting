@@ -13,7 +13,7 @@ class WidthrawBalanceController extends Controller
 {
     public function widthraw_Balance()
     {
-        $wallet = Wallet::where('user_id',auth()->user()->id)->first();
+        $wallet = Wallet::where('user_id', auth()->user()->id)->first();
         return view('user.widthraw', compact('wallet'));
     }
 
@@ -40,13 +40,19 @@ class WidthrawBalanceController extends Controller
 
     public function store_widthraw(Request $request)
     {
+
+        $check_withdraw = History::where('user_id', auth()->user()->id)->where('type', 'withdraw')->first();
+
+        if ($check_withdraw != null) {
+            return redirect()->route('User.Dashboard')->with('error', 'You alread requested for withdraw');
+        }
+
         $withdraw_money = $request->amount;
         // checking if user have enougn balance
         $user = User::where('id', auth()->user()->id)->first();
         $user_balance = $user->balance;
-        if(auth()->user()->balance == null)
-        {
-            return redirect()->route('User.Dashboard')->with('error','you have not enough balance');
+        if (auth()->user()->balance == null) {
+            return redirect()->route('User.Dashboard')->with('error', 'you have not enough balance');
         }
         if ($request->money > $user_balance) {
             return 'error';
