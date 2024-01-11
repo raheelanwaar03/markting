@@ -56,8 +56,8 @@
                         <p style="color:white">Income Rule</p>
                         <p style="color:white" id="result">
                             <span class="displayAmount"></span>
-                            {{ $amount }} (<span
-                                class="displayAmount"></span>{{ $amount }}*{{ $plan->persentage }}*{{ $plan->duration }})=Total
+                            {{ $amount }} + (<span
+                                class="displayAmount"></span>{{ $amount }}*{{ $plan->persentage }}*{{ $plan->duration }}) = Total
                             {{ $total }} Rs.
                         </p>
                     </div>

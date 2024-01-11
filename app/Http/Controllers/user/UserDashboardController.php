@@ -71,7 +71,7 @@ class UserDashboardController extends Controller
     public function history()
     {
         $history = History::get();
-        return view('user.history',compact('history'));
+        return view('user.history', compact('history'));
     }
 
     public function team()
@@ -81,6 +81,12 @@ class UserDashboardController extends Controller
 
     public function daily_reward()
     {
+        $today = Carbon::today();
+        $today_reward = History::where('user_id', auth()->user()->id)->where('type', 'reward')->where('status', 'recived')->whereDate('created_at', $today)->first();
+        if ($today_reward != null) {
+            return redirect()->back()->with('error', 'You have got your daily reward');
+        }
+
         $buy_plans = BuyPlan::where('user_id', auth()->user()->id)->get();
 
         foreach ($buy_plans as $plan) {
@@ -100,15 +106,13 @@ class UserDashboardController extends Controller
                     $history->type = 'Buy Plan';
                     $history->amount = $plan->amount;
                     $history->save();
-
                 }
             }
         }
 
         $active_plans = BuyPlan::where('user_id', auth()->user()->id)->where('status', 'active')->get();
         $total_daily_profit = 0;
-        foreach($active_plans as $active)
-        {
+        foreach ($active_plans as $active) {
             $total_daily_profit += $active->daily_profit;
         }
         // adding to user wallet
@@ -119,6 +123,7 @@ class UserDashboardController extends Controller
         $history = new History();
         $history->user_id = auth()->user()->id;
         $history->amount = $total_daily_profit;
+        $history->status = 'recived';
         $history->type = 'reward';
         $history->save();
 
@@ -127,21 +132,19 @@ class UserDashboardController extends Controller
 
     public function withdraw_history()
     {
-        $history = History::where('user_id',auth()->user()->id)->where('type','withdraw')->get();
-        return view('user.widthraw_history',compact('history'));
+        $history = History::where('user_id', auth()->user()->id)->where('type', 'withdraw')->get();
+        return view('user.widthraw_history', compact('history'));
     }
 
     public function deposit_history()
     {
-        $history = History::where('user_id',auth()->user()->id)->where('type','deposit')->get();
-        return view('user.widthraw_history',compact('history'));
+        $history = History::where('user_id', auth()->user()->id)->where('type', 'deposit')->get();
+        return view('user.widthraw_history', compact('history'));
     }
 
     public function plan_status()
     {
-        $history = History::where('user_id',auth()->user()->id)->where('type','Buy Plan')->get();
-        return view('user.plan_status',compact('history'));
+        $history = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->get();
+        return view('user.plan_status', compact('history'));
     }
-
-
 }
