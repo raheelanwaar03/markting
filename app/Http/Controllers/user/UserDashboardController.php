@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Notification;
 use App\Models\admin\Plans;
 use App\Models\User;
 use App\Models\user\BuyPlan;
@@ -16,14 +17,16 @@ class UserDashboardController extends Controller
 
     public function welcome()
     {
+        $notification = Notification::get();
         $plans = Plans::where('status', 'unlock')->get();
-        return view('welcome', compact('plans'));
+        return view('welcome', compact('plans','notification'));
     }
 
     public function index()
     {
+        $notification = Notification::get();
         $plans = Plans::where('status', 'unlock')->get();
-        return view('user.dashboard', compact('plans'));
+        return view('user.dashboard', compact('plans','notification'));
     }
 
     public function profile()

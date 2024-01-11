@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Referralsetting;
+use App\Models\admin\Notification;
 use App\Models\User;
 use App\Models\user\Deposit;
 use App\Models\user\History;
@@ -21,6 +22,21 @@ class AdminDashboardController extends Controller
         $user =  User::find($id);
         return view('admin.user.editUser', compact('user'));
     }
+
+    public function notification()
+    {
+        return view('admin.notification');
+    }
+
+    public function store_notification(Request $request)
+    {
+        $notification = new Notification();
+        $notification->title = $request->title;
+        $notification->description = $request->description;
+        $notification->save();
+        return redirect()->back()->with('success','Notification Added');
+    }
+
 
     public function updateUser(Request $request, $id)
     {

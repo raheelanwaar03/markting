@@ -27,7 +27,6 @@
                                         <li class="path9"></li>
                                         <li class="path10"></li>
                                     </ul>
-
                                     <span>Reward</span>
                                 </h3>
                             </div>
