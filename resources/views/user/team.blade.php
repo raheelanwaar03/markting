@@ -30,7 +30,7 @@
                         <input type="text" style="border: none;width:350px;font-size:11px;"
                             value="{{ route('register', ['referral' => Auth::user()->user_code]) }}" id="myInput"
                             readonly>
-                        <i class="icon-copy1" style="font-size: 18px;margin-left:-60px" onclick="copy()"></i>
+                        <i class="icon-copy1" style="font-size: 20px;margin-left:-60px" onclick="copy()"></i>
                     </div>
                 </div>
             </div>
@@ -102,8 +102,8 @@
                     </svg>
                     <p>Invitation Code</p>
                     <span><input type="text" value="{{ auth()->user()->user_code }}" id="input"
-                            style="border: 1px solid black;width:100px" readonly>
-                        <i class="icon-copy1" onclick="copyInputValue()"></i></span>
+                            style="width:100px;background-color:#0e29b1;color:white" readonly>
+                        <i class="icon-copy1" style="font-size: 20px;" onclick="copyInputValue()"></i></span>
                 </a>
                 <p style="padding:15px;">
                     Send your invitation link, Your friends register and invest through your link. You will get great
@@ -142,6 +142,7 @@
             <div class="bottom-amounts">
                 <p>Earned: {{ earned_income() }} Rs.</p>
                 <p>Pending: {{ pending_income() }}</p>
+                <p>Upliner: {{ upliner_income() }}</p>
             </div>
         </div>
     </div>

@@ -100,7 +100,6 @@ function earned_income()
     return $total_money;
 }
 
-
 function pending_income()
 {
     $referral_friends = User::where('referral', auth()->user()->user_code)->where('status', 'pending')->get();
@@ -113,4 +112,31 @@ function pending_income()
 
     $total_money = $count * $first;
     return $total_money;
+}
+
+function upliner_income()
+{
+    $my = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->get();
+    $my_investment = 0;
+    foreach ($my as $investor) {
+        $my_investment += $investor->amount;
+    }
+    return $my_investment;
+
+    $upliners = User::where('user_code', $my->referral)->get();
+
+    if ($upliners != null) {
+
+        foreach ($upliners as $person) {
+            $first_person_investment = History::where('user_id', $person->id)->where('type', 'Buy Plan')->get();
+            $first_user_investment = 0;
+            foreach ($first_person_investment as $investor) {
+                $first_user_investment += $investor->amount;
+            }
+            $first_return_value = $my_investment + $first_user_investment;
+        }
+        return $first_return_value;
+    } else {
+        return $my_investment;
+    }
 }
