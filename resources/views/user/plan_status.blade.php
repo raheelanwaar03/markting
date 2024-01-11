@@ -10,7 +10,7 @@
         </div>
     </div>
     <div id="app-wrap">
-        <div class="app-section st1 mt-1 bg_white_color">
+        <div class="app-section st1 mt-1 bg-warning" style="background-color: rgb(231, 198, 12);">
             <div class="tf-container">
                 <div class="wrap-total">
                     <div class="total-item">

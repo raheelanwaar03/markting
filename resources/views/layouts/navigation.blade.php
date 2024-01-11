@@ -53,7 +53,7 @@
                                 fill="white" stroke="white" stroke-width="0.125" />
                         </svg>
                     </a>
-                    <a href="#" id="btn-popup-up" class="icon-notification1"><span>2</span></a>
+                    <a href="#" id="btn-popup-up" class="icon-notification1"><span>1</span></a>
                 </div>
             </div>
         </div>

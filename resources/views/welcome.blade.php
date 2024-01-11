@@ -2,7 +2,7 @@
 @section('content')
     <div class="card-secton">
         <div class="tf-container">
-            <div class="tf-balance-box">
+            <div class="tf-balance-box bg-warning" style="background-color: rgb(231, 198, 12);">
                 <div class="balance">
                     <div class="row">
                         <div class="col-6 br-right">
@@ -168,7 +168,7 @@
     <div class="mt-5">
         <div class="tf-container">
             <div class="tf-title d-flex justify-content-between">
-                <h3 class="fw_6">AI Technology</h3>
+                <h3 class="fw_6">AI Technology Investment Products</h3>
                 <a href="#" class="primary_color fw_6">View All</a>
             </div>
             <div class="card custom-card">

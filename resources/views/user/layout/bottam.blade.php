@@ -1,21 +1,21 @@
-<div class="bottom-navigation-bar">
+<div class="bottom-navigation-bar" style="background-color: rgb(69, 3, 235)">
     <div class="tf-container">
         <ul class="tf-navigation-bar">
             <li>
-                <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
-                    href="{{ route('User.Dashboard') }}"><i class="icon-home"></i> Home</a>
+                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
+                    href="{{ route('User.Dashboard') }}"><i class="icon-home" ></i> Home</a>
             </li>
             <li>
-                <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
+                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
                     href="{{ route('User.History') }}">
                     <i class="icon-history"></i> History</a>
             </li>
             <li>
-                <a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="{{ route('User.Plan.Status') }}">
+                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light" href="{{ route('User.Plan.Status') }}">
                     <i class="icon-scan-qr-code"></i> </a>
             </li>
             <li>
-                <a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="{{ route('User.Team.View') }}">
+                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light" href="{{ route('User.Team.View') }}">
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12.25" cy="12" r="9.5" stroke="#717171" />
@@ -26,7 +26,7 @@
                     Team</a>
             </li>
             <li>
-                <a class="fw_4 d-flex justify-content-center align-items-center flex-column"
+                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
                     href="{{ route('User.Profile') }}">
                     <i class="icon-user-outline"></i> Profile</a>
             </li>
