@@ -24,6 +24,13 @@ class WidthrawBalanceController extends Controller
 
     public function store_wallet(Request $request)
     {
+        $user = User::where('id',auth()->user()->id)->first();
+        $user_security_key = $user->key;
+        if($request->security_key != $user_security_key)
+        {
+            return redirect()->back()->with('error','Security key Not Match');
+        }
+
         $wallet = Wallet::where('user_id', auth()->user()->id)->first();
         if ($wallet != null) {
             return redirect()->back()->with('error', 'Added');

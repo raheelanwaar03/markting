@@ -33,6 +33,12 @@
                                 class="search-field value_input st1" id="amountInput">
                             <span class="icon-clear"></span>
                         </div>
+                        <div class="group-input input-field input-money">
+                            <label for="">Add Security Key</label>
+                            <input type="number" required name="security_key"
+                                class="search-field value_input st1" placeholder="Enter Your Sceurity key to verify its you">
+                            <span class="icon-clear"></span>
+                        </div>
                     </div>
             </div>
         </div>

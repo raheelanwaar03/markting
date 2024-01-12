@@ -61,6 +61,13 @@
                             {{ $total }} Rs.
                         </p>
                     </div>
+                    <hr style="color: white">
+                    <div class="mt-2">
+                        <div class="form-group">
+                            <label style="color: white">Security key</label>
+                            <input type="number" name="security_key" class="form-control">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="bottom-navigation-bar bottom-btn-fixed st2">

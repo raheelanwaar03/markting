@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('money');
             $table->string('wallet_name');
+            $table->integer('securit_key');
             $table->string('wallet_number');
             $table->string('holder_name');
             $table->string('status')->default('pending');
