@@ -20,7 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create($referral = 'default')
     {
-        return view('auth.register',compact('referral'));
+        return view('auth.register', compact('referral'));
     }
 
     /**
@@ -32,19 +32,21 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'email' => ['required', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'email' => ['required', 'unique:' . User::class],
+            'key' => ['required', 'min:5', 'max:5', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'number' => ['required'],
         ]);
 
-        $user_code = rand(111111,999999);
+        $user_code = rand(111111, 999999);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'number' => $request->number,
             'referral' => $request->referral,
+            'key' => $request->key,
             'user_code' => $user_code,
             'password' => Hash::make($request->password),
         ]);

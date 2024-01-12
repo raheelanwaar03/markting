@@ -30,6 +30,7 @@
             <div class="spinner"></div>
         </div>
     </div>
+    <x-alert />
     <!-- /preload -->
     <div class="header">
         <div class="tf-container">
@@ -45,30 +46,35 @@
                 <h1>Register</h1>
                 <div class="group-input">
                     <label>Name</label>
-                    <input type="text" name="name" placeholder="Themesflat">
+                    <input type="text" name="name" placeholder="Themesflat" required>
                 </div>
                 <div class="group-input">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="Example@gmail">
+                    <input type="email" name="email" placeholder="Example@gmail" required>
                 </div>
                 <div class="group-input">
                     <label>Phone Number</label>
-                    <input type="number" name="number" placeholder="123 4567 890">
+                    <input type="number" name="number" placeholder="123 4567 890" required>
+                </div>
+                <div class="group-input">
+                    <label>Security Key</label>
+                    {{-- <input type="number" name="key" pattern="\d{5}" step="1" required> --}}
+                    <input type="number" name="key" maxlength="5" placeholder="Add your security key" required>
                 </div>
                 <div class="group-input">
                     <label>Password</label>
-                    <input type="password" name="password" placeholder="Enter Your Password">
+                    <input type="password" name="password" placeholder="Enter Your Password" required>
                 </div>
                 <div class="group-input auth-pass-input last">
                     <label>Confirm Password</label>
                     <input type="password" name="password_confirmation" class="password-input"
-                        placeholder="Enter Your Password">
+                        placeholder="Enter Your Password" required>
                     <a class="icon-eye password-addon" id="password-addon"></a>
                 </div>
                 <input type="text" name="referral" value="{{ $referral }}" hidden>
                 <div class="group-cb mt-5">
 
-                    <input type="checkbox" checked class="tf-checkbox">
+                    <input type="checkbox" name="remember" checked class="tf-checkbox">
                     <label class="fw_3">I agree to <a>Terms and condition</a> </label>
                 </div>
                 <button type="submit" class="tf-btn accent large">Create An Account</button>

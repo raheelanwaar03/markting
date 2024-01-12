@@ -58,7 +58,7 @@
 
             </form>
             <div class="auth-line">Or</div>
-            <p class="mb-9 fw-3 text-center">Already have a Account? <a href="{{ route('User.Dashboard') }}"
+            <p class="mb-9 fw-3 text-center">Already have a Account? <a href="{{ route('register') }}"
                     class="auth-link-rg">Sign up</a></p>
         </div>
     </div>

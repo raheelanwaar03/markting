@@ -18,9 +18,9 @@ class status
         if (auth()->user()->status == 'approved') {
             return $next($request);
         } elseif (auth()->user()->status == 'pending') {
-            return redirect()->route('Welcome')->with('error', 'Please wait for admin approvel.Your accout is pending!');
+            return redirect()->route('Welcome')->with('success', 'Success');
         } elseif (auth()->user()->status == 'rejected') {
-            return redirect()->route('Welcome')->with('error', 'Please wait for admin approvel.Your accout is rejected!');
+            return redirect()->route('Welcome')->with('error', 'Wait for admin approvel');
         }
     }
 }
