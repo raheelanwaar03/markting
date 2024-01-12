@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}" />
     <!-- Icons -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/icons-alipay.css') }}">
-
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/styles/swiper-bundle.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/styles.css') }}" />
@@ -28,7 +28,6 @@
     <div class="preload preload-container">
         <div class="preload-logo"></div>
     </div>
-
     <x-alert />
 
     <!-- /preload -->
