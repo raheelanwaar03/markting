@@ -14,21 +14,17 @@
 
 .swal-success {
     background-color: #01bb07;
-    /* Green background color */
     color: #fff;
     font-size: medium;
-    /* White text color */
-    width: 100px;
-    /* Adjust the width as needed */
+    width: 150px;
     border-radius: 8px;
-    /* Optional: Add rounded corners */
 }
 
 .swal-error {
     background-color: #e32b0a;
     font-size: medium;
     color: #fff;
-    width: 100px;
+    width: 150px;
     border-radius: 8px;
 }
 
