@@ -162,4 +162,12 @@ class UserDashboardController extends Controller
         $history = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->where('status', 'inactive')->get();
         return view('user.inactive_plans', compact('history'));
     }
+
+    public function claimed()
+    {
+        $history = History::where('user_id', auth()->user()->id)->where('type', 'reward')->where('status', 'recived')->get();
+        return view('user.inactive_plans', compact('history'));
+    }
+
+
 }

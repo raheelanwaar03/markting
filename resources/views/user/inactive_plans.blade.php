@@ -33,16 +33,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    <a href="{{ route('User.Plan.Status') }}" style="text-decoration: none">
+                    <a href="{{ route('User.Plan.Status') }}" style="text-decoration:none">
                         <div class="one-div">
                             <i class="fa-solid fa-hourglass-half" style="margin-left:35px;"></i> <br>
-                            <span style="color: #3a20c8; margin-left: 20px;">Running</span>
+                            <span style="color: #3a20c8; margin-left: 20px;">Active</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="{{ route('User.Claimed.Plan.Status') }}" style="text-decoration:none">
+                        <div class="one-div">
+                            <i class="fa-solid fa-hourglass-half" style="margin-left:35px;"></i> <br>
+                            <span style="color: #3a20c8; margin-left: 20px;">Claimed</span>
                         </div>
                     </a>
                 </div>
                 <div class="col-4">
                     <div class="three-div">
-                        <a href="{{ route('User.Inactive.Plan.Status') }}" style="text-decoration: none">
+                        <a href="{{ route('User.Inactive.Plan.Status') }}" style="text-decoration:none;">
                             <i id="icons" class="fa-solid fa-cubes-stacked" style="margin-left: 20px;"></i> <br>
                             <span style="color: #3a20c8; margin-left: 20px;">Completed</span>
                         </a>

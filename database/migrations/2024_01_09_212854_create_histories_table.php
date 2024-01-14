@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('status')->default('pending');
             $table->integer('amount');
             $table->string('type');
-            $table->string('day')->default('day');
+            $table->string('day')->default('2');
             $table->timestamps();
         });
     }
