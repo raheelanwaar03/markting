@@ -33,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    <a href="{{ route('User.Plan.Status') }}" style="text-decoration:none">
+                    <a href="{{ route('User.Plan.Status') }}" style="text-decoration: none">
                         <div class="one-div">
                             <i class="fa-solid fa-hourglass-half" style="margin-left:35px;"></i> <br>
                             <span style="color: #3a20c8; margin-left: 20px;">Running</span>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-4">
                     <div class="three-div">
-                        <a href="{{ route('User.Inactive.Plan.Status') }}" style="text-decoration:none;">
+                        <a href="{{ route('User.Inactive.Plan.Status') }}" style="text-decoration: none">
                             <i id="icons" class="fa-solid fa-cubes-stacked" style="margin-left: 20px;"></i> <br>
                             <span style="color: #3a20c8; margin-left: 20px;">Completed</span>
                         </a>
@@ -98,6 +98,7 @@
                 </div>
             </div>
         </div>
+
 
         <script type="text/javascript" src="{{ asset('assets/javascript/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/javascript/bootstrap.min.js') }}"></script>

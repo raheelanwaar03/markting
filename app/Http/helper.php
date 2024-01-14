@@ -61,7 +61,7 @@ function user_outcome()
 
 function total_team()
 {
-    $user = User::where('referral',auth()->user()->user_code)->get()->count();
+    $user = User::where('referral', auth()->user()->user_code)->get()->count();
     return $user;
 }
 
@@ -144,5 +144,25 @@ function upliner_income()
         return $first_return_value;
     } else {
         return $my_investment;
+    }
+}
+
+
+if (!function_exists('calculateProgression')) {
+    function calculateProgression($day,$amount)
+    {
+        $increments = $day; // Number of increments (20% each)
+        $incrementValue = $amount; // Percentage increment
+        $progression = [];
+
+        // Calculate the step size for each increment
+        $step = $day / $increments;
+
+        // Generate the progression array
+        for ($i = 1; $i <= $increments; $i++) {
+            $progression = $i * $step * ($incrementValue / 100);
+        }
+
+        return $progression;
     }
 }

@@ -113,6 +113,7 @@ class UserDashboardController extends Controller
                     $history->status = 'inactive';
                     $history->type = 'Buy Plan';
                     $history->amount = $plan->amount;
+                    $history->day = $plan->duration;
                     $history->save();
                 }
             }
@@ -152,7 +153,13 @@ class UserDashboardController extends Controller
 
     public function plan_status()
     {
-        $history = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->get();
+        $history = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->where('status','active')->get();
         return view('user.plan_status', compact('history'));
+    }
+
+    public function inactive()
+    {
+        $history = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->where('status', 'inactive')->get();
+        return view('user.inactive_plans', compact('history'));
     }
 }

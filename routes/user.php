@@ -32,6 +32,7 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user', 'status')->gro
     Route::get('Withdraw/History',[UserDashboardController::class,'withdraw_history'])->name('Withdraw.History');
     Route::get('Deposit/History',[UserDashboardController::class,'deposit_history'])->name('Deposit.History');
     Route::get('Plans/status',[UserDashboardController::class,'plan_status'])->name('Plan.Status');
+    Route::get('Inactive/Plans',[UserDashboardController::class,'inactive'])->name('Inactive.Plan.Status');
 
 
 });

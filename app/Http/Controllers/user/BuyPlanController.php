@@ -81,7 +81,7 @@ class BuyPlanController extends Controller
         $history = new History();
         $history->user_id = auth()->user()->id;
         $history->status = 'active';
-        $history->amount = $request->amount;
+        $history->amount = $request->profit;
         $history->type = 'Buy Plan';
         $history->day = $request->duration;
         $history->save();
