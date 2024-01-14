@@ -1,0 +1,172 @@
+/* Global Css Start */
+body{
+    margin: 0;
+    padding: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}   
+/* Global Css End*/
+
+/* Typography Css start*/
+.first-div{
+    width: 100%;
+    height: 296px;
+    background-color: #3a20c8;
+}
+#team-text{
+    color: white;
+}
+.second-div{
+    background-color: white;
+    width: 95%;
+    height: 75px;
+}
+.third-div{
+    background-color: rgb(44, 43, 43);
+    width: 96%;
+    height: 158px;
+    margin-top: 20px;
+}
+.text-divs{
+    float: left;
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 13px;
+}
+.clear{
+    clear: both;
+}
+.div-one{
+    margin-left: 10px;
+}
+.div-two{
+    margin-left: 20px;
+    color: rgb(200, 13, 13);
+}
+.div-three{
+    margin-left: 30px;
+    color: #3a20c8;
+}
+#link-div{
+    padding-top: 10px;
+    width: 70%;
+    height: 110px;
+    font-size: large;
+    float: left;
+    border-bottom: 1px solid whitesmoke;
+}
+.text-white{
+    border-bottom: 1px solid whitesmoke;
+    
+}
+#div-copy{
+    background-color: #3a20c8;
+    width: 15%;
+    height: 38px;
+    float:left;
+    color: white;
+    margin-left: 20px;
+    margin-top: 16px;
+}
+.fourth-div{
+    width: 100%;
+    height: 390px;
+}
+h5{
+    padding: 8px;
+    font-weight: bold;
+}
+.card{
+    border: 1px solid #3a20c8;
+    border-radius: 15px;
+}
+#card-div{
+    width: 100%;
+    height: 80px;
+}
+#level-team{
+    width: 50%;
+    height: 80px;
+    padding-left: 10px;
+    padding-top: 5px;
+    float: left;
+}
+#commision-div{
+    width: 50%;
+    height: 80px;
+    float: right;
+}
+.com-text{
+    position: relative;
+    left: 12px;
+    font-size: 12px;
+    color: #3a20c8;
+}
+.text-com-right{
+    color: #3a20c8;
+    font-size: 15px;
+    position: relative;
+    left: 75px;
+}
+.gt-icon{
+    float: right;
+    margin-top: 8px;
+    margin-right: 10px;
+    color: #3a20c8;
+    font-size: large;
+}
+.heading{
+    color: #3a20c8;
+    margin: auto;
+}
+.one-div{
+    border-top: 2px solid #3a20c8;
+    width: 100%;
+    height: 80px;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+.two-div{
+    background-color: lightgrey;
+    width: 140%;
+    height: 80px;
+    margin-top: 20px;
+    padding-top: 10px;
+
+}
+.three-div{
+    background-color: lightgrey;
+    width: 100%;
+    height: 80px;
+    margin-top: 20px;
+    padding-top: 10px;
+
+}
+.fa-hourglass-half{
+    color: #3a20c8;
+}
+#running-text{
+    color: #3a20c8;
+}
+#icons{
+    color: grey;
+}
+.second-last{
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+}
+#no-item-div{
+    font-weight: bold;
+   
+    padding-top: 120px;
+}
+#last-icon{
+    margin-top: 60px;
+    color: #3a20c8;
+   
+}
+#last-icon-r{
+    color: #3a20c8;
+    
+    
+}

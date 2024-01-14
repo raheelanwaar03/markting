@@ -59,6 +59,12 @@ function user_outcome()
     return $total_outcome;
 }
 
+function total_team()
+{
+    $user = User::where('referral',auth()->user()->user_code)->get()->count();
+    return $user;
+}
+
 function Total_Team_Investment()
 {
     $my = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->get();
