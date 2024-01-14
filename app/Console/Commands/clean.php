@@ -72,6 +72,19 @@ class clean extends Command
         $user->status = 'approved';
         $user->save();
 
+        $user = new User();
+        $user->name = 'User';
+        $user->email = 'test123@gmail.com';
+        $user->referral = 'default';
+        $user->balance = '10000';
+        $user->user_code = '123457';
+        $user->number = '03000000000';
+        $user->password = Hash::make('asdfasdf');
+        $user->role = 'user';
+        $user->key = '36100';
+        $user->status = 'approved';
+        $user->save();
+
         return Command::SUCCESS;
     }
 }

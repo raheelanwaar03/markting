@@ -102,20 +102,12 @@
                         <li class="wallet-card-item">
                             @if (auth()->user())
                                 <a class="fw_6 btn-card-popup" href="whatsapp://send?Team=03149720318">
-                                    <ul class="icon icon-group-credit-card">
-                                        <li class="path1"></li>
-                                        <li class="path2"></li>
-                                        <li class="path3"></li>
-                                    </ul>
+                                    <img src="{{ asset('assets/support.png') }}" style="height: 30px;width:30px">
                                     Support
                                 </a>
                             @else
                                 <a class="fw_6 btn-card-popup" href="{{ route('login') }}">
-                                    <ul class="icon icon-group-credit-card">
-                                        <li class="path1"></li>
-                                        <li class="path2"></li>
-                                        <li class="path3"></li>
-                                    </ul>
+                                    <img src="{{ asset('assets/support.png') }}" style="height: 30px;width:30px">
                                     Support
                                 </a>
                             @endif

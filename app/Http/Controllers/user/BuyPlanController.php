@@ -56,10 +56,9 @@ class BuyPlanController extends Controller
 
     public function store_plan(Request $request, $id)
     {
-        $key = $request->security_key;
         $user = User::where('id', auth()->user()->id)->first();
         $user_security_key = $user->key;
-        if ($key != $user_security_key) {
+        if ($user_security_key != $request->security_key) {
             return redirect()->route('User.Dashboard')->with('error', 'Security key Not Match');
         }
         // getting user enter amount

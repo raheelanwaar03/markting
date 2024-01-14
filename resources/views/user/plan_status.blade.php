@@ -1,34 +1,55 @@
-@extends('user.layout.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-    <div class="header mb-1 is-fixed">
-        <div class="tf-container">
-            <div class="tf-statusbar d-flex justify-content-center align-items-center">
-                <a href="#" class="back-btn"> <i class="icon-left"></i> </a>
-                <h3>Trade</h3>
-            </div>
-        </div>
-    </div>
-    <div id="app-wrap">
-        <div class="app-section st1 mt-1 bg-warning" style="background-color: rgb(231, 198, 12);">
-            <div class="tf-container">
-                <div class="wrap-total">
-                    <div class="total-item">
-                        <div class="content">
-                            <p class="fw_4" style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">INVESTED</p>
-                            <h2 class="fw_6 success_color text-center">RS {{ user_investment() }}</h2>
-                        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade</title>
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/images/logo.png') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/fonts/icons-alipay.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/styles.css') }}" />
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('assets/app/icons/icon-192x192.png') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar shadow">
+            <h3 class="heading">Trade</h3>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="one-div">
+                        <i class="fa-solid fa-hourglass-half" style="margin-left:35px;"></i> <br>
+                        <span style="color: #3a20c8; margin-left: 20px;">Running</span>
                     </div>
-                    <div class="total-item">
-                        <div class="content">
-                            <p class="fw_4" style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">Outcome</p>
-                            <h2 class="fw_6 success_color text-center">RS {{ user_outcome() }}</h2>
-                        </div>
+                </div>
+                <div class="col-4">
+                    <div class="two-div">
+                        <i id="icons" class="fa-solid fa-arrows-up-to-line" style="margin-left: 30px;"></i> <br>
+                        <span style="color: grey; margin-left: 20px;">Claimed</span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="three-div">
+                        <i id="icons" class="fa-solid fa-cubes-stacked" style="margin-left: 20px;"></i> <br>
+                        <span style="color: grey;">Completed</span>
                     </div>
                 </div>
             </div>
         </div>
-
 
         <div class="app-section st1 mt-1 mb-5 bg_white_color">
             <div class="tf-container">
@@ -44,13 +65,15 @@
                                     <div class="content">
                                         <div class="d-flex justify-content-around align-items-center">
                                             <h4>{{ $item->type }}</h4>
-                                            @if ( $item->status == 'pending')
-                                            <p style="color:red">({{ $item->status }})</p>
+                                            @if ($item->status == 'pending')
+                                                <p style="color:red">({{ $item->status }})</p>
                                             @else
-                                            <p style="color:green">({{ $item->status }})</p>
+                                                <p style="color:green">({{ $item->status }})</p>
                                             @endif
                                         </div>
-                                        <p>Buy Date {{ $item->created_at->format('m/d/Y') }} Ends In:{{ $item->day }}</p>
+                                        <p>Buy Date {{ $item->created_at->format('m/d/Y') }} Ends
+                                            In:{{ $item->day }}
+                                        </p>
                                     </div>
                                 </div>
                                 <span class="num-val success_color">RS {{ $item->amount }}</span>
@@ -62,6 +85,23 @@
                 </div>
             </div>
         </div>
-    </div>
-    @include('user.layout.bottam')
-@endsection
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div id="last-div" class="text-center">
+                        <i id="last-icon" class="fa-solid fa-caret-left"></i> &nbsp;&nbsp &nbsp;&nbsp
+                        <i id="last-icon-r" class="fa-solid fa-caret-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="{{ asset('assets/javascript/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/javascript/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/javascript/swiper-bundle.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/javascript/swiper.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/javascript/main.js') }}"></script>
+
+</body>
+
+</html>

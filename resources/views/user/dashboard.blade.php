@@ -58,6 +58,12 @@
                         </li>
                         <li class="wallet-card-item">
                             <a class="fw_6 btn-card-popup" href="#">
+                                <img src="{{ asset('assets/support.png') }}" style="height: 30px;width:30px">
+                                Support
+                            </a>
+                        </li>
+                        <li class="wallet-card-item">
+                            <a class="fw_6" href="{{ route('App') }}">
                                 <ul class="icon icon-my-qr">
                                     <li class="path1"></li>
                                     <li class="path2"></li>
@@ -67,17 +73,7 @@
                                     <li class="path6"></li>
                                     <li class="path7"></li>
                                 </ul>
-                                Support
-                            </a>
-                        </li>
-                        <li class="wallet-card-item">
-                            <a class="fw_6" href="{{ route('User.Daily.Reward') }}">
-                                <ul class="icon icon-group-credit-card">
-                                    <li class="path1"></li>
-                                    <li class="path2"></li>
-                                    <li class="path3"></li>
-                                </ul>
-                                Daily Reward
+                                App
                             </a>
                         </li>
                     </ul>

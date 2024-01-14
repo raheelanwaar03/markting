@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('amount');
             $table->string('daily_profit');
             $table->string('total_profit');
-            $table->integer('securit_key');
             $table->string('duration');
             $table->string('status')->default('active');
             $table->string('current')->default('unlock');
