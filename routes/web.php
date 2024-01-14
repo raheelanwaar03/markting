@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',[UserDashboardController::class,'welcome'])->name('Welcome');
+Route::get('/App',[UserDashboardController::class,'app'])->name('App');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

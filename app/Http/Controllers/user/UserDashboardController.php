@@ -19,14 +19,19 @@ class UserDashboardController extends Controller
     {
         $notification = Notification::get();
         $plans = Plans::where('status', 'unlock')->get();
-        return view('welcome', compact('plans','notification'));
+        return view('welcome', compact('plans', 'notification'));
+    }
+
+    public function app()
+    {
+        return view('user.app');
     }
 
     public function index()
     {
         $notification = Notification::get();
         $plans = Plans::where('status', 'unlock')->get();
-        return view('user.dashboard', compact('plans','notification'));
+        return view('user.dashboard', compact('plans', 'notification'));
     }
 
     public function profile()

@@ -121,7 +121,7 @@
                             @endif
                         </li>
                         <li class="wallet-card-item">
-                            <a class="fw_6" href="{{ route('User.Dashboard') }}">
+                            <a class="fw_6" href="{{ route('App') }}">
                                 <ul class="icon icon-my-qr">
                                     <li class="path1"></li>
                                     <li class="path2"></li>
