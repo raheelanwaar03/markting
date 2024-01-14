@@ -36,15 +36,15 @@
                     <a href="{{ route('User.Plan.Status') }}" style="text-decoration:none">
                         <div class="one-div">
                             <i class="fa-solid fa-hourglass-half" style="margin-left:35px;"></i> <br>
-                            <span style="color: #3a20c8; margin-left: 20px;">Active</span>
+                            <span style="color: grey; margin-left: 20px;">Active</span>
                         </div>
                     </a>
                 </div>
                 <div class="col-4">
                     <a href="{{ route('User.Claimed.Plan.Status') }}" style="text-decoration:none">
-                        <div class="one-div">
-                            <i class="fa-solid fa-hourglass-half" style="margin-left:35px;"></i> <br>
-                            <span style="color: #3a20c8; margin-left: 20px;">Claimed</span>
+                        <div class="two-div">
+                            <i id="icons" class="fa-solid fa-arrows-up-to-line" style="margin-left: 30px;"></i>  <br>
+                            <span  style="color: #3a20c8; margin-left: 20px;">Claimed</span>
                         </div>
                     </a>
                 </div>

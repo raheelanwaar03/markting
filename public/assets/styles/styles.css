@@ -11,22 +11,29 @@
 }
 
 /* Add this to your project's CSS file or style section */
-
 .swal-success {
     background-color: #01bb07;
+    /* Green background color */
     color: #fff;
     font-size: medium;
+    /* White text color */
     width: 200px;
+    /* Adjust the width as needed */
     border-radius: 8px;
+    /* Optional: Add rounded corners */
 }
 
 .swal-error {
     background-color: #e32b0a;
     font-size: medium;
     color: #fff;
+    /* White text color */
     width: 200px;
+    /* Adjust the width as needed */
     border-radius: 8px;
+    /* Optional: Add rounded corners */
 }
+
 
 .secondary2_color {
     color: #c5c5c5;
