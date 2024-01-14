@@ -28,7 +28,7 @@
     <div class="container">
         <nav class="navbar shadow">
             <h3 class="heading">Trade</h3>
-            <a href="{{ route('User.Daily.Reward') }}" class="btn btn-primary">Get Reward</a>
+            <a href="{{ route('User.Daily.Reward') }}" class="btn btn-primary">Collect Reward</a>
         </nav>
         <div class="container">
             <div class="row">
