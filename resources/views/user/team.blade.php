@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
+
+    {{-- <link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/styles.css') }}" />
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('assets/app/icons/icon-192x192.png') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> --}}
+
+
 </head>
 
 <body>
@@ -61,42 +71,87 @@
                         </div>
                     </div>
                 </div>
+                <div class="bottom-navigation-bar"
+                    style="background-color: rgb(69, 3, 235); position: fixed;width:90%;bottom: 10px;">
+                    <div class="tf-container">
+                        <ul class="tf-navigation-bar d-flex justify-content-around align-items-center mt-3"
+                            style="list-style-type:none">
+                            <li>
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
+                                    style="text-decoration:none;" href="{{ route('User.Dashboard') }}">
+                                    <img src="{{ asset('assets/home.png') }}"
+                                        style="color:white;height: 30px;width:30px"> Home
+                                </a>
+                            </li>
+                            <li>
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
+                                    style="text-decoration:none" href="{{ route('User.History') }}">
+                                    <img src="{{ asset('assets/chart.png') }}" style="height: 30px;width:30px">
+                                    History
+                                </a>
+                            </li>
+                            <li>
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
+                                    style="text-decoration:none" href="{{ route('User.Plan.Status') }}">
+                                    <img src="{{ asset('assets/checklist.png') }}"
+                                        style="color:white;height: 30px;width:30px">
+                                    Trade
+                                </a>
+                            </li>
+                            <li>
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
+                                    style="text-decoration:none" href="{{ route('User.Team.View') }}">
+                                    <img src="{{ asset('assets/user.png') }}"
+                                        style="color:white;height: 30px;width:30px">Team
+                                </a>
+                            </li>
+                            <li>
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
+                                    style="text-decoration:none" href="{{ route('User.Profile') }}">
+                                    <img src="{{ asset('assets/profile.png') }}"
+                                        style="color:white;height: 30px;width:30px">
+                                    Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {{-- @include('user.layout.bottam') --}}
             </div>
         </div>
     </div>
+    <footer>
+        <script>
+            function copy() {
+                // Get the text field
+                var copyText = document.getElementById("myInput");
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                navigator.clipboard.writeText(copyText.value);
+                // Alert the copied text
+                alert("Copied");
+            }
+        </script>
+
+        <script>
+            function copyInputValue() {
+                // Get the input element
+                var inputElement = document.getElementById("input");
+
+                // Select the text in the input element
+                inputElement.select();
+                inputElement.setSelectionRange(0, 99999); // For mobile devices
+
+                // Copy the selected text to the clipboard
+                document.execCommand("copy");
+
+                // Deselect the text (optional)
+                window.getSelection().removeAllRanges();
+
+                // Notify the user that the text has been copied (optional)
+                alert("Copied");
+            }
+        </script>
+    </footer>
 </body>
-<footer>
-    <script>
-        function copy() {
-            // Get the text field
-            var copyText = document.getElementById("myInput");
-            copyText.select();
-            copyText.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(copyText.value);
-            // Alert the copied text
-            alert("Copied");
-        }
-    </script>
-
-    <script>
-        function copyInputValue() {
-            // Get the input element
-            var inputElement = document.getElementById("input");
-
-            // Select the text in the input element
-            inputElement.select();
-            inputElement.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the selected text to the clipboard
-            document.execCommand("copy");
-
-            // Deselect the text (optional)
-            window.getSelection().removeAllRanges();
-
-            // Notify the user that the text has been copied (optional)
-            alert("Copied");
-        }
-    </script>
-</footer>
 
 </html>
