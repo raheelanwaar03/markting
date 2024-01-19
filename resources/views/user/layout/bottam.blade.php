@@ -1,4 +1,4 @@
-<div class="bottom-navigation-bar" style="background-color: white">
+<div class="bottom-navigation-bar" style="background-color: white;border:1px solid #0e6315">
     <div class="tf-container">
         <ul class="tf-navigation-bar">
             <li>
