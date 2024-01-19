@@ -72,38 +72,38 @@
                         <ul class="tf-navigation-bar d-flex justify-content-around align-items-center mt-3"
                             style="list-style-type:none">
                             <li>
-                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                                     style="text-decoration:none;" href="{{ route('User.Dashboard') }}">
                                     <img src="{{ asset('assets/home.png') }}"
                                         style="color:white;height: 30px;width:30px"> Home
                                 </a>
                             </li>
                             <li>
-                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
-                                    style="text-decoration:none" href="{{ route('User.History') }}">
-                                    <img src="{{ asset('assets/chart.png') }}" style="height: 30px;width:30px">
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
+                                    href="{{ route('User.History') }}">
+                                    <img src="{{ asset('assets/history.png') }}" style="height: 30px;width:30px">
                                     History
                                 </a>
                             </li>
                             <li>
-                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
-                                    style="text-decoration:none" href="{{ route('User.Plan.Status') }}">
-                                    <img src="{{ asset('assets/checklist.png') }}"
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
+                                    href="{{ route('User.Plan.Status') }}">
+                                    <img src="{{ asset('assets/trade.png') }}"
                                         style="color:white;height: 30px;width:30px">
                                     Trade
                                 </a>
                             </li>
                             <li>
-                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
-                                    style="text-decoration:none" href="{{ route('User.Team.View') }}">
-                                    <img src="{{ asset('assets/user.png') }}"
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
+                                    href="{{ route('User.Team.View') }}">
+                                    <img src="{{ asset('assets/team.png') }}"
                                         style="color:white;height: 30px;width:30px">Team
                                 </a>
                             </li>
                             <li>
-                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
-                                    style="text-decoration:none" href="{{ route('User.Profile') }}">
-                                    <img src="{{ asset('assets/profile.png') }}"
+                                <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
+                                    href="{{ route('User.Profile') }}">
+                                    <img src="{{ asset('assets/male.png') }}"
                                         style="color:white;height: 30px;width:30px">
                                     Profile</a>
                             </li>

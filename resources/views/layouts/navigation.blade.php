@@ -35,8 +35,7 @@
         <div class="tf-container">
             <div class="tf-topbar d-flex justify-content-between align-items-center">
                 <a class="user-info d-flex justify-content-between align-items-center" href="69_profile.html">
-                    <img src="https://www.shutterstock.com/image-vector/default-avatar-profile-icon-social-600nw-1677509740.jpg"
-                        alt="image">
+                    <img src="{{ asset('assets/profile.jpg') }}" alt="image">
 
                     <div class="content">
                         <h4 class="white_color">New Hexa Network</h4>

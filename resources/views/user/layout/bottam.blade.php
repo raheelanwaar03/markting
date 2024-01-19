@@ -24,13 +24,13 @@
             <li>
                 <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
                     href="{{ route('User.Team.View') }}">
-                    <img src="{{ asset('assets/team.webp') }}" style="color:white;height: 30px;width:30px">Team
+                    <img src="{{ asset('assets/team.png') }}" style="color:white;height: 30px;width:30px">Team
                 </a>
             </li>
             <li>
                 <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
                     href="{{ route('User.Profile') }}">
-                    <img src="{{ asset('assets/profile.jpg') }}" style="color:white;height: 30px;width:30px">
+                    <img src="{{ asset('assets/male.png') }}" style="color:white;height: 30px;width:30px">
                     Profile</a>
             </li>
         </ul>

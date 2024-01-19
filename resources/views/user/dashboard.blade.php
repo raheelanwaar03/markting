@@ -36,43 +36,51 @@
                 <div class="wallet-footer">
                     <ul class="d-flex justify-content-between align-items-center">
                         <li class="wallet-card-item">
-                            <a href="javascript:void(0);" class="fw_6 text-center" id="btn-popup-down">
-                                <ul class="icon icon-group-transfers">
-                                    <li class="path1"></li>
-                                    <li class="path2"></li>
-                                    <li class="path3"></li>
-                                </ul>
-                                Deposit
-                            </a>
+                            @if (auth()->user())
+                                <a href="{{ route('User.Transfer') }}" class="fw_6 text-center" id="btn-popup-down">
+                                    <img src="{{ asset('assets/deposit.png') }}" alt="deposit"
+                                        style="color:white;height: 30px;width:30px">
+                                    Deposit
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}" class="fw_6 text-center" id="btn-popup-down">
+                                    <img src="{{ asset('assets/deposit.png') }}" alt="deposit"
+                                        style="color:white;height: 30px;width:30px">
+                                    Deposit
+                                </a>
+                            @endif
                         </li>
                         <li class="wallet-card-item">
-                            <a class="fw_6" href="{{ route('User.Widthraw.View') }}">
-                                <ul class="icon icon-topup">
-                                    <li class="path1"></li>
-                                    <li class="path2"></li>
-                                    <li class="path3"></li>
-                                    <li class="path4"></li>
-                                </ul>
-                                Withdraw
-                            </a>
+                            @if (auth()->user())
+                                <a class="fw_6" href="{{ route('User.Widthraw.View') }}">
+                                    <img src="{{ asset('assets/withdraw.png') }}" alt="deposit"
+                                        style="color:white;height: 30px;width:30px">
+                                    Withdraw
+                                </a>
+                            @else
+                                <a class="fw_6" href="{{ route('login') }}">
+                                    <img src="{{ asset('assets/withdraw.png') }}" alt="deposit"
+                                        style="color:white;height: 30px;width:30px">
+                                    Withdraw
+                                </a>
+                            @endif
                         </li>
                         <li class="wallet-card-item">
-                            <a class="fw_6 btn-card-popup" href="#">
-                                <img src="{{ asset('assets/support.png') }}" style="height: 30px;width:30px">
-                                Support
-                            </a>
+                            @if (auth()->user())
+                                <a class="fw_6 btn-card-popup" href="whatsapp://send?Team=03149720318">
+                                    <img src="{{ asset('assets/support.png') }}" style="height: 30px;width:30px">
+                                    Support
+                                </a>
+                            @else
+                                <a class="fw_6 btn-card-popup" href="{{ route('login') }}">
+                                    <img src="{{ asset('assets/support.png') }}" style="height: 30px;width:30px">
+                                    Support
+                                </a>
+                            @endif
                         </li>
                         <li class="wallet-card-item">
                             <a class="fw_6" href="{{ route('App') }}">
-                                <ul class="icon icon-my-qr">
-                                    <li class="path1"></li>
-                                    <li class="path2"></li>
-                                    <li class="path3"></li>
-                                    <li class="path4"></li>
-                                    <li class="path5"></li>
-                                    <li class="path6"></li>
-                                    <li class="path7"></li>
-                                </ul>
+                                <img src="{{ asset('assets/qr.png') }}" style="height: 30px;width:30px">
                                 App
                             </a>
                         </li>
@@ -131,7 +139,8 @@
 
                         <!-- "Visit" button on the right -->
                         <div class="ml-auto">
-                            <a href="{{ route('User.Invest.Plan', $plan->id) }}" class="btn" style="background:rgb(140, 228, 7);color:white">Start</a>
+                            <a href="{{ route('User.Invest.Plan', $plan->id) }}" class="btn"
+                                style="background:rgb(140, 228, 7);color:white">Start</a>
                         </div>
                     </div>
                 @endforeach
