@@ -2,7 +2,7 @@
 @section('content')
     <div class="card-secton">
         <div class="tf-container">
-            <div class="tf-balance-box bg-warning" style="background-color: rgb(231, 198, 12);">
+            <div class="tf-balance-box">
                 <div class="balance">
                     <div class="row">
                         <div class="col-6">

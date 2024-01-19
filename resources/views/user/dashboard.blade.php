@@ -2,7 +2,7 @@
 @section('content')
     <div class="card-secton">
         <div class="tf-container">
-            <div class="tf-balance-box bg-warning" style="background-color: rgb(231, 198, 12);">
+            <div class="tf-balance-box">
                 <div class="balance">
                     <div class="row">
                         <div class="col-6">
@@ -124,7 +124,6 @@
                         <div class="pl-3">
                             <h5 class="card-title">{{ $plan->plan_name }} - {{ $plan->duration }} Days</h5>
                             <p class="card-text">({{ $plan->min_invest }}-{{ $plan->max_invest }})
-                                {{-- <span style="background-color:cyan;color:white;padding: 5px;border-radius: 20px;">Experimental</span> --}}
                                 <br>
                                 <b>({{ $plan->persentage }}%)</b>
                             </p>
@@ -132,7 +131,7 @@
 
                         <!-- "Visit" button on the right -->
                         <div class="ml-auto">
-                            <a href="{{ route('User.Invest.Plan', $plan->id) }}" class="btn btn-primary">Start</a>
+                            <a href="{{ route('User.Invest.Plan', $plan->id) }}" class="btn" style="background:rgb(140, 228, 7);color:white">Start</a>
                         </div>
                     </div>
                 @endforeach

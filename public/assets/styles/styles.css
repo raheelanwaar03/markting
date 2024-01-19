@@ -1,5 +1,5 @@
 .primary_color {
-    color: #533dea;
+    color: #01bb07;
 }
 
 .on_surface_color {
@@ -468,7 +468,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #533dea;
+    color: #01bb07;
     text-decoration: none;
     outline: 0;
     -webkit-transition: all 0.3s ease-in-out;
@@ -537,7 +537,7 @@ input[type=submit] {
     font-size: 16px;
     line-height: 24px;
     background-color: #ffffff;
-    border: 1px solid #533dea;
+    border: 1px solid #01bb07;
     color: #ffffff;
     text-transform: capitalize;
     text-align: center;
@@ -550,8 +550,8 @@ input[type=submit] {
 }
 
 button:hover {
-    color: #533dea;
-    border-color: #533dea;
+    color: #01bb07;
+    border-color: #01bb07;
     background-color: #ffffff;
 }
 
@@ -603,7 +603,7 @@ input[type=color]:focus {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    border-color: #533dea;
+    border-color: #01bb07;
 }
 
 textarea:-moz-placeholder,
@@ -668,7 +668,7 @@ input[type=radio] {
     border-color: #717171;
     cursor: pointer;
     font-size: 16px;
-    accent-color: #533dea;
+    accent-color: #01bb07;
 }
 
 textarea {
@@ -819,7 +819,7 @@ textarea.form-textarea[rows] {
 }
 
 .tf-switch-check:checked:checked[type=checkbox] {
-    background: #533dea;
+    background: #01bb07;
     transition: 0.5s;
 }
 
@@ -911,7 +911,7 @@ textarea.form-textarea[rows] {
 
 .tf-radio[type=radio] {
     position: relative;
-    border: 1px solid #533dea;
+    border: 1px solid #01bb07;
     border-radius: 50px;
     background: none;
     cursor: pointer;
@@ -933,7 +933,7 @@ textarea.form-textarea[rows] {
     border-radius: 50%;
     width: 12px;
     height: 12px;
-    background-color: #533dea;
+    background-color: #01bb07;
     z-index: 2;
     opacity: 0;
 }
@@ -951,8 +951,8 @@ textarea.form-textarea[rows] {
 }
 
 .tf-radio[type=radio].style-2:checked {
-    background-color: #533dea;
-    border-color: #533dea;
+    background-color: #01bb07;
+    border-color: #01bb07;
 }
 
 .tf-radio[type=radio].style-2:checked::before {
@@ -993,7 +993,7 @@ textarea.form-textarea[rows] {
 }
 
 .text-primary {
-    color: #533dea !important;
+    color: #01bb07 !important;
 }
 
 .text-success {
@@ -1026,13 +1026,13 @@ textarea.form-textarea[rows] {
 }
 
 .tf-btn.accent {
-    background-color: #533dea;
-    border: 1px solid #533dea;
+    background-color: #01bb07;
+    border: 1px solid #01bb07;
     color: #ffffff;
 }
 
 .tf-btn.accent:hover {
-    color: #533dea;
+    color: #01bb07;
     background-color: #ffffff;
 }
 
@@ -1102,14 +1102,14 @@ textarea.form-textarea[rows] {
 }
 
 .tf-btn.outline {
-    color: #533dea;
-    border: 1px solid #533dea;
+    color: #01bb07;
+    border: 1px solid #01bb07;
     background-color: #ffffff;
 }
 
 .tf-btn.outline:hover {
-    background-color: #533dea;
-    border: 1px solid #533dea;
+    background-color: #01bb07;
+    border: 1px solid #01bb07;
     color: #ffffff;
 }
 
@@ -1300,7 +1300,7 @@ textarea.form-textarea[rows] {
 
 .tabs-food .nav-tab.active {
     color: #1e1e1e;
-    border-bottom: 2px solid #533dea;
+    border-bottom: 2px solid #01bb07;
 }
 
 .tab-gift-item {
@@ -1341,11 +1341,11 @@ textarea.form-textarea[rows] {
 }
 
 .nav-tabs .nav-item .nav-link.active {
-    color: #533dea;
+    color: #01bb07;
 }
 
 .nav-tabs.lined .nav-link.active {
-    border-bottom: 1px solid #533dea;
+    border-bottom: 1px solid #01bb07;
 }
 
 .nav-tabs.tab-icon .nav-link .icon {
@@ -1388,7 +1388,7 @@ textarea.form-textarea[rows] {
 }
 
 .dots-tes .swiper-pagination-bullet-active {
-    background: #533dea;
+    background: #01bb07;
 }
 
 .back-btn,
@@ -1544,8 +1544,8 @@ textarea.form-textarea[rows] {
 }
 
 .tf-navigation-bar li.active a .icon-history {
-    border-color: #533dea;
-    background: #533dea;
+    border-color: #01bb07;
+    background: #01bb07;
 }
 
 .tf-navigation-bar li.active a .icon-history::after {
@@ -1553,7 +1553,7 @@ textarea.form-textarea[rows] {
 }
 
 .tf-navigation-bar li.active a i {
-    color: #533dea;
+    color: #01bb07;
 }
 
 .bottom-navigation-bar .line {
@@ -1585,7 +1585,7 @@ textarea.form-textarea[rows] {
 }
 
 .input-field .st1:focus {
-    border-color: #533dea;
+    border-color: #01bb07;
 }
 
 .input-field .icon-search {
@@ -1733,7 +1733,7 @@ textarea.form-textarea[rows] {
     gap: 4px;
     top: 12px;
     right: 14px;
-    color: #533dea;
+    color: #01bb07;
     font-size: 10px;
     line-height: 16px;
 }
@@ -1762,7 +1762,7 @@ textarea.form-textarea[rows] {
 }
 
 .group-checkbox .tf-checkbox.st1:checked {
-    background-color: #533dea;
+    background-color: #01bb07;
 }
 
 .group-checkbox .tf-checkbox.st1::before {
@@ -1807,7 +1807,7 @@ textarea.form-textarea[rows] {
 .tf-card-block .inner .logo {
     font-size: 28px;
     margin: 0px 8px;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .tf-card-block .logo-img {
@@ -2071,7 +2071,7 @@ textarea.form-textarea[rows] {
 }
 
 .circle-box.bg-blue {
-    background-color: #533dea;
+    background-color: #01bb07;
 }
 
 .bank-list {
@@ -2144,7 +2144,7 @@ textarea.form-textarea[rows] {
 }
 
 .tf-card-list.out-line {
-    border: 1px solid #533dea;
+    border: 1px solid #01bb07;
     border-radius: 8px;
 }
 
@@ -2309,7 +2309,7 @@ textarea.form-textarea[rows] {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #533dea;
+    background: #01bb07;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -2331,7 +2331,7 @@ textarea.form-textarea[rows] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #533dea;
+    background: #01bb07;
     background-image: url(../app/icons/icon-96x96.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -2605,7 +2605,7 @@ textarea.form-textarea[rows] {
     height: 215px;
     bottom: 0;
     width: 100%;
-    background-color: #533dea;
+    background-color: #01bb07;
     border-radius: 50%;
 }
 
@@ -2629,7 +2629,7 @@ textarea.form-textarea[rows] {
     height: 215px;
     bottom: 0;
     width: 100%;
-    background-color: #533dea;
+    background-color: #01bb07;
     border-radius: 50%;
     transform: skew(-14deg, 8deg);
 }
@@ -2703,7 +2703,7 @@ textarea.form-textarea[rows] {
 }
 
 .login-section .socials-login li:hover {
-    border-color: #533dea;
+    border-color: #01bb07;
 }
 
 .login-section .tf-btn {
@@ -2733,7 +2733,7 @@ textarea.form-textarea[rows] {
 }
 
 .register-section .tf-form .group-cb .tf-checkbox:checked {
-    background-color: #533dea;
+    background-color: #01bb07;
 }
 
 .register-section .tf-form .group-cb .tf-checkbox::before {
@@ -2821,7 +2821,7 @@ textarea.form-textarea[rows] {
 }
 
 .app-header {
-    background: url(../images/banner/banner-home.png);
+    background: url(../images/banner/bg-top.jpg);
     padding: 16px 0px 84px;
     margin: 0px -16px;
     background-repeat: no-repeat;
@@ -2977,7 +2977,7 @@ textarea.form-textarea[rows] {
 }
 
 #modalhome2 .modal-content .heading .cb .tf-checkbox.st1:checked {
-    background: #533dea;
+    background: #01bb07;
 }
 
 #modalhome2 .modal-content .heading .cb .tf-checkbox.st1::before {
@@ -3082,7 +3082,7 @@ textarea.form-textarea[rows] {
 
 .action-sheet-transfer .icon i {
     font-size: 20px;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .action-sheet-transfer p {
@@ -3128,8 +3128,8 @@ textarea.form-textarea[rows] {
 }
 
 .wrap-transfer-friends .menu-tabs .nav-tab.active {
-    color: #533dea;
-    border-bottom: 2px solid #533dea;
+    color: #01bb07;
+    border-bottom: 2px solid #01bb07;
 }
 
 .wrap-transfer-friends .content-tab {
@@ -3268,7 +3268,7 @@ textarea.form-textarea[rows] {
 }
 
 .wrap-success {
-    background: #533dea;
+    background: #01bb07;
     position: relative;
     overflow: hidden;
     height: 100vh;
@@ -3461,7 +3461,7 @@ textarea.form-textarea[rows] {
     font-weight: 600;
     font-size: 12px;
     line-height: 20px;
-    color: #533dea;
+    color: #01bb07;
     display: flex;
     align-items: center;
 }
@@ -3588,7 +3588,7 @@ textarea.form-textarea[rows] {
     font-size: 20px;
     line-height: 25px;
     font-weight: 600;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .list-card-info {
@@ -3651,7 +3651,7 @@ textarea.form-textarea[rows] {
     line-height: 24px;
     text-align: center;
     padding: 20px 34px;
-    color: #533dea;
+    color: #01bb07;
     text-decoration: underline;
 }
 
@@ -3747,7 +3747,7 @@ textarea.form-textarea[rows] {
 .bill-content h3 a {
     font-size: 12px;
     line-height: 20px;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .bill-content .box-service {
@@ -3777,7 +3777,7 @@ textarea.form-textarea[rows] {
 
 .list-card-invoice .logo i {
     font-size: 24px;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .list-card-invoice .content-right {
@@ -3861,7 +3861,7 @@ textarea.form-textarea[rows] {
 
 .bill-payment-content .bill-topbar i {
     font-size: 24px;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .wrapper-bill {
@@ -4009,7 +4009,7 @@ textarea.form-textarea[rows] {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: #533dea;
+    background: #01bb07;
 }
 
 .button-list li a i {
@@ -4126,9 +4126,9 @@ textarea.form-textarea[rows] {
 }
 
 .timeline li.active {
-    background: #533dea;
+    background: #01bb07;
     color: #ffffff;
-    border-color: #533dea;
+    border-color: #01bb07;
 }
 
 .wrap-chart {
@@ -4191,7 +4191,7 @@ textarea.form-textarea[rows] {
 
 .tf-trading-history .icon-box .icon {
     font-size: 24px;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .filter-history {
@@ -4211,7 +4211,7 @@ textarea.form-textarea[rows] {
 
 .filter-history li .tf-btn.active,
 .filter-history li .tf-btn:hover {
-    background: #533dea;
+    background: #01bb07;
     color: #ffffff;
 }
 
@@ -4521,7 +4521,7 @@ textarea.form-textarea[rows] {
 }
 
 .tes-noti .nav-tab.active a {
-    background: #533dea;
+    background: #01bb07;
     color: #ffffff;
 }
 
@@ -4689,12 +4689,12 @@ textarea.form-textarea[rows] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .giftcard-detail-section-3 .address a .icon-send2 {
     font-size: 20px;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .giftcard-detail-section-4 .top {
@@ -4771,7 +4771,7 @@ textarea.form-textarea[rows] {
     width: 28.5px;
     height: 28.5px;
     border-radius: 50%;
-    background-color: #533dea;
+    background-color: #01bb07;
     overflow: hidden;
 }
 
@@ -4903,7 +4903,7 @@ textarea.form-textarea[rows] {
 }
 
 .box-sl-profile:focus {
-    border-color: #533dea;
+    border-color: #01bb07;
     outline: 0;
     box-shadow: none;
 }
@@ -4929,7 +4929,7 @@ textarea.form-textarea[rows] {
 
 .box-sl-profile.style1:hover,
 .box-sl-profile.style1:active {
-    border: 1px solid #533dea;
+    border: 1px solid #01bb07;
 }
 
 .box-sl-profile.sl-gender {
@@ -4986,7 +4986,7 @@ textarea.form-textarea[rows] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #533dea;
+    background: #01bb07;
     border-radius: 50%;
 }
 
@@ -5064,13 +5064,13 @@ textarea.form-textarea[rows] {
 
 .tf-panel .panel-st-app .panel-content .item a i {
     display: none;
-    color: #533dea;
+    color: #01bb07;
 }
 
 .tf-panel .panel-st-app .panel-content .item a.active,
 .tf-panel .panel-st-app .panel-content .item a:hover,
 .tf-panel .panel-st-app .panel-content .item a:active {
-    color: #533dea;
+    color: #01bb07;
 }
 
 .tf-panel .panel-st-app .panel-content .item a.active i,
@@ -5123,7 +5123,7 @@ textarea.form-textarea[rows] {
 }
 
 .panel-sidebar .header-sidebar {
-    background-color: #533dea;
+    background-color: #01bb07;
 }
 
 .panel-sidebar .header-sidebar .sidebar-logo {
