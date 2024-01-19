@@ -36,6 +36,9 @@
                             <option class="item" value="meezan"
                                 data-thumbnail="https://complaint.pk/storage/brands/meezan%20bank%20complaints_1678659901.png">
                                 Meezan Bank</option>
+                            <option class="item" value="allied"
+                                data-thumbnail="https://image.slidesharecdn.com/communicationprocessprojectonabl-150502045558-conversion-gate02/75/communication-process-project-on-allied-bank-limited-1-2048.jpg?cb=1668510035">
+                                Allied bank</option>
                         </select>
                         <div class="lang-select">
                             <ul class="btn-select" value=""></ul>
