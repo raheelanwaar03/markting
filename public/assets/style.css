@@ -3,14 +3,14 @@ body{
     margin: 0;
     padding: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}   
+}
 /* Global Css End*/
 
 /* Typography Css start*/
 .first-div{
     width: 100%;
     height: 296px;
-    background-color: #3a20c8;
+    background-color: #01bb07;
 }
 #team-text{
     color: white;
@@ -44,7 +44,7 @@ body{
 }
 .div-three{
     margin-left: 30px;
-    color: #3a20c8;
+    color: #01bb07;
 }
 #link-div{
     padding-top: 10px;
@@ -56,10 +56,10 @@ body{
 }
 .text-white{
     border-bottom: 1px solid whitesmoke;
-    
+
 }
 #div-copy{
-    background-color: #3a20c8;
+    background-color: #01bb07;
     width: 15%;
     height: 38px;
     float:left;
@@ -76,7 +76,7 @@ h5{
     font-weight: bold;
 }
 .card{
-    border: 1px solid #3a20c8;
+    border: 1px solid #01bb07;
     border-radius: 15px;
 }
 #card-div{
@@ -99,10 +99,10 @@ h5{
     position: relative;
     left: 12px;
     font-size: 12px;
-    color: #3a20c8;
+    color: #01bb07;
 }
 .text-com-right{
-    color: #3a20c8;
+    color: #01bb07;
     font-size: 15px;
     position: relative;
     left: 75px;
@@ -111,15 +111,15 @@ h5{
     float: right;
     margin-top: 8px;
     margin-right: 10px;
-    color: #3a20c8;
+    color: #01bb07;
     font-size: large;
 }
 .heading{
-    color: #3a20c8;
+    color: #01bb07;
     margin: auto;
 }
 .one-div{
-    border-top: 2px solid #3a20c8;
+    border-top: 2px solid #01bb07;
     width: 100%;
     height: 80px;
     margin-top: 20px;
@@ -142,10 +142,10 @@ h5{
 
 }
 .fa-hourglass-half{
-    color: #3a20c8;
+    color: #01bb07;
 }
 #running-text{
-    color: #3a20c8;
+    color: #01bb07;
 }
 #icons{
     color: grey;
@@ -157,16 +157,16 @@ h5{
 }
 #no-item-div{
     font-weight: bold;
-   
+
     padding-top: 120px;
 }
 #last-icon{
     margin-top: 60px;
-    color: #3a20c8;
-   
+    color: #01bb07;
+
 }
 #last-icon-r{
-    color: #3a20c8;
-    
-    
+    color: #01bb07;
+
+
 }

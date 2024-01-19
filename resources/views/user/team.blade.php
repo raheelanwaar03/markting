@@ -9,15 +9,6 @@
     <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
 
-    {{-- <link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/styles/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/styles.css') }}" />
-    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
-    <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('assets/app/icons/icon-192x192.png') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> --}}
-
-
 </head>
 
 <body>
@@ -72,7 +63,7 @@
                     </div>
                 </div>
                 <div class="bottom-navigation-bar"
-                    style="background-color: rgb(69, 3, 235); position: fixed;width:90%;bottom: 10px;">
+                    style="background-color: #01bb07; position: fixed;width:90%;bottom: 10px;">
                     <div class="tf-container">
                         <ul class="tf-navigation-bar d-flex justify-content-around align-items-center mt-3"
                             style="list-style-type:none">
