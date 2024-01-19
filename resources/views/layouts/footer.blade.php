@@ -200,9 +200,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
 
 </div>
@@ -214,7 +211,7 @@
                 <div class="tf-statusbar d-flex justify-content-center align-items-center">
                     <a href="#" class="clear-panel"> <i class="icon-close1"></i> </a>
                     <h3>Transfer Method</h3>
-                    <a href="40_qr-code.html" class="action-right"><i class="icon-qrcode4"></i></a>
+                    <a href="#" class="action-right"><i class="icon-qrcode4"></i></a>
                 </div>
             </div>
         </div>
@@ -238,10 +235,17 @@
         <div class="header-sidebar bg_white_color is-fixed">
             <div class="tf-container">
                 <div class="d-flex justify-content-between align-items-center">
-                    <a href="home.html" class="sidebar-logo">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
-                        <h5>New Hexa Network </h5>
-                    </a>
+                    @if (auth()->user())
+                        <a href="{{ route('User.Dashboard') }}" class="sidebar-logo">
+                            <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+                            <h5>New Hexa Network </h5>
+                        </a>
+                    @else
+                        <a href="{{ route('login') }}" class="sidebar-logo">
+                            <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+                            <h5>New Hexa Network </h5>
+                        </a>
+                    @endif
                     <a href="javascript:void(0);" class="clear-panel"> <i class="icon-close1"></i> </a>
                 </div>
             </div>
@@ -249,7 +253,6 @@
         <div class="panel-body">
             <div class="tf-container">
                 <div class="box-content">
-
                     <ul class="box-nav">
                         <li class="nav-title">MENU</li>
                         @if (auth()->user())
