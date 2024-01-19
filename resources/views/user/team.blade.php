@@ -21,9 +21,13 @@
                     <span>{{ total_team() }}</span> <br>
                     <span>Total People</span>
                 </div>
+                <div class="text-divs div-one">
+                    <span>{{ my_investment() }}</span> <br>
+                    <span>Total Investment</span>
+                </div>
                 <div class="text-divs div-two">
                     <span style="margin-left:30px;">{{ Total_Team_Investment() }}</span> <br>
-                    <span>Total Invest</span>
+                    <span>Team Deposit</span>
                 </div>
                 <div class="text-divs div-three">
                     <span style="margin-left:10px;">{{ pending_income() }}</span> <br>

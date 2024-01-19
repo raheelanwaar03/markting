@@ -120,6 +120,18 @@ function pending_income()
     return $total_money;
 }
 
+function my_investment()
+{
+    $my_investment = History::where('user_id', auth()->user()->user_code)->where('type', 'Buy Plan')->get();
+
+    $my_total_invest = 0;
+    foreach ($my_investment as $person) {
+        $my_total_invest += $person->amount;
+    }
+    return $my_total_invest;
+}
+
+
 function upliner_income()
 {
     $my = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->get();
@@ -147,9 +159,29 @@ function upliner_income()
     }
 }
 
+function team_deposit()
+{
+    $team = User::where('referral', auth()->user()->user_code)->get();
+
+    if ($team != null) {
+
+        foreach ($team as $person) {
+            $first_person_investment = History::where('user_id', $person->id)->where('type', 'Buy Plan')->get();
+            $first_user_investment = 0;
+            foreach ($first_person_investment as $investor) {
+                $first_user_investment += $investor->amount;
+            }
+            $first_user_investment;
+        }
+        return $first_user_investment;
+    } else {
+        return 0;
+    }
+}
+
 
 if (!function_exists('calculateProgression')) {
-    function calculateProgression($day,$amount)
+    function calculateProgression($day, $amount)
     {
         $increments = $day; // Number of increments (20% each)
         $incrementValue = $amount; // Percentage increment
