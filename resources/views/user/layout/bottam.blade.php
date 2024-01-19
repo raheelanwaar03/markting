@@ -1,6 +1,6 @@
 <div class="bottom-navigation-bar">
     <div class="tf-container">
-        <ul class="tf-navigation-bar" style="border: 1px solid #0e6e15;">
+        <ul class="tf-navigation-bar" style="border-top: 1px solid #0e6e15;">
             <li>
                 <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light"
                     href="{{ route('User.Dashboard') }}" style="color: black;">
