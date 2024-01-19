@@ -24,7 +24,6 @@ class WidthrawBalanceController extends Controller
 
     public function store_wallet(Request $request)
     {
-        return $request;
         $wallet = Wallet::where('user_id', auth()->user()->id)->first();
         if ($wallet != null) {
             return redirect()->back()->with('error', 'Added');
