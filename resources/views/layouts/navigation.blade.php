@@ -34,7 +34,7 @@
     <div class="app-header">
         <div class="tf-container">
             <div class="tf-topbar d-flex justify-content-between align-items-center">
-                <a class="user-info d-flex justify-content-between align-items-center" href="69_profile.html">
+                <a class="user-info d-flex justify-content-between align-items-center" href="#">
                     <img src="{{ asset('assets/profile.jpg') }}" alt="image">
 
                     <div class="content">
