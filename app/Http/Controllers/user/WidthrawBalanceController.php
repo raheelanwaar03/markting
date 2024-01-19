@@ -31,7 +31,7 @@ class WidthrawBalanceController extends Controller
         } else {
             $wallet = new Wallet();
             $wallet->user_id = auth()->user()->id;
-            $wallet->wallet_name = $request->wallet_name;
+            $wallet->wallet_name = $request->bank;
             $wallet->wallet_number = $request->wallet_number;
             $wallet->holder_name = $request->holder_name;
             $wallet->save();
