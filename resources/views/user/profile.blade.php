@@ -35,13 +35,13 @@
     <div class="header mb-1 is-fixed">
         <div class="tf-container">
             <div class="tf-statusbar d-flex justify-content-center align-items-center">
-                <a href="#" class="back-btn"> <i class="icon-left"></i> </a>
+                <a href="#" class="back-btn"><i class="icon-left"></i> </a>
                 <h3 style="color: #0e6e15">Profile</h3>
             </div>
         </div>
     </div>
     <div id="app-wrap">
-        <a class="box-profile mt-1" href="#">
+        <a class="box-profile mt-1" href="{{ route('profile.edit') }}">
             <div class="inner d-flex align-items-center">
                 <div class="box-avatar">
                     <img src="{{ asset('assets/images/logo.png') }}" alt="image">
@@ -49,10 +49,10 @@
                 </div>
                 <div class="info">
                     <h2 class="fw_8">{{ auth()->user()->name }}</h2>
+                    <h6 class="fw_8">ID: {{ auth()->user()->user_code }}</h6>
                 </div>
             </div>
             <span><i class="icon-right"></i></span>
-
         </a>
 
         <ul class="mt-1">
