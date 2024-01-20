@@ -24,20 +24,13 @@ class WidthrawBalanceController extends Controller
 
     public function store_wallet(Request $request)
     {
-        $user = User::where('id',auth()->user()->id)->first();
-        $user_security_key = $user->key;
-        if($request->security_key != $user_security_key)
-        {
-            return redirect()->back()->with('error','Security key Not Match');
-        }
-
         $wallet = Wallet::where('user_id', auth()->user()->id)->first();
         if ($wallet != null) {
             return redirect()->back()->with('error', 'Added');
         } else {
             $wallet = new Wallet();
             $wallet->user_id = auth()->user()->id;
-            $wallet->wallet_name = $request->wallet_name;
+            $wallet->wallet_name = $request->bank;
             $wallet->wallet_number = $request->wallet_number;
             $wallet->holder_name = $request->holder_name;
             $wallet->save();
@@ -47,16 +40,11 @@ class WidthrawBalanceController extends Controller
 
     public function store_widthraw(Request $request)
     {
-
-        $check_withdraw = History::where('user_id', auth()->user()->id)->where('type', 'withdraw')->first();
-
-        if ($check_withdraw != null) {
-            return redirect()->route('User.Dashboard')->with('error', 'Already Request');
-        }
-
-        $withdraw_money = $request->amount;
-        // checking if user have enougn balance
         $user = User::where('id', auth()->user()->id)->first();
+        $user_security_key = $user->key;
+        if ($request->security_key != $user_security_key) {
+            return redirect()->back()->with('error', 'Security key Not Match');
+        }
         $user_balance = $user->balance;
         if (auth()->user()->balance == null) {
             return redirect()->route('User.Dashboard')->with('error', '0 Balance');
@@ -68,6 +56,16 @@ class WidthrawBalanceController extends Controller
         if ($request->money >= 50000) {
             return redirect()->route('User.Dashboard')->with('error', 'Limit Full');
         }
+
+        $check_withdraw = History::where('user_id', auth()->user()->id)->where('type', 'withdraw')->first();
+
+        if ($check_withdraw != null) {
+            return redirect()->route('User.Dashboard')->with('error', 'Already Request');
+        }
+
+        $withdraw_money = $request->amount;
+        // checking if user have enougn balance
+        $user = User::where('id', auth()->user()->id)->first();
         $user->balance -= $request->money;
         $user->save();
         $wallet = Wallet::where('user_id', auth()->user()->id)->first();
