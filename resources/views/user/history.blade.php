@@ -10,20 +10,20 @@
         </div>
     </div>
     <div id="app-wrap">
-        <div class="app-section st1 mt-1 bg-warning" style="background-color: rgb(231, 198, 12);">
+        <div class="app-section st1 mt-1">
             <div class="tf-container">
                 <div class="wrap-total">
                     <div class="total-item">
                         <div class="content">
                             <p class="fw_4"
-                                style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">INVESTED</p>
+                                style="color: white;padding:15px;border-radius:10px;">INVESTED</p>
                             <h2 class="fw_6 success_color text-center">RS {{ user_investment() }}</h2>
                         </div>
                     </div>
                     <div class="total-item">
                         <div class="content">
                             <p class="fw_4"
-                                style="background-color:#0e29b1 ;color: white;padding:15px;border-radius:10px;">Outcome</p>
+                                style="color: white;padding:15px;border-radius:10px;">Outcome</p>
                             <h2 class="fw_6 success_color text-center">RS {{ user_outcome() }}</h2>
                         </div>
                     </div>
