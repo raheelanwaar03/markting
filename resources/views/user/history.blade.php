@@ -15,15 +15,15 @@
                 <div class="wrap-total">
                     <div class="total-item">
                         <div class="content">
-                            <p class="fw_4"
-                                style="color: white;padding:15px;border-radius:10px;">INVESTED</p>
+                            <p class="fw_4 success_color"
+                                style="padding:15px;border-radius:10px;font-size:20px;">Deposit</p>
                             <h2 class="fw_6 success_color text-center">RS {{ user_investment() }}</h2>
                         </div>
                     </div>
                     <div class="total-item">
                         <div class="content">
-                            <p class="fw_4"
-                                style="color: white;padding:15px;border-radius:10px;">Outcome</p>
+                            <p class="fw_4 success_color"
+                                style="padding:15px;border-radius:10px;font-size:20px;">Withdraw</p>
                             <h2 class="fw_6 success_color text-center">RS {{ user_outcome() }}</h2>
                         </div>
                     </div>

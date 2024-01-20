@@ -36,7 +36,7 @@
         <div class="tf-container">
             <div class="tf-statusbar d-flex justify-content-center align-items-center">
                 <a href="#" class="back-btn"> <i class="icon-left"></i> </a>
-                <h3>Profile</h3>
+                <h3 style="color: #0e6e15">Profile</h3>
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@
         <a class="box-profile mt-1" href="#">
             <div class="inner d-flex align-items-center">
                 <div class="box-avatar">
-                    <img src="{{ asset('assets/images/user/profile1.jpg') }}" alt="image">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="image">
                     <span class="icon-camera-to-take-photos"></span>
                 </div>
                 <div class="info">

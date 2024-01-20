@@ -35,8 +35,7 @@
         <div class="tf-container">
             <div class="tf-topbar d-flex justify-content-between align-items-center">
                 <a class="user-info d-flex justify-content-between align-items-center" href="#">
-                    <img src="{{ asset('assets/profile.jpg') }}" alt="image">
-
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="image">
                     <div class="content">
                         <h4 class="white_color">New Hexa Network</h4>
                         <p class="white_color fw_4">"The New Era Of Investment"</p>
