@@ -148,7 +148,7 @@ class UserDashboardController extends Controller
     public function deposit_history()
     {
         $history = History::where('user_id', auth()->user()->id)->where('type', 'deposit')->get();
-        return view('user.widthraw_history', compact('history'));
+        return view('user.deposit', compact('history'));
     }
 
     public function plan_status()
@@ -166,7 +166,7 @@ class UserDashboardController extends Controller
     public function claimed()
     {
         $history = History::where('user_id', auth()->user()->id)->where('type', 'reward')->where('status', 'recived')->get();
-        return view('user.inactive_plans', compact('history'));
+        return view('user.claimed', compact('history'));
     }
 
 
