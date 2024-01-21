@@ -146,8 +146,8 @@
 
     <section class="userid-section">
         <h2>User ID: <span id="userId">{{ auth()->user()->user_code }}</span></h2>
-        <p>Your Referral Link: <span
-                id="referralLink">{{ route('register', ['referral' => Auth::user()->user_code]) }}</span> <span
+        <p>Your Referral Link: <span id="referralLink"
+                style="font-weight: bold;">{{ route('register', ['referral' => Auth::user()->user_code]) }}</span> <span
                 class="copy-icon" onclick="copyToClipboard('referralLink')">📋</span></p>
         <div class="copy-tooltip" id="copyTooltip">Copied!</div>
     </section>
@@ -161,53 +161,58 @@
                 <div id="level-team">
                     <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Team Level:
                         {{ auth()->user()->level }}</span> <br>
-                    <span class="com-text">{{ total_team() }} <br> Total People</span>
+                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">{{ total_team() }} <br>
+                        Total People</span>
                 </div>
                 <div id="commision-div">
-                    <span class="com-text">Commision 7.1% +5%-</span>
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 7.1% +5%-</span>
                     <i class="fa-solid fa-greater-than gt-icon"></i>
                     <br>
-                    <span class="com-text">{{ earned_income() }} pkr</span> <br>
-                    <span class="com-text">Earning</span>
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }} pkr</span>
+                    <br>
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">Earning</span>
                 </div>
             </div>
         </section>
     </div>
-    <div class="bottom-navigation-bar" style="background-color: #0e6e15; position: fixed;width:100%;bottom:2px;">
+    <div class="bottom-navigation-bar" style="position: fixed;width:100%;bottom:2px;">
         <div class="tf-container">
             <ul class="tf-navigation-bar d-flex justify-content-around align-items-center mt-3"
                 style="list-style-type:none">
                 <li>
                     <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                         style="text-decoration:none;" href="{{ route('User.Dashboard') }}">
-                        <img src="{{ asset('assets/home.png') }}" style="color:white;height: 30px;width:30px"> Home
+                        <img src="{{ asset('assets/green_home.png') }}" style="color:#0e6e15;height: 30px;width:30px">
+                        <span style="color: #0e6e15">Home</span>
                     </a>
                 </li>
                 <li>
                     <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                         href="{{ route('User.History') }}">
-                        <img src="{{ asset('assets/history.png') }}" style="height: 30px;width:30px">
-                        History
+                        <img src="{{ asset('assets/green_history.png') }}" style="color:#0e6e15;height: 30px;width:30px">
+                        <span style="color:#0e6e15">History</span>
                     </a>
                 </li>
                 <li>
                     <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                         href="{{ route('User.Plan.Status') }}">
-                        <img src="{{ asset('assets/trade.png') }}" style="color:white;height: 30px;width:30px">
-                        Trade
+                        <img src="{{ asset('assets/green_trade.png') }}" style="color:#0e6e15;height: 30px;width:30px">
+                        <span style="color:#0e6e15;">Trade</span>
                     </a>
                 </li>
                 <li>
                     <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                         href="{{ route('User.Team.View') }}">
-                        <img src="{{ asset('assets/team.png') }}" style="color:white;height: 30px;width:30px">Team
+                        <img src="{{ asset('assets/green_team.png') }}" style="color:#0e6e15;height: 30px;width:30px">
+                            <span style="color: #0e6e15;">Team</span>
                     </a>
                 </li>
                 <li>
                     <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                         href="{{ route('User.Profile') }}">
-                        <img src="{{ asset('assets/male.png') }}" style="color:white;height: 30px;width:30px">
-                        Profile</a>
+                        <img src="{{ asset('assets/green_profile.png') }}" style="color:#0e6e15;height: 30px;width:30px">
+                        <span style="color: #0e6e15;">Profile</span>
+                    </a>
                 </li>
             </ul>
         </div>
