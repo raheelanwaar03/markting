@@ -10,31 +10,6 @@
         </div>
     </div>
     <div id="app-wrap">
-        <div class="app-section st1 mt-1 bg_white_color">
-            <div class="tf-container">
-                <div class="wrap-total">
-                    <div class="total-item">
-                        <a href="#" class="box-icon bg_primary"><i class="icon-arrow-up_minor primary_color"></i></a>
-                        <div class="content">
-                            <p class="fw_4">INVESTED</p>
-                            <h2 class="fw_6 success_color">RS {{ user_investment() }}</h2>
-                        </div>
-                    </div>
-                    <div class="total-item">
-                        <a href="#" class="box-icon bg_critical"><i
-                                class="icon-arrow-up_minor critical_color arrow-down"></i></a>
-
-
-                        <div class="content">
-                            <p class="fw_4">Outcome</p>
-                            <h2 class="fw_6 success_color">RS {{ user_outcome() }}</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         <div class="app-section st1 mt-1 mb-5 bg_white_color">
             <div class="tf-container">
                 <div class="trading-month">

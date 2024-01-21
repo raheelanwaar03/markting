@@ -10,26 +10,6 @@
         </div>
     </div>
     <div id="app-wrap">
-        <div class="app-section st1 mt-1 bg_white_color">
-            <div class="tf-container">
-                <div class="wrap-total">
-                    <div class="total-item">
-                        <div class="content">
-                            <p class="fw_4" style="background-color:#0e6e15 ;color: white;padding:15px;border-radius:10px;">INVESTED</p>
-                            <h2 class="fw_6 success_color text-center">RS {{ user_investment() }}</h2>
-                        </div>
-                    </div>
-                    <div class="total-item">
-                        <div class="content">
-                            <p class="fw_4" style="background-color:#0e6e15 ;color: white;padding:15px;border-radius:10px;">Outcome</p>
-                            <h2 class="fw_6 success_color text-center">RS {{ user_outcome() }}</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         <div class="app-section st1 mt-1 mb-5 bg_white_color">
             <div class="tf-container">
                 <div class="trading-month">
@@ -44,10 +24,10 @@
                                     <div class="content">
                                         <div class="d-flex justify-content-around align-items-center">
                                             <h4>AI Technology</h4>
-                                            @if ( $item->status == 'pending')
-                                            <p style="color:red">({{ $item->status }})</p>
+                                            @if ($item->status == 'pending')
+                                                <p style="color:red">({{ $item->status }})</p>
                                             @else
-                                            <p style="color:green">({{ $item->status }})</p>
+                                                <p style="color:green">({{ $item->status }})</p>
                                             @endif
                                         </div>
                                         <p>Today {{ $item->created_at->format('H:i:s') }}</p>

@@ -43,7 +43,7 @@
                 <div class="col-4">
                     <a href="{{ route('User.Claimed.Plan.Status') }}" style="text-decoration:none">
                         <div class="one-div">
-                            <i id="icons" class="fa-solid fa-arrows-up-to-line" style="margin-left: 30px;"></i>  <br>
+                            <i id="icons" class="fa-solid fa-arrows-up-to-line" style="margin-left: 30px;"></i> <br>
                             <span style="color: #0e6e15; margin-left: 20px;">Claimed</span>
                         </div>
                     </a>
@@ -106,6 +106,8 @@
                 </div>
             </div>
         </div>
+
+        @include('user.layout.bottam')
 
         <script type="text/javascript" src="{{ asset('assets/javascript/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/javascript/bootstrap.min.js') }}"></script>

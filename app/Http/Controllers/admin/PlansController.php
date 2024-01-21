@@ -22,6 +22,7 @@ class PlansController extends Controller
             'persentage' => 'required',
             'duration' => 'required',
             'limite' => 'required',
+            'badge' => 'required',
             'image' => 'required',
         ]);
 
@@ -36,6 +37,7 @@ class PlansController extends Controller
         $plan->min_invest = $validated['min_invest'];
         $plan->max_invest = $validated['max_invest'];
         $plan->limite = $validated['limite'];
+        $plan->badge = $validated['badge'];
         $plan->image = $imageName;
         $plan->save();
         return redirect()->route('Admin.All.Plan')->with('success', 'plan added successfully');

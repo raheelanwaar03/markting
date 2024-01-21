@@ -107,6 +107,7 @@
             </div>
         </div>
 
+        @include('user.layout.bottam')
 
         <script type="text/javascript" src="{{ asset('assets/javascript/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/javascript/bootstrap.min.js') }}"></script>

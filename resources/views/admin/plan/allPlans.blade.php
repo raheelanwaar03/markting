@@ -20,39 +20,49 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Minmum Investment</th>
-                                            <th>Maximum Investment</th>
+                                            <th>Min Investment</th>
+                                            <th>Max Investment</th>
                                             <th>Persentage</th>
                                             <th>Limite</th>
                                             <th>Duration</th>
                                             <th>Status</th>
+                                            <th>Badge</th>
                                             <th>Image</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($plans as $plan)
-                                        <tr>
-                                            <td>{{ $plan->plan_name }}</td>
-                                            <td>{{ $plan->min_invest }}</td>
-                                            <td>{{ $plan->max_invest }}</td>
-                                            <td>{{ $plan->persentage }}</td>
-                                            <td>{{ $plan->limite }}</td>
-                                            <td>{{ $plan->duration }}</td>
-                                            <td>
-                                                @if ($plan->status == 'lock')
-                                                <span class="badge badge-danger" style="background-color:red">{{ $plan->status }}</span>
-                                                @else
-                                                <span class="badge badge-primary" style="background-color:blue">{{ $plan->status }}</span>
-                                                @endif
-                                            </td>
-                                            <td><img src="{{ asset('image/' . $plan->image) }}" alt="image"
-                                                    width="50px" height="50px"></td>
-                                            <td>
-                                                <a href="{{ route('Admin.Lock.Plan',$plan->id) }}" class="btn btn-primary">Lock</a>
-                                                <a href="{{ route('Admin.Unlock.Plan',$plan->id) }}" class="btn btn-danger">Unlock</a>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>{{ $plan->plan_name }}</td>
+                                                <td>{{ $plan->min_invest }}</td>
+                                                <td>{{ $plan->max_invest }}</td>
+                                                <td>{{ $plan->persentage }}%</td>
+                                                <td>{{ $plan->limite }}</td>
+                                                <td>{{ $plan->duration }}</td>
+                                                <td>
+                                                    @if ($plan->status == 'lock')
+                                                        <span class="badge badge-danger"
+                                                            style="background-color:red">{{ $plan->status }}</span>
+                                                    @else
+                                                        <span class="badge badge-primary"
+                                                            style="background-color:blue">{{ $plan->status }}</span>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-success" style="background-color:green">
+                                                        {{ $plan->badge }}
+                                                    </span>
+                                                </td>
+                                                <td><img src="{{ asset('image/' . $plan->image) }}" alt="image"
+                                                        width="50px" height="50px"></td>
+                                                <td>
+                                                    <a href="{{ route('Admin.Lock.Plan', $plan->id) }}"
+                                                        class="btn btn-sm btn-primary">Lock</a>
+                                                    <a href="{{ route('Admin.Unlock.Plan', $plan->id) }}"
+                                                        class="btn btn-sm btn-danger">Unlock</a>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>

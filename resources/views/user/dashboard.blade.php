@@ -133,6 +133,12 @@
                             <h5 class="card-title">{{ $plan->plan_name }} - {{ $plan->duration }} Days</h5>
                             <p class="card-text">({{ $plan->min_invest }}-{{ $plan->max_invest }})
                                 <br>
+                                @if ($plan->badge == 'Experimental')
+                                <span class="badge badge-primary" style="background:rgb(12, 198, 136);padding:5px;">{{ $plan->badge }}</span>
+                                @else
+                                <span class="badge badge-danger" style="background:red;padding:5px;">{{ $plan->badge }}</span>
+                                @endif
+                                <br>
                                 <b>({{ $plan->persentage }}%)</b>
                             </p>
                         </div>
@@ -140,7 +146,7 @@
                         <!-- "Visit" button on the right -->
                         <div class="ml-auto">
                             <a href="{{ route('User.Invest.Plan', $plan->id) }}" class="btn"
-                                style="background:rgb(140, 228, 7);color:white">Start</a>
+                                style="background:#0e6e15;color:white">Start</a>
                         </div>
                     </div>
                 @endforeach

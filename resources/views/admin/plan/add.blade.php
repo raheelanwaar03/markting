@@ -51,8 +51,8 @@
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-delimiters" class="form-label">Persentage</label>
-                                                    <input type="number" step="0.0001" class="form-control" name="persentage"
-                                                        id="cleave-delimiters" placeholder="Enter Profit">
+                                                    <input type="number" step="0.0001" class="form-control"
+                                                        name="persentage" id="cleave-delimiters" placeholder="Enter Profit">
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
@@ -71,9 +71,24 @@
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
-                                                <div class="mb-0 mt-2">
-                                                    <button type="submit" class="btn btn-primary">Add</button>
+                                                <div class="mb-0">
+                                                    <label for="cleave-numeral" class="form-label">Badge</label>
+                                                    <select name="badge" class="form-control">
+                                                        <option value="Experimental">Experimental</option>
+                                                        <option value="Stable">Stable</option>
+                                                        <option value="Steady Income">Steady Income</option>
+                                                        <option value="Hot">Hot</option>
+                                                        <option value="Normal">Normal</option>
+                                                        <option value="High Yield">High yield</option>
+                                                        <option value="Hot Product">Hot product</option>
+                                                        <option value="Businessman">Businessman</option>
+                                                    </select>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="mb-0 mt-2">
+                                                <button type="submit" class="btn btn-primary">Add</button>
                                             </div>
                                         </div>
                                     </div>

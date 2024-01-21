@@ -19,6 +19,7 @@ return new class extends Migration
             $table->float('persentage', 10, 3);
             $table->integer('duration');
             $table->string('limite');
+            $table->string('badge');
             $table->string('status')->default('unlock');
             $table->string('image');
             $table->timestamps();
