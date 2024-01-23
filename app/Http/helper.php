@@ -183,8 +183,8 @@ function team_deposit()
 if (!function_exists('calculateProgression')) {
     function calculateProgression($day, $amount)
     {
-        $increments = $day; // Number of increments (20% each)
-        $incrementValue = $amount; // Percentage increment
+        $increments = $day;
+        $incrementValue = $amount;
         $progression = [];
 
         // Calculate the step size for each increment
@@ -195,6 +195,6 @@ if (!function_exists('calculateProgression')) {
             $progression = $i * $step * ($incrementValue / 100);
         }
 
-        return $progression;
+        return $progression / $increments;
     }
 }

@@ -27,12 +27,12 @@
                 <div class="d-flex justify-content-between align-items-center m-4">
                     <img src="{{ asset('image/' . $plan->image) }}" alt="img" class="img-fluid"
                         style="height: 80px;width:80px;">
-                    <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->plan_name }}
+                    <p style="font-size:15px;color:#0e6e15">{{ $plan->plan_name }}
                     </p>
-                    <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->persentage }}%</p>
-                    <p style="font-size:15px;color:rgb(19, 95, 208)">{{ $plan->duration }}Days</p>
+                    <p style="font-size:15px;color:#0e6e15">{{ $plan->persentage }}%</p>
+                    <p style="font-size:15px;color:#0e6e15">{{ $plan->duration }}Days</p>
                 </div>
-                <div style="background-color: rgb(79, 47, 176);padding:16px">
+                <div style="background-color: #0e6e15;padding:16px">
                     <div class="d-flex justify-content-between align-items-center">
                         <p style="color:rgb(254, 254, 254)">Invest Amount</p>
                         <p style="color:white" class="displayAmount">Rs.{{ $amount }}</p>
