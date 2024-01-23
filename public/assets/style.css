@@ -126,15 +126,13 @@ h5{
     padding-top: 10px;
 }
 .two-div{
-    background-color: lightgrey;
-    width: 140%;
+    width: 100%;
     height: 80px;
     margin-top: 20px;
     padding-top: 10px;
 
 }
 .three-div{
-    background-color: lightgrey;
     width: 100%;
     height: 80px;
     margin-top: 20px;

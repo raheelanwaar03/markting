@@ -97,6 +97,11 @@ class UserDashboardController extends Controller
 
         $buy_plans = BuyPlan::where('user_id', auth()->user()->id)->get();
 
+        if($buy_plans == null)
+        {
+            return redirect()->back()->with('error','No Active Plan');
+        }
+
         foreach ($buy_plans as $plan) {
             // checking user plan created_at date
             if ($plan->status === 'active') {
@@ -129,12 +134,15 @@ class UserDashboardController extends Controller
         $user->balance += $total_daily_profit;
         $user->save();
 
-        $history = new History();
-        $history->user_id = auth()->user()->id;
-        $history->amount = $total_daily_profit;
-        $history->status = 'recived';
-        $history->type = 'reward';
-        $history->save();
+        if ($total_daily_profit == null) {
+            $history = new History();
+            $history->user_id = auth()->user()->id;
+            $history->amount = $total_daily_profit;
+            $history->status = 'recived';
+            $history->type = 'reward';
+            $history->save();
+        }
+
 
         return redirect()->back()->with('success', 'Success');
     }
@@ -153,7 +161,7 @@ class UserDashboardController extends Controller
 
     public function plan_status()
     {
-        $history = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->where('status','active')->get();
+        $history = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->where('status', 'active')->get();
         return view('user.plan_status', compact('history'));
     }
 
@@ -168,6 +176,4 @@ class UserDashboardController extends Controller
         $history = History::where('user_id', auth()->user()->id)->where('type', 'reward')->where('status', 'recived')->get();
         return view('user.claimed', compact('history'));
     }
-
-
 }

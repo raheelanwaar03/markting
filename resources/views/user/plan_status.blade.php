@@ -28,7 +28,7 @@
     <div class="container">
         <nav class="navbar shadow">
             <h3 class="heading">Trade</h3>
-            <a href="{{ route('User.Daily.Reward') }}" class="btn btn-primary">Collect Reward</a>
+            <a href="{{ route('User.Daily.Reward') }}" class="btn btn-success">Collect Reward</a>
         </nav>
         <div class="container">
             <div class="row">
@@ -44,7 +44,7 @@
                     <a href="{{ route('User.Claimed.Plan.Status') }}" style="text-decoration:none">
                         <div class="three-div">
                             <i id="icons" class="fa-solid fa-arrows-up-to-line" style="margin-left: 30px;"></i>  <br>
-                            <span style="color: grey; margin-left: 20px;">Claimed</span>
+                            <span style="margin-left: 20px;">Claimed</span>
                         </div>
                     </a>
                 </div>
@@ -52,7 +52,7 @@
                     <div class="three-div">
                         <a href="{{ route('User.Inactive.Plan.Status') }}" style="text-decoration:none;">
                             <i id="icons" class="fa-solid fa-cubes-stacked" style="margin-left: 20px;"></i> <br>
-                            <span style="color: #3a20c8; margin-left: 20px;">Completed</span>
+                            <span style="margin-left: 20px;">Completed</span>
                         </a>
                     </div>
                 </div>
