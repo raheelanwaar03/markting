@@ -43,10 +43,17 @@ class PlansController extends Controller
         return redirect()->route('Admin.All.Plan')->with('success', 'plan added successfully');
     }
 
+    public function delete_plan($id)
+    {
+        $plan = Plans::find($id);
+        $plan->delete();
+        return redirect()->back()->with('success', 'Plan deleted');
+    }
+
     public function index()
     {
         $plans = Plans::get();
-        return view('admin.plan.allPlans',compact('plans'));
+        return view('admin.plan.allPlans', compact('plans'));
     }
 
     public function lockPlan($id)
@@ -54,7 +61,7 @@ class PlansController extends Controller
         $plan = Plans::find($id);
         $plan->status = 'lock';
         $plan->save();
-        return redirect()->back()->with('success','Plan has been Locked');
+        return redirect()->back()->with('success', 'Plan has been Locked');
     }
 
     public function unLockPlan($id)
@@ -62,7 +69,6 @@ class PlansController extends Controller
         $plan = Plans::find($id);
         $plan->status = 'unlock';
         $plan->save();
-        return redirect()->back()->with('success','Plan has been Unlocked');
+        return redirect()->back()->with('success', 'Plan has been Unlocked');
     }
-
 }

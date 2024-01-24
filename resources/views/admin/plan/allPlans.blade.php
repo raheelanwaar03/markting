@@ -60,7 +60,10 @@
                                                     <a href="{{ route('Admin.Lock.Plan', $plan->id) }}"
                                                         class="btn btn-sm btn-primary">Lock</a>
                                                     <a href="{{ route('Admin.Unlock.Plan', $plan->id) }}"
-                                                        class="btn btn-sm btn-danger">Unlock</a>
+                                                        class="btn btn-sm btn-warning">Unlock</a>
+                                                    <a href="{{ route('Admin.Delete.Plan', $plan->id) }}"
+                                                        class="btn btn-sm btn-danger">
+                                                        Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach
