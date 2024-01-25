@@ -78,11 +78,10 @@
                                                 <p style="color:green">({{ $item->status }})</p>
                                             @endif
                                         </div>
-                                        <p>Buy Date {{ $item->created_at->format('m/d/Y') }}
+                                        <p>Start Date {{ $item->created_at->format('m/d/Y') }}
                                             <br>
                                             Percentage: @progression($item->day, $item->amount)%
-                                            <br>Ends
-                                            In:{{ $item->day }} days
+                                            <br>End Date:{{ $item->day }} days
                                         </p>
                                     </div>
                                 </div>

@@ -28,7 +28,7 @@
     <div class="container">
         <nav class="navbar shadow">
             <h3 class="heading">Trade</h3>
-            <a href="{{ route('User.Daily.Reward') }}" class="btn btn-success">Collect Reward</a>
+            <a href="{{ route('User.Daily.Reward') }}" class="btn btn-success">Recive Profit</a>
         </nav>
         <div class="container">
             <div class="row">
@@ -43,7 +43,7 @@
                 <div class="col-4">
                     <a href="{{ route('User.Claimed.Plan.Status') }}" style="text-decoration:none">
                         <div class="three-div">
-                            <i id="icons" class="fa-solid fa-arrows-up-to-line" style="margin-left: 30px;"></i>  <br>
+                            <i id="icons" class="fa-solid fa-arrows-up-to-line" style="margin-left: 30px;"></i> <br>
                             <span style="margin-left: 20px;">Claimed</span>
                         </div>
                     </a>
@@ -79,11 +79,10 @@
                                                 <p style="color:green">({{ $item->status }})</p>
                                             @endif
                                         </div>
-                                        <p>Buy Date {{ $item->created_at->format('m/d/Y') }}
+                                        <p>Start Date {{ $item->created_at->format('m/d/Y') }}
                                             <br>
-                                            Percentage: @progression($item->day, $item->amount,$item->created_at)%
-                                            <br>Ends
-                                            In:{{ $item->day }} days
+                                            Percentage: @progression($item->day, $item->amount, $item->created_at)%
+                                            <br>End Date:{{ $item->day }} days
                                         </p>
                                     </div>
                                 </div>
