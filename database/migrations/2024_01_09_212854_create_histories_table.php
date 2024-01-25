@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
+            $table->string('name')->default('null');
             $table->string('status')->default('pending');
             $table->integer('amount');
             $table->string('type');

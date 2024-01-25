@@ -28,12 +28,12 @@
             </div>
             <div class="group-input">
                 <label for="">Account Title</label>
-                <input type="text" value="Muhammad Wali">
+                <input type="text" value="Muhammad Wali" readonly>
             </div>
             <div class="group-input">
                 <label for="">Account Number</label>
                 <div class="d-flex">
-                    <input type="text" id="myInput" value="0561302715107" id="acc_num">
+                    <input type="text" id="myInput" value="0561302715107" id="acc_num" readonly>
                     <span style="margin-left: -30px;font-size:20px;margin-top:10px"><i class="icon-copy1"
                             onclick="copy()"></i></span>
                 </div>

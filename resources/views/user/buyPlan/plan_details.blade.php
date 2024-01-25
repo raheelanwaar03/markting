@@ -37,6 +37,7 @@
                         <p style="color:rgb(254, 254, 254)">Invest Amount</p>
                         <p style="color:white" class="displayAmount">Rs.{{ $amount }}</p>
                         <input type="number" name="amount" value="{{ $amount }}" hidden>
+                        <input type="text" name="plan_name" value="{{ $plan_name }}" hidden>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-2">
                         <p style="color:white">Single Limit</p>
@@ -57,7 +58,8 @@
                         <p style="color:white" id="result">
                             <span class="displayAmount"></span>
                             {{ $amount }} + (<span
-                                class="displayAmount"></span>{{ $amount }}*{{ $plan->persentage }}*{{ $plan->duration }}) = Total
+                                class="displayAmount"></span>{{ $amount }}*{{ $plan->persentage }}*{{ $plan->duration }})
+                            = Total
                             {{ $total }} Rs.
                         </p>
                     </div>

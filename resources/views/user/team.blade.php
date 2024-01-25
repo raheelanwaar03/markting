@@ -52,6 +52,7 @@
             margin: 20px;
             background-color: #fff;
             padding: 20px;
+            word-wrap: break-word;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -146,8 +147,8 @@
 
     <section class="userid-section">
         <h2>User ID: <span id="userId">{{ auth()->user()->user_code }}</span></h2>
-        <p>Your Referral Link: <span id="referralLink"
-                style="font-weight: bold;">{{ route('register', ['referral' => Auth::user()->user_code]) }}</span> <span
+        <p>Your Referral Link: <p class="flip-card-back" id="referralLink"
+                style="font-weight: bold;">{{ route('register', ['referral' => Auth::user()->user_code]) }}</p> <span
                 class="copy-icon" onclick="copyToClipboard('referralLink')">📋</span></p>
         <div class="copy-tooltip" id="copyTooltip">Copied!</div>
     </section>

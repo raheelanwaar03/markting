@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="content">
                                         <div class="d-flex justify-content-around align-items-center">
-                                            <h4>{{ $item->type }}</h4>
+                                            <h4>{{ $item->name }}</h4>
                                             @if ($item->status == 'pending')
                                                 <p style="color:red">({{ $item->status }})</p>
                                             @else
