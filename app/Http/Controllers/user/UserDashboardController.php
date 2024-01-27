@@ -97,9 +97,8 @@ class UserDashboardController extends Controller
 
         $buy_plans = BuyPlan::where('user_id', auth()->user()->id)->get();
 
-        if($buy_plans == null)
-        {
-            return redirect()->back()->with('error','No Active Plan');
+        if ($buy_plans == null) {
+            return redirect()->back()->with('error', 'No Active Plan');
         }
 
         foreach ($buy_plans as $plan) {
@@ -111,6 +110,7 @@ class UserDashboardController extends Controller
                 if ($currentDate->diffInDays($activationDate) >= $plan->duration) {
                     $plan = BuyPlan::where('plan_id', $plan->id)->first();
                     $plan->status = 'inactive';
+                    $plan->current = 'lock';
                     $plan->save();
 
                     $history = new History();
@@ -161,13 +161,13 @@ class UserDashboardController extends Controller
 
     public function plan_status()
     {
-        $history = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->where('status', 'active')->get();
+        $history = BuyPlan::where('user_id', auth()->user()->id)->where('status', 'active')->where('current', 'unlock')->get();
         return view('user.plan_status', compact('history'));
     }
 
     public function inactive()
     {
-        $history = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->where('status', 'inactive')->get();
+        $history = BuyPlan::where('user_id', auth()->user()->id)->where('status', 'active')->where('current', 'lock')->get();
         return view('user.inactive_plans', compact('history'));
     }
 

@@ -72,7 +72,8 @@ class BuyPlanController extends Controller
         $user->balance -= $amount;
         $user->save();
         // daily profit will be
-        $daily_profit = $request->profit / $request->duration;
+        $calculation = $request->profit - $amount;
+        $daily_profit = $calculation / $request->duration;
         // storing plan details
         $buy_plan = new BuyPlan();
         $buy_plan->user_id = auth()->user()->id;

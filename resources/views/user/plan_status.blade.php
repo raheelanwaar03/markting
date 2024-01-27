@@ -65,29 +65,34 @@
                     <h4 class="fw_5 mb-3">{{ month() }} AI Technology</h4>
                     <div class="group-trading-history mb-5">
                         @forelse ($history as $item)
-                            <a class="tf-trading-history" href="#">
+                            <div class="tf-trading-history" href="#">
                                 <div class="inner-left">
                                     <div class="icon-box rgba_primary">
                                         <i class="icon icon-electricity-1"></i>
                                     </div>
                                     <div class="content">
                                         <div class="d-flex justify-content-around align-items-center">
-                                            <h4>{{ $item->name }}</h4>
+                                            <h2>{{ $item->plan_name }}</h2>
                                             @if ($item->status == 'pending')
                                                 <p style="color:red">({{ $item->status }})</p>
                                             @else
                                                 <p style="color:green">({{ $item->status }})</p>
                                             @endif
                                         </div>
-                                        <p>Start Date {{ $item->created_at->format('m/d/Y') }}
-                                            <br>
-                                            Percentage: @progression($item->day, $item->amount, $item->created_at)%
-                                            <br>End Date:{{ $item->day }} days
+                                        <p>Invest: {{ $item->amount }}</p>
+                                        <p>Daily Icome: {{ $item->daily_profit }}</p>
+                                        <p>
+                                            Percentage: @progression($item->duration, $item->amount)%
+                                        </p>
+                                        <p>Start Date <span
+                                                style="font-size:15px;color:#0e6e15;">({{ $item->created_at->format('m/d/Y') }})</span>
+                                            <br>End Date: <span
+                                                style="font-size:15px;color:#0e6e15;">({{ getNextDate($item->created_at, $item->duration) }})</span>
                                         </p>
                                     </div>
                                 </div>
-                                <span class="num-val success_color">RS {{ $item->amount }}</span>
-                            </a>
+                                <span class="num-val success_color">Total: {{ $item->total_profit }}</span>
+                            </div>
                         @empty
                             <h3>Empty</h3>
                         @endforelse

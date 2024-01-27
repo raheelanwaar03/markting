@@ -179,6 +179,14 @@ function team_deposit()
     }
 }
 
+if (!function_exists('getNextDate')) {
+    function getNextDate($created_at, $duration)
+    {
+        $startDate = Carbon::parse($created_at);
+        $startDate->addDays($duration)->toDateString();
+        return $startDate->format('m/d/Y');
+    }
+}
 
 if (!function_exists('calculateProgression')) {
     function calculateProgression($day, $amount)
