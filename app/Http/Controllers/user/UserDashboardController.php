@@ -167,7 +167,7 @@ class UserDashboardController extends Controller
 
     public function inactive()
     {
-        $history = BuyPlan::where('user_id', auth()->user()->id)->where('status', 'active')->where('current', 'lock')->get();
+        $history = BuyPlan::where('user_id', auth()->user()->id)->where('status', 'inactive')->where('current', 'lock')->get();
         return view('user.inactive_plans', compact('history'));
     }
 

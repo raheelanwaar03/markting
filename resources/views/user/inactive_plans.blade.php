@@ -80,6 +80,7 @@
                                         </div>
                                         <p>Invest: {{ $item->amount }}</p>
                                         <p>Daily Icome: {{ $item->daily_profit }}</p>
+                                        <p>Total Icome: {{ $item->total_profit }}</p>
                                         <p>
                                             Percentage: @progression($item->duration, $item->amount)%
                                         </p>
@@ -90,7 +91,8 @@
                                         </p>
                                     </div>
                                 </div>
-                                <span class="num-val success_color">Total: {{ $item->total_profit }}</span>
+                                <a href="{{ route('User.Invest.Plan', $item->id) }}"
+                                    class="btn btn-success">Reinvest</a>
                             </div>
                         @empty
                             <h3>Empty</h3>
