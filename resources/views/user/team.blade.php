@@ -138,7 +138,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <h2>Upliners Deposit</h2>
-                        <p>({{ upliner_income() }})</p>
+                        <p>({{ upliner_deposit() }})</p>
                     </div>
                 </div>
             </div>
@@ -147,9 +147,10 @@
 
     <section class="userid-section">
         <h2>User ID: <span id="userId">{{ auth()->user()->user_code }}</span></h2>
-        <p>Your Referral Link: <p class="flip-card-back" id="referralLink"
-                style="font-weight: bold;">{{ route('register', ['referral' => Auth::user()->user_code]) }}</p> <span
-                class="copy-icon" onclick="copyToClipboard('referralLink')">📋</span></p>
+        <p>Your Referral Link:
+        <p class="flip-card-back" id="referralLink" style="font-weight: bold;">
+            {{ route('register', ['referral' => Auth::user()->user_code]) }}</p> <span class="copy-icon"
+            onclick="copyToClipboard('referralLink')">📋</span></p>
         <div class="copy-tooltip" id="copyTooltip">Copied!</div>
     </section>
 
@@ -160,13 +161,46 @@
         <section class="team-section mb-5">
             <div id="card-div">
                 <div id="level-team">
-                    <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Team Level:
-                        {{ auth()->user()->level }}</span> <br>
+                    <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 1 Team</span> <br>
                     <span class="com-text bold" style="font-weight: bold; font-size:13px;">{{ total_team() }} <br>
                         Total People</span>
                 </div>
                 <div id="commision-div">
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 7.1% +5%-</span>
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 7.1% + 5%-</span>
+                    <i class="fa-solid fa-greater-than gt-icon"></i>
+                    <br>
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }} pkr</span>
+                    <br>
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">Earning</span>
+                </div>
+            </div>
+        </section>
+        <section class="team-section mb-5">
+            <div id="card-div">
+                <div id="level-team">
+                    <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 2 Team</span> <br>
+                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">{{ total_team() }} <br>
+                        Total People</span>
+                </div>
+                <div id="commision-div">
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 4.1% + 2.5%-</span>
+                    <i class="fa-solid fa-greater-than gt-icon"></i>
+                    <br>
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }} pkr</span>
+                    <br>
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">Earning</span>
+                </div>
+            </div>
+        </section>
+        <section class="team-section mb-5">
+            <div id="card-div">
+                <div id="level-team">
+                    <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 3 Team</span> <br>
+                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">{{ total_team() }} <br>
+                        Total People</span>
+                </div>
+                <div id="commision-div">
+                    <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 2% + 1.1%-</span>
                     <i class="fa-solid fa-greater-than gt-icon"></i>
                     <br>
                     <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }} pkr</span>
@@ -190,7 +224,8 @@
                 <li>
                     <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                         href="{{ route('User.History') }}">
-                        <img src="{{ asset('assets/green_history.png') }}" style="color:#0e6e15;height: 30px;width:30px">
+                        <img src="{{ asset('assets/green_history.png') }}"
+                            style="color:#0e6e15;height: 30px;width:30px">
                         <span style="color:#0e6e15">History</span>
                     </a>
                 </li>
@@ -205,13 +240,14 @@
                     <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                         href="{{ route('User.Team.View') }}">
                         <img src="{{ asset('assets/green_team.png') }}" style="color:#0e6e15;height: 30px;width:30px">
-                            <span style="color: #0e6e15;">Team</span>
+                        <span style="color: #0e6e15;">Team</span>
                     </a>
                 </li>
                 <li>
                     <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                         href="{{ route('User.Profile') }}">
-                        <img src="{{ asset('assets/green_profile.png') }}" style="color:#0e6e15;height: 30px;width:30px">
+                        <img src="{{ asset('assets/green_profile.png') }}"
+                            style="color:#0e6e15;height: 30px;width:30px">
                         <span style="color: #0e6e15;">Profile</span>
                     </a>
                 </li>

@@ -89,8 +89,7 @@ class UserDashboardController extends Controller
 
     public function daily_reward()
     {
-        $today = Carbon::today();
-        $today_reward = History::where('user_id', auth()->user()->id)->where('type', 'reward')->where('status', 'recived')->whereDate('created_at', $today)->first();
+        $today_reward = History::where('user_id', auth()->user()->id)->where('type', 'reward')->where('status', 'recived')->whereDate('created_at', Carbon::today())->first();
         if ($today_reward != null) {
             return redirect()->back()->with('error', 'Already Recived');
         }
@@ -103,14 +102,13 @@ class UserDashboardController extends Controller
 
         foreach ($buy_plans as $plan) {
             // checking user plan created_at date
-            if ($plan->status === 'active') {
+            if ($plan->status == 'active') {
                 // Check if the user's plan has been active for more than three days
                 $activationDate = Carbon::parse($plan->created_at);
                 $currentDate = Carbon::now();
                 if ($currentDate->diffInDays($activationDate) >= $plan->duration) {
                     $plan = BuyPlan::where('plan_id', $plan->id)->first();
                     $plan->status = 'inactive';
-                    $plan->current = 'lock';
                     $plan->save();
 
                     $history = new History();
@@ -134,14 +132,12 @@ class UserDashboardController extends Controller
         $user->balance += $total_daily_profit;
         $user->save();
 
-        if ($total_daily_profit == null) {
-            $history = new History();
-            $history->user_id = auth()->user()->id;
-            $history->amount = $total_daily_profit;
-            $history->status = 'recived';
-            $history->type = 'reward';
-            $history->save();
-        }
+        $history = new History();
+        $history->user_id = auth()->user()->id;
+        $history->amount = $total_daily_profit;
+        $history->status = 'recived';
+        $history->type = 'reward';
+        $history->save();
 
 
         return redirect()->back()->with('success', 'Success');

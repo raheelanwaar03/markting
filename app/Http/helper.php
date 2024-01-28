@@ -2,6 +2,7 @@
 
 use App\Models\admin\Referralsetting;
 use App\Models\User;
+use App\Models\user\BuyPlan;
 use App\Models\user\Deposit;
 use App\Models\user\History;
 use Carbon\Carbon;
@@ -67,26 +68,25 @@ function total_team()
 
 function Total_Team_Investment()
 {
-    $my = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->get();
+    $my = Deposit::where('user_id', auth()->user()->id)->where('status', 'approved')->get();
     $my_investment = 0;
     foreach ($my as $investor) {
         $my_investment += $investor->amount;
     }
-    return $my_investment;
 
     $referrals = User::where('referral', auth()->user()->user_code)->get();
 
     if ($referrals != null) {
 
         foreach ($referrals as $person) {
-            $first_person_investment = History::where('user_id', $person->id)->where('type', 'Buy Plan')->get();
+            $first_person_investment = Deposit::where('user_id', $person->id)->where('status', 'approved')->get();
             $first_user_investment = 0;
             foreach ($first_person_investment as $investor) {
-                $first_user_investment += $investor->amount;
+                $first_user_investment += $investor->money;
             }
             $first_return_value = $my_investment + $first_user_investment;
+            return $first_return_value;
         }
-        return $first_return_value;
     } else {
         return $my_investment;
     }
@@ -122,8 +122,7 @@ function pending_income()
 
 function my_investment()
 {
-    $my_investment = History::where('user_id', auth()->user()->user_code)->where('type', 'Buy Plan')->get();
-
+    $my_investment = BuyPlan::where('user_id', auth()->user()->id)->where('status', 'active')->where('current', 'unlock')->get();
     $my_total_invest = 0;
     foreach ($my_investment as $person) {
         $my_total_invest += $person->amount;
@@ -132,31 +131,54 @@ function my_investment()
 }
 
 
-function upliner_income()
+function upliner_deposit()
 {
-    $my = History::where('user_id', auth()->user()->id)->where('type', 'Buy Plan')->get();
+    $my = Deposit::where('user_id', auth()->user()->id)->where('status', 'approved')->get();
     $my_investment = 0;
     foreach ($my as $investor) {
-        $my_investment += $investor->amount;
+        $my_investment += $investor->money;
     }
-    return $my_investment;
 
-    $upliners = User::where('user_code', $my->referral)->get();
-
-    if ($upliners != null) {
-
-        foreach ($upliners as $person) {
-            $first_person_investment = History::where('user_id', $person->id)->where('type', 'Buy Plan')->get();
-            $first_user_investment = 0;
-            foreach ($first_person_investment as $investor) {
-                $first_user_investment += $investor->amount;
-            }
-            $first_return_value = $my_investment + $first_user_investment;
-        }
-        return $first_return_value;
-    } else {
+    $upliner = User::where('user_code', auth()->user()->referral)->first();
+    if ($upliner == null) {
         return $my_investment;
+    } else {
+        $first_investor = Deposit::where('user_id', $upliner->id)->where('status', 'approved')->get();
+        $first_investment = 0;
+        foreach ($first_investor as $investor) {
+            $first_investment += $investor->money;
+        }
     }
+    $both = 0;
+
+    $second_upliner = User::where('user_code', $upliner->referral)->first();
+    if ($second_upliner == null) {
+        $both = $my_investment + $first_investment;
+        return $both;
+    } else {
+        $second_investor = Deposit::where('user_id', $second_upliner->id)->where('status', 'approved')->get();
+        $second_investment = 0;
+        foreach ($second_investor as $investor) {
+            $second_investment += $investor->money;
+        }
+    }
+
+    $calculation = 0;
+
+    $third_upliner = User::where('user_code', $second_upliner->referral)->first();
+    if ($third_upliner == null) {
+        $calculation = $second_investment + $both;
+        return $calculation;
+    } else {
+        $third_investor = Deposit::where('user_id', $third_upliner->id)->where('status', 'approved')->get();
+        $third_investment = 0;
+        foreach ($third_investor as $investor) {
+            $third_investment += $investor->money;
+        }
+    }
+
+    $main = $third_investment + $calculation;
+    return $main;
 }
 
 function team_deposit()
