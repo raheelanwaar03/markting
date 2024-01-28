@@ -58,7 +58,7 @@
                         <p style="color:white" id="result">
                             <span class="displayAmount"></span>
                             {{ $amount }} + (<span
-                                class="displayAmount"></span>{{ $amount }}*{{ $plan->persentage }}*{{ $plan->duration }})
+                                class="displayAmount"></span>{{ $amount }}*{{ $plan->persentage }}*{{ $plan->duration }})÷100
                             = Total
                             {{ $total }} Rs.
                         </p>

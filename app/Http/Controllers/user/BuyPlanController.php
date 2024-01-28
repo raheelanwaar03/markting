@@ -50,7 +50,8 @@ class BuyPlanController extends Controller
         }
 
         $amount = $request->amount;
-        $total = $amount + ($amount * $percentage * $duration);
+        $calculation = ($amount * $percentage * $duration) / 100;
+        $total = $amount + $calculation;
         $profit = $total - $amount;
         return view('user.buyPlan.plan_details', compact('plan', 'plan_name', 'total', 'amount', 'profit'));
     }
