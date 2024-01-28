@@ -82,7 +82,7 @@
                                         <p>Invest: {{ $item->amount }}</p>
                                         <p>Daily Icome: {{ $item->daily_profit }}</p>
                                         <p>
-                                            Percentage: @progression($item->duration, $item->amount)%
+                                            Percentage: @progression($item->daily_profit, $item->total_profit, $item->duration)%
                                         </p>
                                         <p>Start Date <span
                                                 style="font-size:15px;color:#0e6e15;">({{ $item->created_at->format('m/d/Y') }})</span>

@@ -134,6 +134,7 @@ class UserDashboardController extends Controller
 
         $history = new History();
         $history->user_id = auth()->user()->id;
+        $history->name = 'Profit';
         $history->amount = $total_daily_profit;
         $history->status = 'recived';
         $history->type = 'reward';

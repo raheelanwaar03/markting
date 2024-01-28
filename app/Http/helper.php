@@ -211,20 +211,14 @@ if (!function_exists('getNextDate')) {
 }
 
 if (!function_exists('calculateProgression')) {
-    function calculateProgression($day, $amount)
+    function calculateProgression($daily_profit, $total_profit, $duration)
     {
-        $increments = $day;
-        $incrementValue = $amount;
+        $day = $duration;
         $progression = [];
+        $calu = $total_profit / $daily_profit;
+        return $calu;
+        $progression = $daily_profit / $total_profit * 100;
 
-        // Calculate the step size for each increment
-        $step = $day / $increments;
-
-        // Generate the progression array
-        for ($i = 1; $i <= $increments; $i++) {
-            $progression = $i * $step * ($incrementValue / 100);
-        }
-
-        return $progression / $increments;
+        return $progression;
     }
 }

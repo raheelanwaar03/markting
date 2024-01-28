@@ -21,8 +21,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Blade::directive('progression', function ($expression) {
-            list($day, $amount) = explode(',', $expression);
-            return "<?php print_r(calculateProgression($day, $amount)); ?>";
+            list($daily_profit, $total_profit, $duration) = explode(',', $expression);
+            return "<?php print_r(calculateProgression($daily_profit, $total_profit,$duration)); ?>";
         });
     }
 }
