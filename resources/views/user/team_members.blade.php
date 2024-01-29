@@ -58,16 +58,29 @@
 
     <div class="container">
         <div class="tree-container">
-            <div class="user-node">
-                <h3 class="user-name">{{ auth()->user()->name }}</h3>
-                <p>Email: {{ auth()->user()->email }}</p>
-                @forelse ($users as $item)
-                    <div class="user-node">
-                        <h4 class="user-name">{{ $item->name }}</h4>
-                        <p>Email: {{ $item->email }}</p>
-                    </div>
-                @empty
-                @endforelse
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr class="table-active">
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($users as $user)
+                        <tr>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->balance }}</td>
+                            <td>{{ $user->status }}</td>
+                        </tr>
+                        @empty
+                            <h4>No user</h4>
+                        @endforelse
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
