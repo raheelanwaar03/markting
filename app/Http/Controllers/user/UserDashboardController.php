@@ -173,4 +173,10 @@ class UserDashboardController extends Controller
         $history = History::where('user_id', auth()->user()->id)->where('type', 'reward')->where('status', 'recived')->get();
         return view('user.claimed', compact('history'));
     }
+
+    public function all_team()
+    {
+        $users = User::where('referral', auth()->user()->user_code)->get();
+        return view('user.team_members', compact('users'));
+    }
 }
