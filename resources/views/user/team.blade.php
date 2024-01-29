@@ -179,7 +179,7 @@
             <div id="card-div">
                 <div id="level-team">
                     <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 2 Team</span> <br>
-                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">{{ total_team() }} <br>
+                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">0<br>
                         Total People</span>
                 </div>
                 <div id="commision-div">
@@ -196,7 +196,7 @@
             <div id="card-div">
                 <div id="level-team">
                     <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 3 Team</span> <br>
-                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">{{ total_team() }} <br>
+                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">0 <br>
                         Total People</span>
                 </div>
                 <div id="commision-div">
