@@ -80,7 +80,7 @@
                                         </div>
                                         <p>Start Date {{ $item->created_at->format('m/d/Y') }}
                                             <br>
-                                            Percentage: @progression($item->day, $item->amount)%
+                                            Percentage: @progression($item->day, $item->amount, $item->duration)%
                                             <br>End In:{{ $item->day }} days
                                         </p>
                                     </div>
