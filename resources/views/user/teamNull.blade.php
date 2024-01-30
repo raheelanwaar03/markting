@@ -70,21 +70,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @forelse ($users as $user)
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->balance }}</td>
                                 <td>{{ $user->status }}</td>
-                                <td>
-                                    @if ($user->deposits != null)
-                                        <p>{{ $user->deposits->sum('money') }}</p>
-                                    @else
-                                        <p>Null</p>
-                                    @endif
-                                </td>
+                                <td>{{ $user->money }}</td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <h5>No User</h5>
+                        @endforelse
                     </tbody>
                 </table>
             </div>

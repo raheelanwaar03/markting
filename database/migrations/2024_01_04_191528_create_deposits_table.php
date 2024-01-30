@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('deposits', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('bank');
             $table->string('account_name');
             $table->string('account_number');
             $table->integer('money');
             $table->string('screen_shot');
             $table->string('status')->default('pending');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

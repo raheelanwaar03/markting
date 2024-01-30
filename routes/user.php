@@ -16,6 +16,7 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user', 'status')->gro
     // Team Members
     Route::get('Team/Members',[UserDashboardController::class,'team'])->name('Team.View');
     Route::get('All/Team/Members',[UserDashboardController::class,'all_team'])->name('All.Team.Members');
+    Route::get('Null/Team/Members',[UserDashboardController::class,'null_team'])->name('Null.Team.Members');
     // Widthraw
     Route::get('Widthraw/View', [WidthrawBalanceController::class, 'widthraw_Balance'])->name('Widthraw.View');
     Route::post('Store/Widthraw', [WidthrawBalanceController::class, 'store_widthraw'])->name('Store.Widthraw');

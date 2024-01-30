@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Models\user\Deposit;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -29,6 +31,16 @@ class User extends Authenticatable
         'user_code',
         'number',
     ];
+
+    public function teamMembers()
+    {
+        return $this->hasMany(User::class, 'referral', auth()->user()->user_code);
+    }
+
+    function deposits()
+    {
+        return $this->hasMany(Deposit::class, 'user_id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

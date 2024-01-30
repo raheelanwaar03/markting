@@ -161,53 +161,62 @@
         </div>
         <section class="team-section mb-5">
             <div id="card-div">
-                <div id="level-team">
-                    <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 1 Team</span> <br>
-                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">{{ total_team() }} <br>
-                        Total People</span>
-                </div>
-                <div id="commision-div">
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 7.1% + 5%-</span>
-                    <i class="fa-solid fa-greater-than gt-icon"></i>
-                    <br>
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }} pkr</span>
-                    <br>
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">Earning</span>
-                </div>
+                <a href="{{ route('User.All.Team.Members') }}">
+                    <div id="level-team">
+                        <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 1 Team</span> <br>
+                        <span class="com-text bold" style="font-weight: bold; font-size:13px;">{{ total_team() }} <br>
+                            Total People</span>
+                    </div>
+                    <div id="commision-div">
+                        <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 7.1% + 5%-</span>
+                        <i class="fa-solid fa-greater-than gt-icon"></i>
+                        <br>
+                        <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }}
+                            pkr</span>
+                        <br>
+                        <span class="com-text" style="font-weight: bold; font-size:13px;">Earning</span>
+                    </div>
+                </a>
             </div>
         </section>
         <section class="team-section mb-5">
             <div id="card-div">
-                <div id="level-team">
-                    <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 2 Team</span> <br>
-                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">0<br>
-                        Total People</span>
-                </div>
-                <div id="commision-div">
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 4.1% + 2.5%-</span>
-                    <i class="fa-solid fa-greater-than gt-icon"></i>
-                    <br>
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }} pkr</span>
-                    <br>
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">Earning</span>
-                </div>
+                <a href="{{ route('User.Null.Team.Members') }}">
+                    <div id="level-team">
+                        <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 2 Team</span> <br>
+                        <span class="com-text bold" style="font-weight: bold; font-size:13px;">0<br>
+                            Total People</span>
+                    </div>
+                    <div id="commision-div">
+                        <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 4.1% + 2.5%-</span>
+                        <i class="fa-solid fa-greater-than gt-icon"></i>
+                        <br>
+                        <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }}
+                            pkr</span>
+                        <br>
+                        <span class="com-text" style="font-weight: bold; font-size:13px;">Earning</span>
+                    </div>
+                </a>
             </div>
         </section>
         <section class="team-section mb-5">
             <div id="card-div">
-                <div id="level-team">
-                    <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 3 Team</span> <br>
-                    <span class="com-text bold" style="font-weight: bold; font-size:13px;">0 <br>
-                        Total People</span>
-                </div>
-                <div id="commision-div">
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 2% + 1.1%-</span>
-                    <i class="fa-solid fa-greater-than gt-icon"></i>
-                    <br>
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }} pkr</span>
-                    <br>
-                    <span class="com-text" style="font-weight: bold; font-size:13px;">Earning</span>
-                </div>
+                <a href="{{ route('User.Null.Team.Members') }}">
+                    <div id="level-team">
+                        <span style="font-weight: bold; font-size: 13px;color:#40cc45;">Level 3 Team</span> <br>
+                        <span class="com-text bold" style="font-weight: bold; font-size:13px;">0 <br>
+                            Total People</span>
+                    </div>
+                    <div id="commision-div">
+                        <span class="com-text" style="font-weight: bold; font-size:13px;">Commision 2% + 1.1%-</span>
+                        <i class="fa-solid fa-greater-than gt-icon"></i>
+                        <br>
+                        <span class="com-text" style="font-weight: bold; font-size:13px;">{{ earned_income() }}
+                            pkr</span>
+                        <br>
+                        <span class="com-text" style="font-weight: bold; font-size:13px;">Earning</span>
+                    </div>
+                </a>
             </div>
         </section>
     </div>
@@ -240,7 +249,8 @@
                 <li>
                     <a class="fw_4 d-flex justify-content-center align-items-center flex-column text-light text-decoration-none"
                         href="{{ route('User.Team.View') }}">
-                        <img src="{{ asset('assets/green_team.png') }}" style="color:#0e6e15;height: 30px;width:30px">
+                        <img src="{{ asset('assets/green_team.png') }}"
+                            style="color:#0e6e15;height: 30px;width:30px">
                         <span style="color: #0e6e15;">Team</span>
                     </a>
                 </li>

@@ -176,7 +176,16 @@ class UserDashboardController extends Controller
 
     public function all_team()
     {
-        $users = User::where('referral', auth()->user()->user_code)->get();
+        $users = User::where('referral', auth()->user()->user_code)
+            ->with('deposits')
+            ->get();
+        return view('user.team_members', compact('users'));
+    }
+
+    public function null_team()
+    {
+        $users = User::where('referral', auth()->user()->name)
+            ->get();
         return view('user.team_members', compact('users'));
     }
 }
