@@ -78,7 +78,7 @@ class UserDashboardController extends Controller
 
     public function history()
     {
-        $history = History::get();
+        $history = Deposit::where('user_id',auth()->user()->id)->get();
         return view('user.history', compact('history'));
     }
 
@@ -176,7 +176,7 @@ class UserDashboardController extends Controller
 
     public function all_team()
     {
-        $users = User::where('referral', auth()->user()->user_code)
+        $users = User::where('referral', auth()->user()->user_code)->where('status','approved')
             ->with('deposits')
             ->get();
         return view('user.team_members', compact('users'));

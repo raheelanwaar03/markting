@@ -11,7 +11,7 @@
                                 <h4 class="card-title mb-0">User Details who request for Deposit</h4>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('Admin.Update.User.Account', $user->id) }}" method="POST">
+                                <form action="{{ route('Admin.Update.User.Account', $deposits->id) }}" method="POST">
                                     @csrf
                                     <div class="mt-4">
                                         <div class="row">
@@ -19,14 +19,14 @@
                                                 <div class="mb-3">
                                                     <label for="cleave-ccard" class="form-label">User Name</label>
                                                     <input type="text" class="form-control" id="cleave-ccard"
-                                                        value="{{ $user->name }}" readonly>
+                                                        value="{{ $deposits->user->name }}" readonly>
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Email</label>
                                                     <input type="text" class="form-control" id="cleave-prefix"
-                                                        value="{{ $user->email }}" readonly>
+                                                        value="{{ $deposits->user->email }}" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -35,14 +35,14 @@
                                                 <div class="mb-3">
                                                     <label for="cleave-ccard" class="form-label">Referral</label>
                                                     <input type="text" class="form-control" id="cleave-ccard"
-                                                        value="{{ $user->referral }}" readonly>
+                                                        value="{{ $deposits->user->referral }}" readonly>
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Balance</label>
                                                     <input type="number" class="form-control" id="cleave-prefix"
-                                                        value="{{ $user->balance }}" readonly>
+                                                        value="{{ $deposits->user->balance }}" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -51,14 +51,14 @@
                                                 <div class="mb-3">
                                                     <label for="cleave-ccard" class="form-label">Request for Deposit</label>
                                                     <input type="text" class="form-control" id="cleave-ccard"
-                                                        value="{{ $deposit->money }}" readonly>
+                                                        value="{{ $deposits->money }}" readonly>
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Status</label>
                                                     <input type="text" class="form-control" id="cleave-prefix"
-                                                        value="{{ $deposit->status }}" readonly>
+                                                        value="{{ $deposits->status }}" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,8 +67,8 @@
                                                 <label for="" class="form-label">User Transcation Screen
                                                     Shot</label>
                                                 <img class="form-control text-center"
-                                                    src="{{ asset('images/' . $deposit->screen_shot) }}"
-                                                    alt="{{ $deposit->screen_shot }}" class="img-fluid" width="200px"
+                                                    src="{{ asset('images/' . $deposits->screen_shot) }}"
+                                                    alt="{{ $deposits->screen_shot }}" class="img-fluid" width="200px"
                                                     height="200px">
                                             </div>
                                         </div>

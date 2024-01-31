@@ -24,7 +24,7 @@
                         <div class="content">
                             <p class="fw_4 success_color"
                                 style="padding:15px;border-radius:10px;font-size:20px;">Withdraw</p>
-                            <h2 class="fw_6 success_color text-center">RS {{ user_outcome() }}</h2>
+                            <h2 class="fw_6 success_color text-center">RS {{ withdraw_amount() }}</h2>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                                         <p>Today {{ $item->created_at->format('H:i:s') }}</p>
                                     </div>
                                 </div>
-                                <span class="num-val success_color">RS {{ $item->amount }}</span>
+                                <span class="num-val success_color">RS {{ $item->money }}</span>
                             </a>
                         @empty
                             <h3>Empty</h3>

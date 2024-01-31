@@ -155,10 +155,6 @@
     </section>
 
     <div style="margin-bottom: 150px">
-        <div>
-            <h2 class="text-center">Team Information <a href="{{ route('User.All.Team.Members') }}"
-                    class="btn btn-sm btn-success">Team</a> </h2>
-        </div>
         <section class="team-section mb-5">
             <div id="card-div">
                 <a href="{{ route('User.All.Team.Members') }}">

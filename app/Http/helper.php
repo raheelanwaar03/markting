@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Models\user\BuyPlan;
 use App\Models\user\Deposit;
 use App\Models\user\History;
+use App\Models\user\WidthrawBalance;
 use Carbon\Carbon;
 
 function users()
@@ -33,7 +34,7 @@ function rejected_users()
 
 function user_investment()
 {
-    $investment = Deposit::where('id', auth()->user()->id)->where('status', 'approved')->get();
+    $investment = Deposit::where('user_id', auth()->user()->id)->where('status', 'approved')->get();
     $total_money = 0.00;
 
     foreach ($investment as $invest) {
@@ -130,6 +131,15 @@ function my_investment()
     return $my_total_invest;
 }
 
+function withdraw_amount()
+{
+    $withdraw = WidthrawBalance::where('user_id', auth()->user()->id)->where('status', 'approved')->get();
+    $total_withdraw = 0;
+    foreach ($withdraw as $person) {
+        $total_withdraw += $person->money;
+    }
+    return $total_withdraw;
+}
 
 function upliner_deposit()
 {

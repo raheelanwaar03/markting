@@ -10,8 +10,6 @@ class Deposit extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'user_id';
-
     function User()
     {
         return $this->belongsTo(User::class, 'id');

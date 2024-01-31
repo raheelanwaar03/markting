@@ -211,6 +211,7 @@ class AdminDashboardController extends Controller
         $deposit = Deposit::find($id);
         $deposit->status = 'approved';
         $deposit->save();
+
         return redirect()->back()->with('success', 'Deposit request has been approved');
     }
 
@@ -232,14 +233,15 @@ class AdminDashboardController extends Controller
 
     public function addDeposit($id)
     {
-        $deposit = Deposit::find($id);
-        $user = User::where('id', $deposit->user_id)->first();
-        return view('admin.deposit.add', compact('user', 'deposit'));
+        $deposits = Deposit::with('User')->find($id);
+        return view('admin.deposit.add', compact('deposits'));
     }
 
     public function updateDeposit(Request $request, $id)
     {
-        $user = User::find($id);
+
+        $deposit = Deposit::find($id);
+        $user = User::where('id',$deposit->user_id)->first();
         $user->balance += $request->balance;
         $user->save();
         return redirect()->route('Admin.Deposit.Requests')->with('success', 'Deposit added successfully');

@@ -77,11 +77,11 @@
                                 <td>{{ $user->balance }}</td>
                                 <td>{{ $user->status }}</td>
                                 <td>
-                                    @if ($user->deposits != null)
-                                        <p>{{ $user->deposits->sum('money') }}</p>
-                                    @else
-                                        <p>Null</p>
-                                    @endif
+                                    @php
+                                        $approvedDeposits = $user->deposits->where('status', 'approved');
+                                        $totalApprovedDeposit = $approvedDeposits->isNotEmpty() ? $approvedDeposits->sum('amount') : 0;
+                                    @endphp
+                                    <p>{{ $totalApprovedDeposit }}</p>
                                 </td>
                             </tr>
                         @endforeach
