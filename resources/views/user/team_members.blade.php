@@ -65,6 +65,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Balance</th>
+                            <th>Referral</th>
                             <th>Status</th>
                             <th>Investment</th>
                         </tr>
@@ -75,6 +76,17 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->balance }}</td>
+                                <td>
+                                    @php
+                                        // get user team
+                                        $team = Auth::user()
+                                            ::where('referral', $user->user_code)
+                                            ->where('status', 'approved')
+                                            ->get()
+                                            ->count();
+                                    @endphp
+                                    {{ $team }}
+                                </td>
                                 <td>{{ $user->status }}</td>
                                 <td>
                                     @php
