@@ -79,7 +79,7 @@
                                 <td>
                                     @php
                                         $approvedDeposits = $user->deposits->where('status', 'approved');
-                                        $totalApprovedDeposit = $approvedDeposits->isNotEmpty() ? $approvedDeposits->sum('amount') : 0;
+                                        $totalApprovedDeposit = $approvedDeposits->isNotEmpty() ? $approvedDeposits->sum('money') : 0;
                                     @endphp
                                     <p>{{ $totalApprovedDeposit }}</p>
                                 </td>
