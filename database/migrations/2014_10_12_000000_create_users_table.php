@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('number');
             $table->string('user_code');
             $table->string('role')->default('user');
-            $table->string('status')->default('pending');
+            $table->string('status')->default('approved');
             $table->string('password');
             $table->integer('key');
             $table->timestamp('email_verified_at')->nullable();
