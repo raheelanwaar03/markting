@@ -60,13 +60,13 @@ class WidthrawBalanceController extends Controller
         $check_withdraw = History::where('user_id', auth()->user()->id)->where('type', 'withdraw')->first();
 
         if ($check_withdraw != null) {
-            return redirect()->route('User.Dashboard')->with('error', 'Already Request');
+            return redirect()->route('User.Dashboard')->with('error', 'Already Requested');
         }
 
         $withdraw_money = $request->amount;
         // checking if user have enougn balance
-        $user = User::where('id', auth()->user()->id)->first();
-        $user->balance -= $request->money;
+        $user = User::find(auth()->user()->id);
+        $user->balance -= $withdraw_money;
         $user->save();
         $wallet = Wallet::where('user_id', auth()->user()->id)->first();
         if ($wallet == null) {
@@ -78,7 +78,8 @@ class WidthrawBalanceController extends Controller
         $widthraw->wallet_name = $wallet->wallet_name;
         $widthraw->wallet_number = $wallet->wallet_number;
         $widthraw->holder_name = $wallet->holder_name;
-        $widthraw->money = $withdraw_money;
+        $widthraw->money = $request->amount;
+        $widthraw->securit_key = $request->security_key;
         $widthraw->save();
 
         $history = new History();
