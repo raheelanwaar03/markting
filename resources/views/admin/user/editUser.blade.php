@@ -7,8 +7,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header d-flex justify-content-between align-items-center">
                                 <h4 class="card-title mb-0">User Details</h4>
+                                <h4 class="card-title mb-0">User Team ({{ $team }})</h4>
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('Admin.Update.User', $user->id) }}" method="POST">
@@ -41,14 +42,38 @@
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Balance</label>
-                                                    <input type="number" name="balance" class="form-control" id="cleave-prefix"
-                                                        value="{{ $user->balance }}">
+                                                    <input type="number" name="balance" class="form-control"
+                                                        id="cleave-prefix" value="{{ $user->balance }}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="mb-0 mt-2">
-                                                <button type="submit" class="btn btn-primary">Add</button>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{ route('Admin.Update.Password', $user->id) }}" method="POST">
+                                    @csrf
+                                    <div class="mt-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3 class="text-center">Change Password</h3>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="mb-3">
+                                                    <label for="cleave-prefix" class="form-label">Password</label>
+                                                    <input type="text" class="form-control" name="password" id="cleave-prefix"
+                                                        value="{{ $user->password }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="mb-0 mt-2">
+                                                <button type="submit" class="btn btn-primary">Update</button>
                                             </div>
                                         </div>
                                     </div>

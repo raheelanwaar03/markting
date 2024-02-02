@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\admin\Referralsetting;
 use App\Models\admin\Notification;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use App\Models\user\Deposit;
 use App\Models\user\History;
 use Illuminate\Http\Request;
@@ -20,8 +21,18 @@ class AdminDashboardController extends Controller
     public function editUser($id)
     {
         $user =  User::find($id);
-        return view('admin.user.editUser', compact('user'));
+        $team = User::where('referral', $user->user_code)->get()->count();
+        return view('admin.user.editUser', compact('user', 'team'));
     }
+
+    public function updatePassword(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return redirect()->back()->with('success', 'Password Changed');
+    }
+
 
     public function notification()
     {
@@ -241,7 +252,7 @@ class AdminDashboardController extends Controller
     {
 
         $deposit = Deposit::find($id);
-        $user = User::where('id',$deposit->user_id)->first();
+        $user = User::where('id', $deposit->user_id)->first();
         $user->balance += $request->balance;
         $user->save();
         return redirect()->route('Admin.Deposit.Requests')->with('success', 'Deposit added successfully');
