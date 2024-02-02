@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\admin\BankDetails;
 use App\Models\admin\Referralsetting;
 use App\Models\User;
 use Illuminate\Console\Command;
@@ -42,6 +43,14 @@ class clean extends Command
         $referral_bouns->third_person = "25";
         $referral_bouns->status = "1";
         $referral_bouns->save();
+
+        // adding bank Details
+        $bank = new BankDetails();
+        $bank->title = 'test';
+        $bank->account = '11111111';
+        $bank->bank = 'allied';
+        $bank->status = 1;
+        $bank->save();
 
         // adding users
 

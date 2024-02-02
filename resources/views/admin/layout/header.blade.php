@@ -250,6 +250,10 @@
                                         <a href="{{ route('Admin.Referral.Setting') }}" class="nav-link">Referral
                                             Bouns</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('Admin.Edit.Bank.Detials') }}" class="nav-link">Bank
+                                            Details</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
