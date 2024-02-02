@@ -8,6 +8,7 @@ use App\Models\admin\Notification;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Models\user\Deposit;
+use App\Models\user\Wallet;
 use App\Models\user\History;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class AdminDashboardController extends Controller
 
     public function editUser($id)
     {
-        $user =  User::find($id);
+        $user =  User::where('id', $id)->with('wallet')->first();
         $team = User::where('referral', $user->user_code)->get()->count();
         return view('admin.user.editUser', compact('user', 'team'));
     }
@@ -33,6 +34,15 @@ class AdminDashboardController extends Controller
         return redirect()->back()->with('success', 'Password Changed');
     }
 
+    public function updateWallet(Request $request, $id)
+    {
+        $wallet = Wallet::find($id);
+        $wallet->wallet_name = $request->wallet_name;
+        $wallet->wallet_number = $request->wallet_number;
+        $wallet->holder_name = $request->holder_name;
+        $wallet->save();
+        return redirect()->back()->with('success','Wallet Updated');
+    }
 
     public function notification()
     {

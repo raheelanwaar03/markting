@@ -24,16 +24,16 @@
             </div>
             <div class="group-input">
                 <label for="">Bank</label>
-                <input type="text" value="United Bank Limited (UBL)" readonly>
+                <input type="text" value="{{ $bank->bank }}" readonly>
             </div>
             <div class="group-input">
                 <label for="">Account Title</label>
-                <input type="text" value="Muhammad Wali" readonly>
+                <input type="text" value="{{ $bank->title }}" readonly>
             </div>
             <div class="group-input">
                 <label for="">Account Number</label>
                 <div class="d-flex">
-                    <input type="text" id="myInput" value="0561302715107" id="acc_num" readonly>
+                    <input type="text" id="myInput" value="{{ $bank->account }}" id="acc_num" readonly>
                     <span style="margin-left: -30px;font-size:20px;margin-top:10px"><i class="icon-copy1"
                             onclick="copy()"></i></span>
                 </div>

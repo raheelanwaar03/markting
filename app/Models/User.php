@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\user\Deposit;
+use App\Models\user\Wallet;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -40,6 +41,11 @@ class User extends Authenticatable
     function deposits()
     {
         return $this->hasMany(Deposit::class, 'user_id');
+    }
+
+    function wallet()
+    {
+        return $this->hasOne(Wallet::class, 'user_id');
     }
 
     /**

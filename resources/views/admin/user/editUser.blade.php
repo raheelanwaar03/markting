@@ -66,19 +66,55 @@
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
                                                     <label for="cleave-prefix" class="form-label">Password</label>
-                                                    <input type="text" class="form-control" name="password" id="cleave-prefix"
-                                                        value="{{ $user->password }}">
+                                                    <input type="text" class="form-control" name="password"
+                                                        id="cleave-prefix" value="{{ $user->password }}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="mb-0 mt-2">
-                                                <button type="submit" class="btn btn-primary">Update</button>
+                                                <button type="submit" class="btn btn-primary">Change</button>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
+                            @if ($user->wallet != null)
+                            <div class="card-body">
+                                <form action="{{ route('Admin.Update.Wallet', $user->wallet->id) }}" method="POST">
+                                    @csrf
+                                    <div class="mt-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3 class="text-center">User Wallet</h3>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="mb-3">
+                                                    <label for="cleave-prefix" class="form-label">Bank</label>
+                                                    <input type="text" class="form-control" name="wallet_name"
+                                                        id="cleave-prefix" value="{{ $user->wallet->wallet_name }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="cleave-prefix" class="form-label">Account Title</label>
+                                                    <input type="text" class="form-control" name="holder_name"
+                                                        id="cleave-prefix" value="{{ $user->wallet->holder_name }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="cleave-prefix" class="form-label">Account Number</label>
+                                                    <input type="text" class="form-control" name="wallet_number"
+                                                        id="cleave-prefix" value="{{ $user->wallet->wallet_number }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="mb-0 mt-2">
+                                                <button type="submit" class="btn btn-primary">Update Wallet</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>

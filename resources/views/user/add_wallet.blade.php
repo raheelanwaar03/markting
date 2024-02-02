@@ -98,7 +98,8 @@
                 </div>
                 <div class="group-input">
                     <label for="">Message</label>
-                    <input type="text" placeholder="Add Your wallet carefully you cannot edit it later!" readonly>
+                    <input type="text"
+                        placeholder="Add Your wallet carefully. Contact Admin if you want to change the wallet later!" readonly>
                     <div class="tf-spacing-12"></div>
                 </div>
                 <div class="bottom-navigation-bar bottom-btn-fixed st2">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Models\admin\Notification;
 use App\Models\admin\Plans;
+use App\Models\admin\BankDetails;
 use App\Models\User;
 use App\Models\user\BuyPlan;
 use App\Models\user\Deposit;
@@ -41,7 +42,8 @@ class UserDashboardController extends Controller
 
     public function transfer()
     {
-        return view('user.deposit.add');
+        $bank = BankDetails::where('status', 1)->first();
+        return view('user.deposit.add', compact('bank'));
     }
 
     public function storeTransfer(Request $request)
@@ -78,7 +80,7 @@ class UserDashboardController extends Controller
 
     public function history()
     {
-        $history = Deposit::where('user_id',auth()->user()->id)->get();
+        $history = Deposit::where('user_id', auth()->user()->id)->get();
         return view('user.history', compact('history'));
     }
 
@@ -176,7 +178,7 @@ class UserDashboardController extends Controller
 
     public function all_team()
     {
-        $users = User::where('referral', auth()->user()->user_code)->where('status','approved')
+        $users = User::where('referral', auth()->user()->user_code)->where('status', 'approved')
             ->with('deposits')
             ->get();
         return view('user.team_members', compact('users'));
