@@ -22,6 +22,8 @@
     <link href="{{ asset('admin/asset/css/app.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{{ asset('admin/asset/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
+    {{-- datatabe --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 
 </head>
 
